@@ -11,18 +11,19 @@ before_build:
 - cmd: dotnet restore
 build:
   verbosity: normal
+test: off
 artifacts:
 - path: src\Core\bin\release\*.nupkg
   name: NuGet
 deploy:
 - provider: NuGet
+  server: https://ci.appveyor.com/nuget/core-g30m1l7vcj2g
   api_key:
-    secure: Ddx9R8TDSv9NPDUhGkQAE5lGqYtt/nZfjMG56q+n4AblRJQ/HPo8T41GEuGNjXJZ
-  on:
-    branch: master
-- provider: NuGet
-  server: https://ci.appveyor.com/nuget/sferguson82-ov95v3o0e59j
-  api_key:
-    secure: sUtJWVxeRcxUsY4dTnNV+XrJy9peSFxjs80cSgSy/ao=
+    secure: UrDd5YDeQLuxwr1PxxPPsJzcN/BMHy6iCGfmq7EcMHY=
   on:
     branch: stage
+- provider: NuGet
+  api_key:
+    secure: PAO/O5vbA5FhGyMxquvwnFat6TwT9tLp0JkAC9xWZOYTae4SaldtKh93v4TVNKES
+  on:
+    branch: master
