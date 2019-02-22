@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Relay.Core</PackageId>
+    <Authors>Scott Ferguson</Authors>
+    <Company>Relay Technologies</Company>
+    <Product />
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <Copyright>Copyright © 2019</Copyright>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <Description>An application framework for .NET Core</Description>
+    <PackageProjectUrl>https://github.com/relay-dev/core</PackageProjectUrl>
+    <PackageIconUrl>https://i.imgur.com/KLdrWTh.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/relay-dev/core.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\_src\relay\core\src\Core\Core.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

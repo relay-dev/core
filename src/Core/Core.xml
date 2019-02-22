@@ -1,0 +1,1561 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Core</name>
+    </assembly>
+    <members>
+        <member name="T:Core.Application.ApplicationAttribute">
+            <summary>
+            This attribute provides the ability to specify meta-data about an application
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationAttribute.Name">
+            <summary>
+            The name of the hosting application
+            </summary>
+        </member>
+        <member name="T:Core.Application.ApplicationContext">
+            <summary>
+            Communicates details about the application context
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationContext.ApplicationID">
+            <summary>
+            The unique Id of the application
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationContext.ApplicationName">
+            <summary>
+            The name of the application
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationContext.ApplicationVersion">
+            <summary>
+            The version of the application
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationContext.IsDebugMode">
+            <summary>
+            Indicates whether the application is running in a debugging context
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationContext.BuildTimestamp">
+            <summary>
+            The timestamp at which this application was built
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationContext.HostEnvironment">
+            <summary>
+            The HostEnvironment where the application is running (Dev, Test, Stage, Production)
+            </summary>
+        </member>
+        <member name="T:Core.Application.HostEnvironment">
+            <summary>
+            Specifies the Environment under which an application is running (usually obtained from a Context type object)
+            </summary>
+        </member>
+        <member name="F:Core.Application.HostEnvironment.Undefined">
+            <summary>
+            Not specified
+            </summary>
+        </member>
+        <member name="F:Core.Application.HostEnvironment.Mock">
+            <summary>
+            A Mock environment is setup to auto-mock all dependencies of all classes, and is often driven by a formatted text file to inject sets of mocked data for an application demo to run offline, or for running mock tests
+            </summary>
+        </member>
+        <member name="F:Core.Application.HostEnvironment.Development">
+            <summary>
+            The Development environment belongs to the Development Team and is the least restrictive in the environment stack
+            </summary>
+        </member>
+        <member name="F:Core.Application.HostEnvironment.Test">
+            <summary>
+            The Test environment belongs to the Testing Team and is slightly more restrictive than the Development environment
+            </summary>
+        </member>
+        <member name="F:Core.Application.HostEnvironment.Stage">
+            <summary>
+            The Stage environment belongs to the Business Team and is slightly more restrictive than the QA environment
+            </summary>
+        </member>
+        <member name="F:Core.Application.HostEnvironment.Beta">
+            <summary>
+            The Beta environment belongs to the IT and Business Team and is available for testing beta applications side-by-side with an existing version of the same application
+            </summary>
+        </member>
+        <member name="F:Core.Application.HostEnvironment.Production">
+            <summary>
+            The Production environment belongs to the Production Management Team and is very restrictive
+            </summary>
+        </member>
+        <member name="T:Core.Application.HostEnvironmentAttribute">
+            <summary>
+            This attribute give you the ability to provide additional meta-data details for a specific value in any Enum that represents runtime Environments
+            </summary>
+        </member>
+        <member name="P:Core.Application.HostEnvironmentAttribute.IsMockInstance">
+            <summary>
+            Returns <c>true</c> if the given EnvironmentCode represents a Mocked runtime Environment; otherwise, <c>false</c>
+            </summary>
+        </member>
+        <member name="P:Core.Application.HostEnvironmentAttribute.IsDevelopmentInstance">
+            <summary>
+            Returns <c>true</c> if the given EnvironmentCode represents a Development runtime Environment; otherwise, <c>false</c>
+            </summary>
+        </member>
+        <member name="P:Core.Application.HostEnvironmentAttribute.IsTestingInstance">
+            <summary>
+            Returns <c>true</c> if the given EnvironmentCode represents a Testing runtime Environment; otherwise, <c>false</c>
+            </summary>
+        </member>
+        <member name="P:Core.Application.HostEnvironmentAttribute.IsBetaInstance">
+            <summary>
+            Returns <c>true</c> if the given EnvironmentCode represents a Beta runtime Environment; otherwise, <c>false</c>
+            </summary>
+        </member>
+        <member name="P:Core.Application.HostEnvironmentAttribute.IsProductionInstance">
+            <summary>
+            Returns <c>true</c> if the given EnvironmentCode represents a Production runtime Environment; otherwise, <c>false</c>
+            </summary>
+        </member>
+        <member name="T:Core.Application.IBootstrapper">
+            <summary>
+            A generic abstraction of an application bootstrapper
+            </summary>
+        </member>
+        <member name="M:Core.Application.IBootstrapper.Startup">
+            <summary>
+            Called by the Core application framework during application startup
+            </summary>
+        </member>
+        <member name="T:Core.Caching.ICache">
+            <summary>
+            A generic abstraction of a caching mechanism
+            </summary>
+        </member>
+        <member name="M:Core.Caching.ICache.ContainsKey(System.String)">
+            <summary>
+            Indicates whether or not the cache contains a specific key
+            </summary>
+            <param name="key"></param>
+            <returns><c>true</c> if the provided string is found in the cache, which inheritly means there is a value cached for it; otherwise, <c>false</c></returns>
+        </member>
+        <member name="P:Core.Caching.ICache.Contents">
+            <summary>
+            Exposes the contents of the cache as a formatted string
+            </summary>
+            <returns>A string representing the contents of the cache</returns>
+        </member>
+        <member name="M:Core.Caching.ICache.GetOrAdd``1(System.String,System.Func{``0})">
+            <summary>
+            Calls the GetOrAdd() overload using the applications default CacheExpirationInHours
+            </summary>
+            <typeparam name="TReturn">The Type of object you are expecting to receive from the cache</typeparam>
+            <param name="key">Lookup key for the cache entry</param>
+            <param name="valueFactory">Function to set the value of the cache entry if it does not exist or has expired</param>
+            <returns>The entry in the cache for the given key</returns>
+        </member>
+        <member name="M:Core.Caching.ICache.GetOrAdd``1(System.String,System.Func{``0},System.Int32)">
+            <summary>
+            Gets an entry from the cache if it exists. If it does not exist (or it has expired) it will use the Func you pass in to set a value in the cache for the key you specified.
+            </summary>
+            <typeparam name="TReturn">The Type of object you are expecting to receive from the cache</typeparam>
+            <param name="key">Lookup key for the cache entry</param>
+            <param name="valueFactory">Function to set the value of the cache entry if it does not exist or has expired</param>
+            <param name="expirationInHours">Specifies how long the cache should live for before using the Func parameter to refresh the cache entrys value</param>
+            <returns>The entry in the cache for the given key</returns>
+        </member>
+        <member name="M:Core.Caching.ICache.FormatKey(System.Object[])">
+            <summary>
+            Given n input arguments, this method will return a string ready to be used as a key using all standard conventions
+            </summary>
+            <returns>The formatted cache key</returns>
+        </member>
+        <member name="M:Core.Caching.ICache.Remove(System.String)">
+            <summary>
+            Removes a single cache entry, by key
+            </summary>
+            <param name="key">Lookup key for the cache entry</param>
+            <returns>The object that was cache</returns>
+        </member>
+        <member name="M:Core.Caching.ICache.RemoveAll">
+            <summary>
+            Removes all cache entries, effectively clearing out the cache completely
+            </summary>
+        </member>
+        <member name="T:Core.Caching.ICacheFactory">
+            <summary>
+            Creates <see cref="T:Core.Caching.ICache"/> instances, using the default (when no name is specified) or the cache instance by name
+            </summary>
+        </member>
+        <member name="T:Core.Configuration.IConfiguration">
+            <summary>
+            A generic abstraction of an application configuration mechanism
+            </summary>
+        </member>
+        <member name="M:Core.Configuration.IConfiguration.GetApplicationSetting``1(System.String)">
+            <summary>
+            Gets an application setting from a configuration source by key (a string) and casts it to the expected type
+            </summary>
+            <typeparam name="TReturn">Type of object to be returned</typeparam>
+            <param name="key">Unique key of the application setting</param>
+            <returns>The application setting, of type TReturn</returns>
+        </member>
+        <member name="M:Core.Configuration.IConfiguration.ContainsApplicationSetting(System.String)">
+            <summary>
+            Determines if the given key is present in the application settings
+            </summary>
+            <param name="key">Unique key of the application setting</param>
+            <returns><c>true</c> if the given key is present in the application settings; otherwise, <c>false</c></returns>
+        </member>
+        <member name="T:Core.Configuration.IConfigurationFactory">
+            <summary>
+            Creates <see cref="T:Core.Configuration.IConfiguration"/> instances, using the default (when no name is specified) or the configuration instance by name
+            </summary>
+        </member>
+        <member name="T:Core.Data.DatabaseCommandParameter">
+            <summary>
+            A generic abstraction of a database command parameter
+            </summary>
+        </member>
+        <member name="P:Core.Data.DatabaseCommandParameter.Name">
+            <summary>
+            The name of the database parameter
+            </summary>
+        </member>
+        <member name="P:Core.Data.DatabaseCommandParameter.Value">
+            <summary>
+            The value that should be passed as part of this Command
+            </summary>
+        </member>
+        <member name="P:Core.Data.DatabaseCommandParameter.Direction">
+            <summary>
+            The direction of the parameter (Input, Output, InputOutput or Return)
+            </summary>
+        </member>
+        <member name="T:Core.Data.Entity.Entity">
+            <summary>
+            A generic representation of an object that represents a record
+            </summary>
+        </member>
+        <member name="P:Core.Data.Entity.Entity.ModifiedBy">
+            <summary>
+            The person, process or application that modified the object
+            </summary>
+        </member>
+        <member name="P:Core.Data.Entity.Entity.ModifiedDate">
+            <summary>
+            The date and time the object was modified
+            </summary>
+        </member>
+        <member name="T:Core.Data.Entity.IEntity">
+            <summary>
+            A generic representation of an object that represents a record
+            </summary>
+        </member>
+        <member name="T:Core.Data.Entity.IReadOnlyEntity">
+            <summary>
+            A generic representation of an object that represents a readonly record
+            </summary>
+        </member>
+        <member name="T:Core.Data.Entity.ReadOnlyEntity">
+            <summary>
+            A generic representation of an object that represents a readonly record
+            </summary>
+        </member>
+        <member name="P:Core.Data.Entity.ReadOnlyEntity.ID">
+            <summary>
+            The ID of the object
+            </summary>
+        </member>
+        <member name="P:Core.Data.Entity.ReadOnlyEntity.CreatedBy">
+            <summary>
+            The person, process or application that created the object
+            </summary>
+        </member>
+        <member name="P:Core.Data.Entity.ReadOnlyEntity.CreatedDate">
+            <summary>
+            The date and time the object was created
+            </summary>
+        </member>
+        <member name="T:Core.Data.IAbstractRepositoryFactory">
+            <summary>
+            Creates <see cref="T:Core.Data.IRepositoryFactory"/> for Commands
+            </summary>
+        </member>
+        <member name="T:Core.Data.IDatabase">
+            <summary>
+            A generic abstraction of a database
+            </summary>
+        </member>
+        <member name="M:Core.Data.IDatabase.Execute(System.String,System.Collections.Generic.List{Core.Data.DatabaseCommandParameter})">
+            <summary>
+            Executes a SQL string against the database this <see cref="T:Core.Data.IDatabase"/> is connected to
+            </summary>
+            <param name="sql">The SQL to be executed</param>
+            <param name="databaseParameters">Optional; if there are parameter placeholders in the SQL string, the parameter values should be specified here</param>
+            <returns>The result of the SQL string</returns>
+        </member>
+        <member name="M:Core.Data.IDatabase.ExecuteScalar``1(System.String,System.Collections.Generic.List{Core.Data.DatabaseCommandParameter})">
+            <summary>
+            Executes a SQL string against the database this <see cref="T:Core.Data.IDatabase"/> is connected to which returns a single value
+            </summary>
+            <typeparam name="TResult">The type to convert the result to</typeparam>
+            <param name="sql">The SQL to be executed</param>
+            <param name="databaseParameters">Optional; if there are parameter placeholders in the SQL string, the parameter values should be specified here</param>
+            <returns>The result of the SQL string</returns>
+        </member>
+        <member name="M:Core.Data.IDatabase.ExecuteNonQuery(System.String,System.Collections.Generic.List{Core.Data.DatabaseCommandParameter})">
+            <summary>
+            Executes a SQL statement which is either an Insert, Update or Delete
+            </summary>
+            <param name="sql">The SQL to be executed</param>
+            <param name="databaseParameters">Optional; if there are parameter placeholders in the SQL string, the parameter values should be specified here</param>
+            <returns></returns>
+        </member>
+        <member name="M:Core.Data.IDatabase.ExecuteStoredProcedure(System.String,System.Collections.Generic.List{Core.Data.DatabaseCommandParameter})">
+            <summary>
+            Executes a stored procedure against the database this <see cref="T:Core.Data.IDatabase"/> is connected to
+            </summary>
+            <param name="storedProcedureName">The name of the stored procedure to be executed</param>
+            <param name="databaseParameters">Optional; if there are parameter placeholders in the SQL string, the parameter values should be specified here</param>
+            <returns>The result of the stored procedure</returns>
+        </member>
+        <member name="M:Core.Data.IDatabase.BulkInsert(System.String,System.Data.DataTable,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Inserts a set of records from a <see cref="T:System.Data.DataTable"/> into a database table in a single transaction
+            </summary>
+            <param name="tableName">The name of the table to insert into</param>
+            <param name="dataTable">The dataTable that contains the data to be inserted</param>
+            <param name="columnMappings">Optional; maps the dataTable column names to the database table column names</param>
+        </member>
+        <member name="M:Core.Data.IDatabase.GetServerName">
+            <summary>
+            Gets the server name this <see cref="T:Core.Data.IDatabase"/> instance is connected to
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Core.Data.IDatabaseFactory">
+            <summary>
+            Creates <see cref="T:Core.Data.IDatabase"/> instances, using the default (when no name is specified) or the database instance by name
+            </summary>
+        </member>
+        <member name="T:Core.Data.IDbContext">
+            <summary>
+            A generic abstraction of a database context
+            </summary>
+        </member>
+        <member name="M:Core.Data.IDbContext.Set``1">
+            <summary>
+            Returns a reference to a set of entities from the data source
+            </summary>
+            <typeparam name="TEntity">The type of entities to reference from the data source</typeparam>
+            <returns>A reference to a set of entities from the data source</returns>
+        </member>
+        <member name="P:Core.Data.IDbContext.Tracker">
+            <summary>
+            A mechanism for tracking entities to be added or modified in the data source
+            </summary>
+        </member>
+        <member name="M:Core.Data.IDbContext.SaveChanges">
+            <summary>
+            Persists all pending changes to the data source
+            </summary>
+            <returns>Count of rows affected</returns>
+        </member>
+        <member name="T:Core.Data.IRepository`1">
+            <summary>
+            A generic abstraction of a repository of data
+            </summary>
+            <typeparam name="TEntity">The type of Entites that belong to this repository</typeparam>
+        </member>
+        <member name="M:Core.Data.IRepository`1.Add(`0)">
+            <summary>
+            Adds a new entity to the repository
+            </summary>
+            <param name="entity">The entity to add to the repository</param>
+        </member>
+        <member name="M:Core.Data.IRepository`1.Delete(`0)">
+            <summary>
+            Deletes an entity from the repository
+            </summary>
+            <param name="entity">The entity to delete from the repository</param>
+        </member>
+        <member name="M:Core.Data.IRepository`1.GetAll">
+            <summary>
+            Gets all entities from the repository
+            </summary>
+            <returns>All entities from the repository</returns>
+        </member>
+        <member name="M:Core.Data.IRepository`1.Query">
+            <summary>
+            Queries the repository
+            </summary>
+            <returns>An expression that can be used to query the repository</returns>
+        </member>
+        <member name="T:Core.Data.IRepositoryFactory">
+            <summary>
+            Creates types that implement the IRepository interface for Commands
+            </summary>
+        </member>
+        <member name="M:Core.Data.IRepositoryFactory.Create``1">
+            <summary>
+            Creates the Repository type requested
+            </summary>
+            <typeparam name="IRepository">Type of the Repository to be returned</typeparam>
+            <returns>A new instance of an object of type IRepository</returns>
+        </member>
+        <member name="T:Core.Data.IUnitOfWork">
+            <summary>
+            A generic abstraction of a unit of work
+            </summary>
+        </member>
+        <member name="M:Core.Data.IUnitOfWork.Commit">
+            <summary>
+            Persists all pending changes to the data source
+            </summary>
+            <returns>Count of rows affected</returns>
+        </member>
+        <member name="T:Core.Data.Attributes.CommandAttribute">
+            <summary>
+            This attribute provides the ability to specify meta-data about a Command, such as whether or not it will alter a data source
+            </summary>
+        </member>
+        <member name="P:Core.Data.Attributes.CommandAttribute.IsPersistent">
+            <summary>
+            Set to <c>true</c> if the Command you are denoting will alter a data source, such as a database; otherwise, <c>false</c>
+            </summary>
+        </member>
+        <member name="T:Core.Data.Attributes.ComponentAttribute">
+            <summary>
+            This attribute give you the ability to create new Components and subscribe them to existing Modules without impacting Module code (i.e. this facilitaes a loose coupling between Modules and Components)
+            </summary>
+        </member>
+        <member name="P:Core.Data.Attributes.ComponentAttribute.Name">
+            <summary>
+            The name of this Component
+            </summary>
+        </member>
+        <member name="P:Core.Data.Attributes.ComponentAttribute.Type">
+            <summary>
+            The type of this Component
+            </summary>
+        </member>
+        <member name="P:Core.Data.Attributes.ComponentAttribute.ModuleName">
+            <summary>
+            The Module this Component should be associated with. If the type is not an IModule, the Bootstrapper process will throw an Exception
+            </summary>
+        </member>
+        <member name="T:Core.Data.Attributes.InjectableAttribute">
+            <summary>
+            This attribute give you the ability to declare IoC injection behavor as meta-data on a class intended to be used in a dependeny injection context
+            </summary>
+        </member>
+        <member name="P:Core.Data.Attributes.InjectableAttribute.MapTo">
+            <summary>
+            Specifies the interface to be automattically mapped to the class with the Injectable attribute for IoC. When this value is null and a class has this attribute, it will assume the first interface on this class should be used for the mapping
+            </summary>
+            <exception cref="T:System.InvalidOperationException"> Thrown when this attribute exists on a class, but InterfaceToMap is null and no interfaces exist on the class</exception>
+        </member>
+        <member name="P:Core.Data.Attributes.InjectableAttribute.AutoWiring">
+            <summary>
+            Allows the class to opt-out of the auto-wiring IoC process. This would also support any IoC auto-wiring where classes are expected to exlicitly opt-in
+            </summary>
+        </member>
+        <member name="P:Core.Data.Attributes.InjectableAttribute.Lifetime">
+            <summary>
+            The lifetime to be used when registering types for the container
+            </summary>
+        </member>
+        <member name="T:Core.Data.Attributes.ModuleAttribute">
+            <summary>
+            This attribute give you the ability to specify meta-data about your Module, such as a Name
+            </summary>
+        </member>
+        <member name="P:Core.Data.Attributes.ModuleAttribute.Name">
+            <summary>
+            The Name of this Module
+            </summary>
+        </member>
+        <member name="T:Core.Data.Attributes.PluginAttribute">
+            <summary>
+            This attribute give you the ability to provide meta-data for Plugin modules, which allows you to specifiy a Plugin's name and type on the ICorePlugin class
+            </summary>
+        </member>
+        <member name="P:Core.Data.Attributes.PluginAttribute.Name">
+            <summary>
+            A name that uniquely identifies this module. This will be used in the IoC auto-wiring process as a key for consuming applications to dictate which modules they're composed of
+            </summary>
+        </member>
+        <member name="P:Core.Data.Attributes.PluginAttribute.Type">
+            <summary>
+            Specifies the type of module this class represents. This will be used in the IoC auto-wiring process as a key for consuming applications to dictate which modules they're composed of
+            </summary>
+        </member>
+        <member name="T:Core.Data.Descriptor.IAuditable">
+            <summary>
+            Indicates this class has properties used to capture the artifacts around the creation and modification of the object
+            </summary>
+        </member>
+        <member name="T:Core.Data.Descriptor.IHaveAnID">
+            <summary>
+            Indicates this class has a property called Id of type long that has a public setter and getter. Used by polymorphic methods that need to check for a non-zero Id to know whether to insert or update
+            </summary>
+        </member>
+        <member name="P:Core.Data.Descriptor.IHaveAnID.ID">
+            <summary>
+            The ID of the object
+            </summary>
+        </member>
+        <member name="T:Core.Data.Descriptor.IHaveCreatedFields">
+            <summary>
+            Indicates this class has properties used to capture the artifacts around the creation of the object
+            </summary>
+        </member>
+        <member name="P:Core.Data.Descriptor.IHaveCreatedFields.CreatedBy">
+            <summary>
+            The person, process or application that created the object
+            </summary>
+        </member>
+        <member name="P:Core.Data.Descriptor.IHaveCreatedFields.CreatedDate">
+            <summary>
+            The date and time the object was created
+            </summary>
+        </member>
+        <member name="T:Core.Data.Descriptor.IHaveModifiedFields">
+            <summary>
+            Indicates this class has properties used to capture the artifacts around the modification of the object
+            </summary>
+        </member>
+        <member name="P:Core.Data.Descriptor.IHaveModifiedFields.ModifiedBy">
+            <summary>
+            The person, process or application that modified the object
+            </summary>
+        </member>
+        <member name="P:Core.Data.Descriptor.IHaveModifiedFields.ModifiedDate">
+            <summary>
+            The date and time the object was modified
+            </summary>
+        </member>
+        <member name="T:Core.Data.Enums.Opt">
+            <summary>
+            Provides clients with an option to Opt In or Out of a process (this is currently used by the IoC bootstrapper assembly scanner)
+            </summary>
+        </member>
+        <member name="F:Core.Data.Enums.Opt.Undefined">
+            <summary>
+            Not specified
+            </summary>
+        </member>
+        <member name="F:Core.Data.Enums.Opt.In">
+            <summary>
+            Opt-in to an automated process
+            </summary>
+        </member>
+        <member name="F:Core.Data.Enums.Opt.Out">
+            <summary>
+            Opt-out of an automated process
+            </summary>
+        </member>
+        <member name="T:Core.Data.ICommand">
+            <summary>
+            Represents a single unit of work that can be executed
+            </summary>
+        </member>
+        <member name="M:Core.Data.ICommand.Execute">
+            <summary>
+            Executes the command
+            </summary>
+        </member>
+        <member name="T:Core.Data.ICommand`1">
+            <summary>
+            Represents a single unit of work that can be executed
+            </summary>
+            <typeparam name="TResult">Output type needed for the command</typeparam>
+        </member>
+        <member name="M:Core.Data.ICommand`1.Execute">
+            <summary>
+            Executes the command
+            </summary>
+            <returns>Result of the command</returns>
+        </member>
+        <member name="T:Core.Data.IComponent">
+            <summary>
+            A Business Logic class that exposes related methods, and orchestrates Commands (usually an Aggregate Root)
+            </summary>
+        </member>
+        <member name="T:Core.Data.IContext">
+            <summary>
+            Context objects provide contextual details to Commands
+            </summary>
+        </member>
+        <member name="T:Core.Data.IFacade">
+            <summary>
+            A thin layer that serves as an API boundary
+            </summary>
+        </member>
+        <member name="T:Core.Data.IFactory`1">
+            <summary>
+            Factories create objects for use by Commands
+            </summary>
+            <typeparam name="TService">Type of object to be created</typeparam>
+        </member>
+        <member name="M:Core.Data.IFactory`1.Create``1">
+            <summary>
+            Creates the type requested
+            </summary>
+            <typeparam name="TToCreate">Type of object to be returned</typeparam>
+            <returns>A new instance of an object of type TToCreate</returns>
+        </member>
+        <member name="M:Core.Data.IFactory`1.Create(System.String)">
+            <summary>
+            Creates the type requested
+            </summary>
+            <param name="name">Unique name of the instance to return (when name is null, the default instance will be used)</param>
+            <returns>A new instance of an object of type TService</returns>
+        </member>
+        <member name="T:Core.Data.IFactory">
+            <summary>
+            Factories create objects for use by Commands
+            </summary>
+        </member>
+        <member name="M:Core.Data.IFactory.Create``1">
+            <summary>
+            Creates the type requested
+            </summary>
+            <typeparam name="TToCreate">Type of object to be returned</typeparam>
+            <returns>A new instance of an object of type TToCreate</returns>
+        </member>
+        <member name="T:Core.Data.IModule">
+            <summary>
+            An assortment of Components, usually culminating to an Aggregate Root in the system
+            </summary>
+        </member>
+        <member name="M:Core.Data.IModule.GetComponent``1">
+            <summary>
+            Gets a Component that belongs to the Module
+            </summary>
+            <typeparam name="IComponent">Component type to be returned</typeparam>
+            <returns>A new instance of an object of type IComponent</returns>
+        </member>
+        <member name="T:Core.Data.IModuleFactory">
+            <summary>
+            Creates types that implement the IModule interface for Commands
+            </summary>
+        </member>
+        <member name="M:Core.Data.IModuleFactory.Create``1">
+            <summary>
+            Creates the Module type requested
+            </summary>
+            <typeparam name="IModule">Type of the Module to be returned</typeparam>
+            <returns>A new instance of an object of type IModule</returns>
+        </member>
+        <member name="T:Core.Data.IPlugin">
+            <summary>
+            Third Party modules that enjoy a pub/sub pattern
+            </summary>
+        </member>
+        <member name="M:Core.Data.IPlugin.Load">
+            <summary>
+            Loads the IPlugin
+            </summary>
+        </member>
+        <member name="T:Core.Data.IProvider`1">
+            <summary>
+            Providers simply provide consumers with something, by way of either a read-only property, or a getter method with no input
+            </summary>
+        </member>
+        <member name="M:Core.Data.IProvider`1.Get">
+            <summary>
+            Returns the type requested
+            </summary>
+            <returns>The type requested</returns>
+        </member>
+        <member name="T:Core.Exceptions.CoreException">
+            <summary>
+            Core Exceptions a thrown only by the Core.* assemblies. There are several overloads to support concise client code.
+            </summary>
+        </member>
+        <member name="P:Core.Exceptions.CoreException.ErrorCode">
+            <summary>
+            Error Code string to be logged; Error Codes can be found in Core.Constants.ErrorCode.*
+            </summary>
+        </member>
+        <member name="P:Core.Exceptions.CoreException.LogLevel">
+            <summary>
+            The Level at which an entry should be logged
+            </summary>
+        </member>
+        <member name="M:Core.Exceptions.CoreException.#ctor(System.String)">
+            <summary>
+            Simple overload for providing a message as part of the exception
+            </summary>
+            <param name="message">A brief description of what the <see cref="T:Core.Logging.LogEntry"/> is. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readble descriptive note of what happened. There are other classes for providing more structure to log entries for the sake of searching and grouping</param>
+        </member>
+        <member name="M:Core.Exceptions.CoreException.#ctor(System.String,System.String)">
+            <summary>
+            Simple overload for providing an <see cref="T:Core.Validation.ErrorCode"/> as well as a message as part of the exception
+            </summary>
+            <param name="errorCode">The Error Code string to be logged; Error Codes can be found in Core.Constants.ErrorCode.* and are 4 character strings</param>
+            <param name="message">A brief description of the <see cref="T:Core.Logging.LogEntry"/>. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readble descriptive note of what happened. There are other classes (i.e. <see cref="T:Core.Logging.LogEntry"/>) for providing more structure to log entries for the sake of searching and grouping</param>
+        </member>
+        <member name="M:Core.Exceptions.CoreException.#ctor(System.Exception,System.String)">
+            <summary>
+            Simple overload for providing an inner exception as well as a message as part of the exception
+            </summary>
+            <param name="innerException">The inner exception being wrapped</param>
+            <param name="message">A brief description of what the <see cref="T:Core.Logging.LogEntry"/> is. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readble descriptive note of what happened. There are other classes for providing more structure to log entries for the sake of searching and grouping</param>
+        </member>
+        <member name="M:Core.Exceptions.CoreException.#ctor(System.Exception,System.String,System.String)">
+            <summary>
+            Simple overload for providing an inner exception and an <see cref="T:Core.Validation.ErrorCode"/>, as well as a message as part of the exception
+            </summary>
+            <param name="innerException">The inner exception being wrapped</param>
+            <param name="errorCode">The Error Code string to be logged; Error Codes can be found in Core.Constants.ErrorCode.* and are 4 character strings</param>
+            <param name="message">A brief description of what the <see cref="T:Core.Logging.LogEntry"/> is. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readble descriptive note of what happened. There are other classes (i.e. <see cref="T:Core.Logging.LogEntry"/>) for providing more structure to log entries for the sake of searching and grouping</param>
+        </member>
+        <member name="T:Core.IoC.DuplicateRegistrationOption">
+            <summary>
+            Used by the IoC auto-wiring process. This enum indicates how the IoC initialization process should behave when it encounters a duplicate registration.
+            </summary>
+        </member>
+        <member name="F:Core.IoC.DuplicateRegistrationOption.Undefined">
+            <summary>
+            Not specified
+            </summary>
+        </member>
+        <member name="F:Core.IoC.DuplicateRegistrationOption.ThrowException">
+            <summary>
+            When a call is made to register and a duplicate registration exists, consider it an error and throw an exception
+            </summary>
+        </member>
+        <member name="F:Core.IoC.DuplicateRegistrationOption.OverrideExistingRegistration">
+            <summary>
+            When a call is made to register and a duplicate registration exists, consider the request to be the correct registration and override the existing registration
+            </summary>
+        </member>
+        <member name="F:Core.IoC.DuplicateRegistrationOption.IgnoreRegistrationRequest">
+            <summary>
+            When a call is made to register and a duplicate registration exists, consider the existing registration to be correct and ignore the requested registration
+            </summary>
+        </member>
+        <member name="T:Core.IoC.RegistrationLifetime">
+            <summary>
+            Indicates the lifetime to be used when registering types for the container
+            </summary>
+        </member>
+        <member name="F:Core.IoC.RegistrationLifetime.Undefined">
+            <summary>
+            Not specified
+            </summary>
+        </member>
+        <member name="F:Core.IoC.RegistrationLifetime.Singleton">
+            <summary>
+            Singleton components are instantiated once, and shared between all clients.
+            </summary>
+        </member>
+        <member name="F:Core.IoC.RegistrationLifetime.Transient">
+            <summary>
+            Transient components are created on demand.
+            </summary>
+        </member>
+        <member name="F:Core.IoC.RegistrationLifetime.PerRequest">
+            <summary>
+            PerRequest components are created once per Http Request
+            </summary>
+        </member>
+        <member name="T:Core.IoC.IIoCContainer">
+            <summary>
+            A generic abstraction of an IoC container mechanism
+            </summary>
+        </member>
+        <member name="P:Core.IoC.IIoCContainer.Settings">
+            <summary>
+            Global settings to be used by the IoC container
+            </summary>
+        </member>
+        <member name="M:Core.IoC.IIoCContainer.Register``2(Core.IoC.IoCContainerSettings)">
+            <summary>
+            Registers the IoC container mapping from a generic service to a concrete implementation
+            </summary>
+            <typeparam name="TService">The generic service interface</typeparam>
+            <typeparam name="TImplementation">The concrete implementation</typeparam>
+            <param name="ioCContainerSettings">Optional; will override the Settings property for this registration only</param>
+            <returns>The instance of this IIoCContainer, to support a fluent API</returns>
+        </member>
+        <member name="M:Core.IoC.IIoCContainer.Register(System.Type,System.Type,Core.IoC.IoCContainerSettings)">
+            <summary>
+            Registers the IoC container mapping from a generic service to a concrete implementation
+            </summary>
+            <param name="serviceType">Type of the generic service interface</param>
+            <param name="implementationType">Type of the concrete implementation</param>
+            <param name="ioCContainerSettings">Optional; will override the Settings property for this registration only</param>
+            <returns>The instance of this IIoCContainer, to support a fluent API</returns>
+        </member>
+        <member name="M:Core.IoC.IIoCContainer.Register``1(``0,Core.IoC.IoCContainerSettings)">
+            <summary>
+            Registers the IoC container mapping from a generic service to a concrete implementation
+            </summary>
+            <typeparam name="TService">The generic service interface</typeparam>
+            <param name="instance">The instance to map the generic service to</param>
+            <param name="ioCContainerSettings">Optional; will override the Settings property for this registration only</param>
+            <returns>The instance of this IIoCContainer, to support a fluent API</returns>
+        </member>
+        <member name="M:Core.IoC.IIoCContainer.Resolve``1">
+            <summary>
+            Resolves a generic service to a concrete implementation using the mapping specified by the given IoC container
+            </summary>
+            <typeparam name="TService">The generic service interface</typeparam>
+            <returns>An instance of the concrete implementation mapped to the generic service</returns>
+        </member>
+        <member name="M:Core.IoC.IIoCContainer.Release(System.Object)">
+            <summary>
+            Frees up the memory being used by any object that was manually resolved from the IoC container
+            </summary>
+            <param name="instance">The instance of the object that was returned by the Resolve() method</param>
+            <remarks>This method does not need to be used on objects that where created by way of the IoC application framework (i.e. the object was initialized by constructor or property injection)</remarks>
+        </member>
+        <member name="M:Core.IoC.IIoCContainer.Install``1">
+            <summary>
+            Installs any <see cref="T:Core.IoC.IIoCContainerPlugin"/> on the given IoC container
+            </summary>
+            <typeparam name="IIoCContainerPlugin">The plugin type to install</typeparam>
+            <returns>The instance of this IIoCContainer, to support a fluent API</returns>
+        </member>
+        <member name="M:Core.IoC.IIoCContainer.IsRegistered``1">
+            <summary>
+            Indicates to consumers whether or not a generic service is already registered with the IoC container
+            </summary>
+            <typeparam name="TService">The generic service interface</typeparam>
+            <returns>Returns <c>true</c> if the given generic service is already registered with the IoC container; otherwise, <c>false</c></returns>
+        </member>
+        <member name="M:Core.IoC.IIoCContainer.ToString">
+            <summary>
+            Returns a formatted string that lists out the contents of the IoC container
+            </summary>
+            <returns>A formatted string that lists out the contents of the IoC container</returns>
+        </member>
+        <member name="T:Core.IoC.IIoCContainerInitializer">
+            <summary>
+            Encapsulates the initialization of the application's IoC container
+            </summary>
+        </member>
+        <member name="M:Core.IoC.IIoCContainerInitializer.Init">
+            <summary>
+            Initializes a new instance of a <see cref="T:Core.IoC.IIoCContainer"/>
+            </summary>
+            <returns>An instance of the <see cref="T:Core.IoC.IIoCContainer"/> configured for the given application</returns>
+        </member>
+        <member name="T:Core.IoC.IIoCContainerPlugin">
+            <summary>
+            A Plugin for <see cref="T:Core.IoC.IIoCContainer"/>
+            </summary>
+        </member>
+        <member name="M:Core.IoC.IIoCContainerPlugin.Register(Core.IoC.IIoCContainer)">
+            <summary>
+            Allows IoCContainerPlugins to setup their configurations for the <see cref="T:Core.IoC.IIoCContainer"/>
+            </summary>
+            <param name="ioCContainer">The application's IoC container</param>
+        </member>
+        <member name="T:Core.IoC.IoCContainerSettings">
+            <summary>
+            Encapsulates all settings that can be used by a <see cref="T:Core.IoC.IIoCContainer"/>
+            </summary>
+        </member>
+        <member name="M:Core.IoC.IoCContainerSettings.#ctor">
+            <summary>
+            Creates a new instance of IoCContainerSettings and sets all properties to reasonable default
+            </summary>
+        </member>
+        <member name="P:Core.IoC.IoCContainerSettings.RegistrationLifetime">
+            <summary>
+            Indicates how the IoC Container should manage the lifetime of an object
+            </summary>
+        </member>
+        <member name="P:Core.IoC.IoCContainerSettings.DuplicateRegistrationOption">
+            <summary>
+            Indicates how the IoC Container should behave when it encounters a duplicate before trying to create this registration
+            </summary>
+        </member>
+        <member name="P:Core.IoC.IoCContainerSettings.RegistrationNameFormat">
+            <summary>
+            The name which the IoC Container should use to identify this registration
+            </summary>
+        </member>
+        <member name="P:Core.IoC.IoCContainerSettings.IsThrowIfInvalid">
+            <summary>
+            Indicates whether or not the IoC initialization code should throw an exception at the end of its process, should the container be in an invalid state
+            </summary>
+        </member>
+        <member name="P:Core.IoC.IoCContainerSettings.AssemblyLoadContext">
+            <summary>
+            Indicates the AssemblyLoadContext for which assemblies should be scanned during the auto-registration process
+            </summary>
+        </member>
+        <member name="T:Core.IO.DirectoryModel">
+            <summary>
+            A generic abstraction of a directory
+            </summary>
+        </member>
+        <member name="P:Core.IO.DirectoryModel.DirectoryInfo">
+            <summary>
+            Info for the given directory
+            </summary>
+        </member>
+        <member name="T:Core.IO.FileModel">
+            <summary>
+            A generic abstraction of a file
+            </summary>
+        </member>
+        <member name="P:Core.IO.FileModel.FileInfo">
+            <summary>
+            Info for the given file
+            </summary>
+        </member>
+        <member name="P:Core.IO.FileModel.FileContents">
+            <summary>
+            The raw contents of the file
+            </summary>
+        </member>
+        <member name="P:Core.IO.FileModel.FileType">
+            <summary>
+            The type of file
+            </summary>
+        </member>
+        <member name="T:Core.IO.IDirectorySystem">
+            <summary>
+            A generic abstraction of the Directory system
+            </summary>
+        </member>
+        <member name="M:Core.IO.IDirectorySystem.CreateDirectory(System.IO.DirectoryInfo)">
+            <summary>
+            Creates a new Directory
+            </summary>
+            <param name="directoryInfo">DirectoryInfo for the directory of interest</param>
+            <returns>Returns <c>true</c> if the Directory was created successfully; otherwise, <c>false</c></returns>
+        </member>
+        <member name="M:Core.IO.IDirectorySystem.DeleteDirectory(System.IO.DirectoryInfo)">
+            <summary>
+            Deletes an existing Directory
+            </summary>
+            <param name="directoryInfo">DirectoryInfo for the directory of interest</param>
+            <returns>Returns <c>true</c> if the Directory was created successfully; otherwise, <c>false</c></returns>
+        </member>
+        <member name="M:Core.IO.IDirectorySystem.GetUniqueFileInfo(System.IO.FileInfo)">
+            <summary>
+            Finds a unique filename for the directory you wish to store a file. This guarentees you'll be able to save a file, using a certain naming convention, in any directory you choose, regarless of whether or not a file by that same name already exists in that directory (useful on retry scenarios where files are being created)
+            </summary>
+            <param name="fileInfo">Details about the file to generate a unique name for, such as the directory, and potential name for the file</param>
+            <returns>Returns FileInfo about the unique file to avoid ambiguity about the nature of a simpiler return type, such as a string</returns>
+        </member>
+        <member name="M:Core.IO.IDirectorySystem.IsDirectoryExists(System.IO.DirectoryInfo)">
+            <summary>
+            Checks to see if a Dictory already exists
+            </summary>
+            <param name="directoryInfo">DirectoryInfo for the directory of interest</param>
+            <returns>Returns <c>true</c> if the given Directory exists; otherwise, <c>false</c></returns>
+        </member>
+        <member name="T:Core.IO.IFileSystem">
+            <summary>
+            A generic abstraction of the File system
+            </summary>
+        </member>
+        <member name="M:Core.IO.IFileSystem.CreateFile(Core.IO.FileModel)">
+            <summary>
+            Creates a file and stores it in a location to be determed by the concrete implementations of IFileSystem
+            </summary>
+            <param name="fileModel">Details about the file to create</param>
+            <returns>A unique identifier for the File to be retrieved in the future; a filepath, for example</returns>
+        </member>
+        <member name="M:Core.IO.IFileSystem.DeleteFile(Core.IO.FileModel)">
+            <summary>
+            Deletes an existing File
+            </summary>
+            <param name="fileModel">Details about the file to delete</param>
+            <returns>Returns <c>true</c> if the Directory was deleted successfully; otherwise, <c>false</c></returns>
+        </member>
+        <member name="M:Core.IO.IFileSystem.GetFile(System.String)">
+            <summary>
+            Gets a file from a location to be determed by the concrete implementations of IFileSystem
+            </summary>
+            <param name="fileIdentifier">A unique identifier for the File to be located; a filepath, for example</param>
+            <returns>The File that was requested</returns>
+        </member>
+        <member name="M:Core.IO.IFileSystem.IsFileExists(Core.IO.FileModel)">
+            <summary>
+            Checks to see if a Dictory already exists
+            </summary>
+            <param name="fileModel">DirectoryInfo for the directory of interest</param>
+            <returns>Returns <c>true</c> if the given Directory exists; otherwise, <c>false</c></returns>
+        </member>
+        <member name="T:Core.Logging.ILogger">
+            <summary>
+            A generic abstraction of a logging mechanism
+            </summary>
+        </member>
+        <member name="M:Core.Logging.ILogger.Log(Core.Logging.LogEntry)">
+            <summary>
+            Logs an entry in the appropriate Log. This also provides full access to the LogEntry fields
+            </summary>
+        </member>
+        <member name="M:Core.Logging.ILogger.LogInfo(System.String,System.Object[])">
+            <summary>
+            Logs an informative message, such as Application Startup Time or Application Version
+            </summary>
+        </member>
+        <member name="M:Core.Logging.ILogger.LogWarning(System.String,System.Object[])">
+            <summary>
+            Logs a Warning message
+            </summary>
+        </member>
+        <member name="M:Core.Logging.ILogger.LogError(System.Exception,System.String,System.Object[])">
+            <summary>
+            Logs an error; if you have more details to provide, please use the Log(LogEntry logEntry) method
+            </summary>
+        </member>
+        <member name="M:Core.Logging.ILogger.LogFatal(System.Exception,System.String,System.Object[])">
+            <summary>
+            Logs an error as being fatal; if you have more details to provide, please use the Log(LogEntry logEntry) method
+            </summary>
+        </member>
+        <member name="T:Core.Logging.ILoggerFactory">
+            <summary>
+            Creates <see cref="T:Core.Logging.ILogger"/> instances, using the default (when no name is specified) or the cache instance by name
+            </summary>
+        </member>
+        <member name="T:Core.Logging.LogEntry">
+            <summary>
+            A generic representation of an entry in a log
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.GUID">
+            <summary>
+            The unique identifier for this instance
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.ProcessGUID">
+            <summary>
+            The unique identifier for a given process which can be used to tie all LogEntries for a single Process
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.LogLevel">
+            <summary>
+            The Level at which this LogEntry should be logged
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.ErrorCode">
+            <summary>
+            A four character representation of the type of error that occured
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.Message">
+            <summary>
+            A simple message to display in the logs; no formatting is required
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.Exception">
+            <summary>
+            The Exception that occured, if any
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.MethodName">
+            <summary>
+            The name of the Method that was called under the context of the given LogEntry
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.MethodInput">
+            <summary>
+            A serialized version of the object used as input to the Method
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.MethodOutput">
+            <summary>
+            A serialized version of the object used as output to the Method
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.ApplicationName">
+            <summary>
+            The name of the application for which the LogEntry is being generated
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.ChildApplicationName">
+            <summary>
+            The name of the child application for which the LogEntry is being generated
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.MachineName">
+            <summary>
+            The name of the machine for which the LogEntry is being generated
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.IPAddress">
+            <summary>
+            The IP Address where the LogEntry is being generated
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.ProcessStep">
+            <summary>
+            Used in conjunction with the ProcessGUID, this can be used to tag which step in the overall process generated this LogEntry
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.GenericIdentifier1">
+            <summary>
+            Free-form string that facilitates consumers tagging LogEntries for the sake of grouping them later on
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.GenericIdentifier1Type">
+            <summary>
+            The type of free-form string used in GenericIdentifier1
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.GenericIdentifier2">
+            <summary>
+            Free-form string that facilitates consumers tagging LogEntries for the sake of grouping them later on
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.GenericIdentifier2Type">
+            <summary>
+            The type of free-form string used in GenericIdentifier2
+            </summary>
+        </member>
+        <member name="P:Core.Logging.LogEntry.ElapsedMilliseconds">
+            <summary>
+            The total number of milliseconds that elapsed within the scope of the operation for which this LogEntry is being generated
+            </summary>
+        </member>
+        <member name="T:Core.Logging.LogLevel">
+            <summary>
+            Describes the Level at which an entry should be logged
+            </summary>
+        </member>
+        <member name="F:Core.Logging.LogLevel.Undefined">
+            <summary>
+            Not specified
+            </summary>
+        </member>
+        <member name="F:Core.Logging.LogLevel.Debug">
+            <summary>
+            The Debug level designates fine-grained informational events that are most useful to debug an application
+            </summary>
+        </member>
+        <member name="F:Core.Logging.LogLevel.Info">
+            <summary>
+            The Info level designates informational messages that highlight the progress of the application at coarse-grained level
+            </summary>
+        </member>
+        <member name="F:Core.Logging.LogLevel.Warn">
+            <summary>
+            The Warn level designates potentially harmful situations
+            </summary>
+        </member>
+        <member name="F:Core.Logging.LogLevel.Error">
+            <summary>
+            The Error level designates error events that might still allow the application to continue running
+            </summary>
+        </member>
+        <member name="F:Core.Logging.LogLevel.Fatal">
+            <summary>
+            The Fatal level designates very severe error events that will presumably lead the application to abort
+            </summary>
+        </member>
+        <member name="T:Core.Mapping.IMap">
+            <summary>
+            A generic abstraction of a class that specifies mapping details
+            </summary>
+        </member>
+        <member name="M:Core.Mapping.IMap.Configure">
+            <summary>
+            Called by the framework at application startup to initialize an IMap to be used by the IMapper
+            </summary>
+        </member>
+        <member name="T:Core.Mapping.IMapper">
+            <summary>
+            A generic abstraction of a mapper mechanism
+            </summary>
+        </member>
+        <member name="M:Core.Mapping.IMapper.MapToNew``1(System.Object)">
+            <summary>
+            Maps an object to a new instance of the destination type
+            </summary>
+            <typeparam name="TDestination">The type which should be mapped to and returned</typeparam>
+            <param name="source">The input object, expected to be non-null and fully hydrated</param>
+            <returns>A new instance of type TDestination, fully hydrated using the values from the source object</returns>
+        </member>
+        <member name="M:Core.Mapping.IMapper.MapOver``2(``0,``1)">
+            <summary>
+            Maps an object over an existing instance of the destination type
+            </summary>
+            <typeparam name="TSource">The type which should be mapped from</typeparam>
+            <typeparam name="TDestination">The type which should be mapped to</typeparam>
+            <param name="source">The input object, expected to be non-null and fully hydrated</param>
+            <param name="destination">The destination object</param>
+        </member>
+        <member name="T:Core.Mapping.IMapperFactory">
+            <summary>
+            Creates <see cref="T:Core.Mapping.IMapper"/> instances, using the default (when no name is specified) or the cache instance by name
+            </summary>
+        </member>
+        <member name="T:Core.Mapping.MapAttribute">
+            <summary>
+            This attribute provides the ability to specify meta-data about a Command, such as whether or not it will alter a data source
+            </summary>
+        </member>
+        <member name="P:Core.Mapping.MapAttribute.Source">
+            <summary>
+            The type which should be mapped from
+            </summary>
+        </member>
+        <member name="P:Core.Mapping.MapAttribute.Destination">
+            <summary>
+            The type which should be mapped to
+            </summary>
+        </member>
+        <member name="P:Core.Mapping.MapAttribute.ProfileName">
+            <summary>
+            Optional; allows an application to host n classes that map the same source type to the same destination type, but in different ways
+            </summary>
+        </member>
+        <member name="T:Core.Providers.IDateTimeProvider">
+            <summary>
+            Provides Commands with the date and time
+            </summary>
+        </member>
+        <member name="T:Core.Providers.IRandomGuidProvider">
+            <summary>
+            Provides Commands with a random GUID
+            </summary>
+        </member>
+        <member name="T:Core.Providers.IRandomLongProvider">
+            <summary>
+            Provides Commands with a random long
+            </summary>
+        </member>
+        <member name="T:Core.Providers.IResourceProvider">
+            <summary>
+            Provides Commands with resources
+            </summary>
+        </member>
+        <member name="M:Core.Providers.IResourceProvider.GetString(System.String,System.String)">
+            <summary>
+            Gets a resource by string
+            </summary>
+            <param name="resourceName">The name of the resource (usually the file name, without the extension)</param>
+            <param name="key">The key of the resource</param>
+            <returns>The resource, as a string</returns>
+        </member>
+        <member name="T:Core.Providers.ISequenceProvider">
+            <summary>
+            Provides Commands with sequential longs
+            </summary>
+        </member>
+        <member name="M:Core.Providers.ISequenceProvider.Get(System.String)">
+            <summary>
+            Gets the next long in the sequence, using the sequence name
+            </summary>
+            <param name="sequenceName">The name of the sequence to use</param>
+            <returns>The next long in the sequence</returns>
+        </member>
+        <member name="T:Core.Providers.IUsernameProvider">
+            <summary>
+            Provides Commands with the username which is relevent under the current context
+            </summary>
+        </member>
+        <member name="T:Core.Validation.ErrorCode">
+            <summary>
+            Constant strings related to Error Codes
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.NONE">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.SYST">
+            <summary>
+            System Error
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.CORE">
+            <summary>
+            Core Error
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.DTBS">
+            <summary>`
+            Database Error
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.APPL">
+            <summary>
+            Application Error
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.SRVC">
+            <summary>
+            Service Error
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.AUTH">
+            <summary>
+            Authenication Failure
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.INVL">
+            <summary>
+            Invalid
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.INVA">
+            <summary>
+            Invalid State of Application
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.INVD">
+            <summary>
+            Invalid State of Data
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.NODA">
+            <summary>
+            No Data
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.EXIS">
+            <summary>
+            Already Exists
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.CNSV">
+            <summary>
+            Could Not Save
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ErrorCode.WBST">
+            <summary>
+            Web Site
+            </summary>
+        </member>
+        <member name="T:Core.Validation.IValidator`1">
+            <summary>
+            A generic abstraction of a validation mechanism
+            </summary>
+        </member>
+        <member name="M:Core.Validation.IValidator`1.Validate(`0)">
+            <summary>
+            Runs a rules validator against the given instance
+            </summary>
+            <param name="instance">The object to run the validator on</param>
+            <returns>The result of the validation</returns>
+        </member>
+        <member name="M:Core.Validation.IValidator`1.Validate(`0,System.String)">
+            <summary>
+            Runs a rules validator against the given instance using the specified rule set
+            </summary>
+            <param name="instance">The object to run the validator on</param>
+            <param name="ruleSet">The name of the ruleSet to run</param>
+            <returns>The result of the validation</returns>
+        </member>
+        <member name="T:Core.Validation.IValidatorFactory">
+            <summary>
+            Creates types that implement the IValidator interface for Commands
+            </summary>
+        </member>
+        <member name="M:Core.Validation.IValidatorFactory.Create``1">
+            <summary>
+            Creates the Rules Validator type requested
+            </summary>
+            <typeparam name="TToValidate">Type for which the Rules Validator will be acting on</typeparam>
+            <returns>A new instance of an object of type IRulesValidator</returns>
+        </member>
+        <member name="T:Core.Validation.IValidatorInline">
+            <summary>
+            A generic abstraction of an inline validation mechanism
+            </summary>
+        </member>
+        <member name="M:Core.Validation.IValidatorInline.Not(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+            Validate against a generic expression
+            </summary>
+            <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        </member>
+        <member name="M:Core.Validation.IValidatorInline.NotDefault``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            Validate against the default value for the given type
+            </summary>
+            <typeparam name="T">The input type for the Func{T} within the expression</typeparam>
+            <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        </member>
+        <member name="M:Core.Validation.IValidatorInline.NotEnumUndefined(System.Linq.Expressions.Expression{System.Func{System.Enum}})">
+            <summary>
+            Validate against enums where Undefined is set
+            </summary>
+            <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        </member>
+        <member name="M:Core.Validation.IValidatorInline.NotGreaterThan``1(System.Linq.Expressions.Expression{System.Func{``0}},``0)">
+            <summary>
+            Validate against greater than
+            </summary>
+            <typeparam name="T">The input type for the Func{T} within the expression</typeparam>
+            <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+            <param name="value">The object or property to validate against</param>
+        </member>
+        <member name="M:Core.Validation.IValidatorInline.NotGreaterThanOrEqual``1(System.Linq.Expressions.Expression{System.Func{``0}},``0)">
+            <summary>
+            Validate against greater than or equal to
+            </summary>
+            <typeparam name="T">The input type for the Func{T} within the expression</typeparam>
+            <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+            <param name="value">The object or property to validate against</param>
+        </member>
+        <member name="M:Core.Validation.IValidatorInline.NotInvalidID(System.Linq.Expressions.Expression{System.Func{System.Int64}})">
+            <summary>
+            Validate against an invalidate ID
+            </summary>
+            <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        </member>
+        <member name="M:Core.Validation.IValidatorInline.NotLessThan``1(System.Linq.Expressions.Expression{System.Func{``0}},``0)">
+            <summary>
+            Validate against less than
+            </summary>
+            <typeparam name="T">The input type for the Func{T} within the expression</typeparam>
+            <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+            <param name="value">The object or property to validate against</param>
+        </member>
+        <member name="M:Core.Validation.IValidatorInline.NotLessThanOrEqual``1(System.Linq.Expressions.Expression{System.Func{``0}},``0)">
+            <summary>
+            Validate against less than or equal to
+            </summary>
+            <typeparam name="T">The input type for the Func{T} within the expression</typeparam>
+            <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+            <param name="value">The object or property to validate against</param>
+        </member>
+        <member name="M:Core.Validation.IValidatorInline.NotNull(System.Linq.Expressions.Expression{System.Func{System.Object}})">
+            <summary>
+            Validate against a null object
+            </summary>
+            <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        </member>
+        <member name="M:Core.Validation.IValidatorInline.NotNullOrEmpty(System.Linq.Expressions.Expression{System.Func{System.String}})">
+            <summary>
+            Validate against a null or empty string
+            </summary>
+            <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        </member>
+        <member name="M:Core.Validation.IValidatorInline.NotNullOrEmptyCollection``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.ICollection{``0}}})">
+            <summary>
+            Validate against a null or empty collection
+            </summary>
+            <typeparam name="T">The input type for the Func{T} within the expression</typeparam>
+            <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        </member>
+        <member name="M:Core.Validation.IValidatorInline.Validate">
+            <summary>
+            Runs the validation and throws a <see cref="T:Core.Exceptions.CoreException"/> if the validation fails
+            </summary>
+        </member>
+        <member name="T:Core.Validation.StringLengthRule`1">
+            <summary>
+            Encapsulates everything needed to evaluate string lengths on a given type
+            </summary>
+            <typeparam name="T">The type for which the given StringLengthRule should apply</typeparam>
+        </member>
+        <member name="P:Core.Validation.StringLengthRule`1.MaxLength">
+            <summary>
+            The maximum length permitted for the string
+            </summary>
+        </member>
+        <member name="P:Core.Validation.StringLengthRule`1.PropertySelector">
+            <summary>
+            An expression that allows consumers to indicate which property on type T the given StringLengthRule is for
+            </summary>
+        </member>
+        <member name="M:Core.Validation.StringLengthRule`1.#ctor">
+            <summary>
+            Creates a new instance of a StringLengthRule without setting any properties
+            </summary>
+        </member>
+        <member name="M:Core.Validation.StringLengthRule`1.#ctor(System.Linq.Expressions.Expression{System.Func{`0,System.String}},System.Int32)">
+            <summary>
+            Creates a new instance of a StringLengthRule and allows consumers to set all properties with inline syntax
+            </summary>
+            <param name="propertySelector">An expression that allows consumers to indicate which property on type T the given StringLengthRule is for</param>
+            <param name="maxLength">Creates a new instance of a StringLengthRule without setting any properties</param>
+        </member>
+        <member name="T:Core.Validation.ValidatorFailure">
+            <summary>
+            The result of a single rule failure
+            </summary>
+        </member>
+        <member name="M:Core.Validation.ValidatorFailure.#ctor">
+            <summary>
+            Creates a new instance of a RulesValidatorFailure without setting any properties
+            </summary>
+        </member>
+        <member name="M:Core.Validation.ValidatorFailure.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Creates a new instance of a RulesValidatorFailure and allows consumers to set all properties with inline syntax
+            </summary>
+            <param name="typeName">The name of the type on which the validation failure occured</param>
+            <param name="propertyName">The name of the property on which the validation failure occured</param>
+            <param name="errorMessage">An error message string that represents the RulesValidatorFailure</param>
+        </member>
+        <member name="P:Core.Validation.ValidatorFailure.TypeName">
+            <summary>
+            The name of the type on which the validation failure occured
+            </summary>
+        </member>
+        <member name="P:Core.Validation.ValidatorFailure.PropertyName">
+            <summary>
+            The name of the property on which the validation failure occured
+            </summary>
+        </member>
+        <member name="P:Core.Validation.ValidatorFailure.ErrorMessage">
+            <summary>
+            An error message string that represents the RulesValidatorFailure
+            </summary>
+        </member>
+        <member name="T:Core.Validation.ValidatorResult">
+            <summary>
+            The result of a validation operation from the <see cref="T:Core.Validation.IValidator`1"/>
+            </summary>
+        </member>
+        <member name="F:Core.Validation.ValidatorResult._failures">
+            <summary>
+            Any failures that occured during validation
+            </summary>
+        </member>
+        <member name="M:Core.Validation.ValidatorResult.#ctor">
+            <summary>
+            Creates a new instance of a RulesValidatorResult without setting any properties
+            </summary>
+        </member>
+        <member name="M:Core.Validation.ValidatorResult.#ctor(System.Collections.Generic.IEnumerable{Core.Validation.ValidatorFailure})">
+            <summary>
+            Creates a new instance of a RulesValidatorResult and allows consumers to set all properties with inline syntax
+            </summary>
+            <param name="failures">Any failures that occured during validation</param>
+        </member>
+        <member name="P:Core.Validation.ValidatorResult.Failures">
+            <summary>
+            Any failures that occured during validation
+            </summary>
+        </member>
+        <member name="P:Core.Validation.ValidatorResult.IsValid">
+            <summary>
+            Returns <c>true</c> if there were no validation failures; otherwise, <c>false</c>
+            </summary>
+        </member>
+        <member name="M:Core.Validation.ValidatorResult.ThrowIfInvalid">
+            <summary>
+            Throws a new <see cref="T:Core.Exceptions.CoreException"/> if the result has any failures
+            </summary>
+        </member>
+        <member name="M:Core.Validation.ValidatorResult.ToString">
+            <summary>
+            Returns a string representation of the validation result
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
