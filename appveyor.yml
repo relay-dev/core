@@ -4,7 +4,9 @@ pull_requests:
 branches:
   only:
   - master
+  - stage
 image: Visual Studio 2017
+configuration: Release
 nuget:
   disable_publish_on_pr: true
 before_build:
@@ -13,7 +15,7 @@ build:
   verbosity: normal
 test: off
 artifacts:
-- path: src\Core\bin\release\*.nupkg
+- path: src\Core\bin\Release\*.nupkg
   name: NuGet
 deploy:
 - provider: NuGet
