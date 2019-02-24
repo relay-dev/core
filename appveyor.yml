@@ -1,21 +1,23 @@
 version: 1.0.{build}
-image: Visual Studio 2017
+pull_requests:
+  do_not_increment_build_number: true
 branches:
   only:
   - master
+image: Visual Studio 2017
+configuration: Release
+nuget:
+  disable_publish_on_pr: true
 before_build:
 - cmd: dotnet restore
-configuration: Release
+build:
+  verbosity: normal
+after_build:
+- ps: nuget pack Core.csproj -Version %appveyor_build_version%
+test: off
 artifacts:
 - path: src\Core\bin\Release\*.nupkg
   name: NuGet
-pull_requests:
-  do_not_increment_build_number: true
-nuget:
-  disable_publish_on_pr: true
-build:
-  verbosity: normal
-test: off
 deploy:
 - provider: NuGet
   api_key:
