@@ -8,13 +8,14 @@
     <Company>Relay Technologies</Company>
     <Product />
     <PackageReleaseNotes>Initial release</PackageReleaseNotes>
-    <Copyright>Copyright © 2019</Copyright>
+    <Copyright>Copyright ©2019</Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
     <Description>An application framework for .NET Core</Description>
     <PackageProjectUrl>https://github.com/relay-dev/core</PackageProjectUrl>
-    <PackageIconUrl>https://i.imgur.com/KLdrWTh.png</PackageIconUrl>
+    <PackageIconUrl>https://i.imgur.com/wlzLkCC.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/relay-dev/core.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <Version>$version$</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
