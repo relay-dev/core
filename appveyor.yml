@@ -9,11 +9,11 @@ configuration: Release
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
-  version: '1.0.{build}'
-  package_version: '1.0.{build}'
-  assembly_version: '1.0.{build}'
-  file_version: '1.0.{build}'
-  informational_version: '1.0.{build}'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
 nuget:
   disable_publish_on_pr: true
 before_build:

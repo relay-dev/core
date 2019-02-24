@@ -15,6 +15,7 @@
     <PackageIconUrl>https://i.imgur.com/wlzLkCC.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/relay-dev/core.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
