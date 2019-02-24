@@ -6,14 +6,20 @@ branches:
   - master
 image: Visual Studio 2017
 configuration: Release
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
 nuget:
   disable_publish_on_pr: true
 before_build:
 - cmd: dotnet restore
 build:
   verbosity: normal
-after_build:
-- ps: nuget pack Core.csproj -Version %appveyor_build_version%
 test: off
 artifacts:
 - path: src\Core\bin\Release\*.nupkg
