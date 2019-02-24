@@ -1,29 +1,28 @@
-version: '{build}'
-pull_requests:
-  do_not_increment_build_number: true
+version: 1.0.{build}
+image: Visual Studio 2017
 branches:
   only:
   - master
-  - stage
-image: Visual Studio 2017
-configuration: Release
-nuget:
-  disable_publish_on_pr: true
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}-dev'
 before_build:
 - cmd: dotnet restore
-build:
-  verbosity: normal
-test: off
+configuration: Release
 artifacts:
 - path: src\Core\bin\Release\*.nupkg
   name: NuGet
+pull_requests:
+  do_not_increment_build_number: true
+nuget:
+  disable_publish_on_pr: true
+build:
+  verbosity: normal
+test: off
 deploy:
-- provider: NuGet
-  server: https://ci.appveyor.com/nuget/core-g30m1l7vcj2g
-  api_key:
-    secure: UrDd5YDeQLuxwr1PxxPPsJzcN/BMHy6iCGfmq7EcMHY=
-  on:
-    branch: stage
 - provider: NuGet
   api_key:
     secure: PAO/O5vbA5FhGyMxquvwnFat6TwT9tLp0JkAC9xWZOYTae4SaldtKh93v4TVNKES
