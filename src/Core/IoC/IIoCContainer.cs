@@ -47,6 +47,13 @@ namespace Core.IoC
         TService Resolve<TService>();
 
         /// <summary>
+        /// Resolves a generic service to a concrete implementation using the mapping specified by the given IoC container
+        /// </summary>
+        /// <param name="type">The generic service interface</param>
+        /// <returns>An instance of the concrete implementation mapped to the generic service</returns>
+        object Resolve(Type service);
+
+        /// <summary>
         /// Frees up the memory being used by any object that was manually resolved from the IoC container
         /// </summary>
         /// <param name="instance">The instance of the object that was returned by the Resolve() method</param>

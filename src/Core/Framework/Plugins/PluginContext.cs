@@ -11,6 +11,11 @@ namespace Core.Framework.Plugins
         /// <summary>
         /// A read-only collection that represents the current state of all pending IoC container registrations
         /// </summary>
-        public IReadOnlyList<IoCContainerRegistration> ExistingRegisterations { get; set; }
+        public IReadOnlyList<IoCContainerRegistration> IoCContainerRegisterations { get; }
+
+        /// <summary>
+        /// A copy of the current IoCContainerSettings
+        /// </summary>
+        public IoCContainerSettings IoCContainerSettings { get; }
     }
 }
