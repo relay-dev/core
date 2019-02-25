@@ -61,13 +61,6 @@ namespace Core.IoC
         void Release(object instance);
 
         /// <summary>
-        /// Installs any <see cref="IIoCContainerPlugin"/> on the given IoC container
-        /// </summary>
-        /// <typeparam name="IIoCContainerPlugin">The plugin type to install</typeparam>
-        /// <returns>The instance of this IIoCContainer, to support a fluent API</returns>
-        IIoCContainer Install<IIoCContainerPlugin>() where IIoCContainerPlugin : new();
-
-        /// <summary>
         /// Indicates to consumers whether or not a generic service is already registered with the IoC container
         /// </summary>
         /// <typeparam name="TService">The generic service interface</typeparam>
