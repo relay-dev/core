@@ -3,7 +3,7 @@
     /// <summary>
     /// The result of a single rule failure
     /// </summary>
-    public class ValidationFailure
+    public class ValidatorFailure
     {
         private readonly string _typeName;
         private readonly string _propertyName;
@@ -12,7 +12,7 @@
         /// <summary>
         /// Creates a new instance of a RulesValidatorFailure without setting any properties
         /// </summary>
-        public ValidationFailure() { }
+        public ValidatorFailure() { }
 
         /// <summary>
         /// Creates a new instance of a RulesValidatorFailure and allows consumers to set all properties with inline syntax
@@ -20,7 +20,7 @@
         /// <param name="typeName">The name of the type on which the validation failure occured</param>
         /// <param name="propertyName">The name of the property on which the validation failure occured</param>
         /// <param name="errorMessage">An error message string that represents the RulesValidatorFailure</param>
-        public ValidationFailure(string typeName, string propertyName, string errorMessage)
+        public ValidatorFailure(string typeName, string propertyName, string errorMessage)
         {
             _typeName = typeName;
             _propertyName = propertyName;
