@@ -1,11 +1,9 @@
-﻿using Core.Framework;
-
-namespace Core.IoC.Plugins
+﻿namespace Core.IoC.Plugins
 {
     /// <summary>
     /// Third-party IoCContainer plugins and non-third-party implementations that enjoy a pub/sub pattern
     /// </summary>
-    public interface IIoCContainerPlugin : IPlugin
+    public interface IIoCContainerPlugin
     {
         /// <summary>
         /// Loads the IPlugin
