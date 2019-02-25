@@ -1,4 +1,4 @@
-﻿using Core.Data.Descriptor;
+﻿using Core.Framework.Descriptor;
 
 namespace Core.Data.Entity
 {

@@ -1,4 +1,4 @@
-﻿using Core.Data;
+﻿using Core.Framework;
 using System.Collections.Generic;
 
 namespace Core.Providers

@@ -1,4 +1,4 @@
-﻿using Core.Data;
+﻿using Core.Framework;
 
 namespace Core.Logging
 {

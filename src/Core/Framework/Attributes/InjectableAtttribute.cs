@@ -1,4 +1,4 @@
-﻿using Core.Data.Enums;
+﻿using Core.Framework.Enums;
 using Core.IoC;
 using System;
 
