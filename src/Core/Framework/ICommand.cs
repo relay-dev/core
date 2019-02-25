@@ -1,4 +1,4 @@
-﻿namespace Core.Data
+﻿namespace Core.Framework
 {
     /// <summary>
     /// Represents a single unit of work that can be executed

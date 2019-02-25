@@ -1,4 +1,4 @@
-﻿namespace Core.Data
+﻿namespace Core.Framework
 {
     /// <summary>
     /// A thin layer that serves as an API boundary

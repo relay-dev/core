@@ -1,4 +1,4 @@
-﻿namespace Core.Data
+﻿namespace Core.Framework.Plugins
 {
     /// <summary>
     /// Third Party modules that enjoy a pub/sub pattern
@@ -8,6 +8,6 @@
         /// <summary>
         /// Loads the IPlugin
         /// </summary>
-        void Load();
+        PluginBuilder Load(PluginContext context);
     }
 }

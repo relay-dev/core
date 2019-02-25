@@ -1,4 +1,4 @@
-﻿namespace Core.Data
+﻿namespace Core.Framework
 {
     /// <summary>
     /// Factories create objects for use by Commands

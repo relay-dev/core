@@ -1,4 +1,4 @@
-﻿namespace Core.Data
+﻿namespace Core.Framework
 {
     /// <summary>
     /// Creates types that implement the IModule interface for Commands

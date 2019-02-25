@@ -15,5 +15,12 @@ namespace Core.Providers
         /// <param name="key">The key of the resource</param>
         /// <returns>The resource, as a string</returns>
         string GetString(string resourceName, string key);
+
+        /// <summary>
+        /// Gets a resource by string, assuming the resourceName is Messages
+        /// </summary>
+        /// <param name="key">The key of the resource</param>
+        /// <returns>The resource, as a string</returns>
+        string GetMessage(string key);
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Core.Data
+﻿namespace Core.Framework
 {
     /// <summary>
     /// An assortment of Components, usually culminating to an Aggregate Root in the system

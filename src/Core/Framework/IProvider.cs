@@ -1,4 +1,4 @@
-﻿namespace Core.Data
+﻿namespace Core.Framework
 {
     /// <summary>
     /// Providers simply provide consumers with something, by way of either a read-only property, or a getter method with no input

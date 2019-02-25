@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core.Data.Attributes
+namespace Core.Framework.Attributes
 {
     /// <summary>
     /// This attribute provides the ability to specify meta-data about a Command, such as whether or not it will alter a data source
