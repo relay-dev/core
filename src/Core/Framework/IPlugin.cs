@@ -1,7 +1,9 @@
-﻿namespace Core.Framework.Plugins
+﻿using Core.Framework.Plugins;
+
+namespace Core.Framework
 {
     /// <summary>
-    /// Third Party modules that enjoy a pub/sub pattern
+    /// Third-party plugins and non-third-party implementations that enjoy a pub/sub pattern
     /// </summary>
     public interface IPlugin
     {
