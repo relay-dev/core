@@ -25,9 +25,9 @@ namespace Core.IoC.Plugins
         /// <summary>
         /// Given an IIoCContainer, this allows consumers to specify type registraions, etc
         /// </summary>
-        public IoCContainerPluginBuilder Install(Action<IIoCContainer> install)
+        public IoCContainerPluginBuilder OnInstall(Action<IIoCContainer> onInstall)
         {
-            DeferredInstall = install;
+            DeferredInstall = onInstall;
 
             return this;
         }
