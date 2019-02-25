@@ -1,4 +1,5 @@
 ﻿using Core.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,20 +13,20 @@ namespace Core.Validation
         /// <summary>
         /// Any failures that occured during validation
         /// </summary>
-        private readonly IEnumerable<ValidatorFailure> _failures;
+        private readonly IEnumerable<ValidatorFailure> _validatorFailures;
 
         /// <summary>
-        /// Creates a new instance of a RulesValidatorResult without setting any properties
+        /// Creates a new instance of a ValidationResult without setting any properties
         /// </summary>
         public ValidatorResult() { }
 
         /// <summary>
-        /// Creates a new instance of a RulesValidatorResult and allows consumers to set all properties with inline syntax
+        /// Creates a new instance of a ValidationResult and sets all properties with inline syntax
         /// </summary>
-        /// <param name="failures">Any failures that occured during validation</param>
-        public ValidatorResult(IEnumerable<ValidatorFailure> failures)
+        /// <param name="validatorFailures">Any failures that occured during validation</param>
+        public ValidatorResult(IEnumerable<ValidatorFailure> validatorFailures)
         {
-            _failures = failures;
+            _validatorFailures = validatorFailures;
         }
 
         /// <summary>
@@ -33,7 +34,7 @@ namespace Core.Validation
         /// </summary>
         public List<ValidatorFailure> Failures
         {
-            get { return _failures.ToList(); }
+            get { return _validatorFailures.ToList(); }
         }
 
         /// <summary>
@@ -41,7 +42,7 @@ namespace Core.Validation
         /// </summary>
         public bool IsValid
         {
-            get { return _failures == null || !_failures.Any(); }
+            get { return _validatorFailures == null || !_validatorFailures.Any(); }
         }
 
         /// <summary>
@@ -49,7 +50,7 @@ namespace Core.Validation
         /// </summary>
         public void ThrowIfInvalid()
         {
-            if (IsValid)
+            if (!IsValid)
             {
                 throw new CoreException(ToString());
             }
@@ -61,8 +62,46 @@ namespace Core.Validation
         /// <returns></returns>
         public override string ToString()
         {
-            // ValidateAndReturnResultString() code to go here
-            return base.ToString();
+            if (IsValid)
+                return String.Empty;
+
+            return String.Join(Environment.NewLine, GetFormattedErrors());
         }
+
+        #region Private
+
+        private List<string> GetFormattedErrors(bool includeTypeName = true)
+        {
+            if (IsValid)
+                return new List<string>();
+
+            return _validatorFailures.Select(failure =>
+                String.Format("{0}{1}{2}{3}",
+                    includeTypeName ? failure.TypeName : String.Empty,
+                    includeTypeName ? "." : String.Empty,
+                    failure.PropertyName,
+                    SubstringAfter(SubstringAfter(failure.ErrorMessage, "'"), "'")))
+                    .ToList();
+        }
+
+        private string SubstringAfter(string str, string removeBefore)
+        {
+            if (str == null)
+                return null;
+
+            if (removeBefore == null || !str.Contains(removeBefore))
+                return str;
+
+            try
+            {
+                return str.Substring(str.IndexOf(removeBefore, StringComparison.Ordinal) + 1);
+            }
+            catch
+            {
+                return str;
+            }
+        }
+
+        #endregion
     }
 }

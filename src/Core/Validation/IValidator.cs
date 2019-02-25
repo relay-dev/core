@@ -10,7 +10,7 @@
         /// </summary>
         /// <param name="instance">The object to run the validator on</param>
         /// <returns>The result of the validation</returns>
-        ValidatorResult Validate(TToValidate instance);
+        ValidationResult Run(TToValidate instance);
 
         /// <summary>
         /// Runs a rules validator against the given instance using the specified rule set
@@ -18,6 +18,6 @@
         /// <param name="instance">The object to run the validator on</param>
         /// <param name="ruleSet">The name of the ruleSet to run</param>
         /// <returns>The result of the validation</returns>
-        ValidatorResult Validate(TToValidate instance, string ruleSet);
+        ValidationResult Run(TToValidate instance, string ruleSet);
     }
 }

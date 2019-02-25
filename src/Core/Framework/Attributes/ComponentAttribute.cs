@@ -19,8 +19,8 @@ namespace Core.Framework.Attributes
         public string Type { get; set; }
 
         /// <summary>
-        /// The Module this Component should be associated with. If the type is not an IModule, the Bootstrapper process will throw an Exception
+        /// The Plugin this Component should be associated with
         /// </summary>
-        public string ModuleName { get; set; }
+        public string PluginName { get; set; }
     }
 }
