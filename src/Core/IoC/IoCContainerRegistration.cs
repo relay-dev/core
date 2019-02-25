@@ -26,5 +26,10 @@ namespace Core.IoC
         /// The lifetime for this registation
         /// </summary>
         public RegistrationLifetime RegistrationLifetime { get; }
+
+        /// <summary>
+        /// Indicates this service should exhibit the behavior of a factory
+        /// </summary>
+        public bool IsFactory { get; }
     }
 }

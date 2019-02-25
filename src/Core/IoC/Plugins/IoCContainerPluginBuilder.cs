@@ -8,15 +8,16 @@ namespace Core.IoC.Plugins
     /// </summary>
     public class IoCContainerPluginBuilder : PluginBuilder
     {
-        public Action<IIoCContainer> DeferredOnInstall;
-        public Action<IIoCContainer> DeferredRegisterServices;
+        public Action<IIoCContainer> DeferredBeforeInstall;
+        public Action<IIoCContainer> DeferredInstall;
+        public Action<IIoCContainer> DeferredAfterInstall;
         
         /// <summary>
-        /// A defered action to be run when the plugin is installed
+        /// A defered action to be run before the plugin is installed
         /// </summary>
-        public IoCContainerPluginBuilder OnInstall(Action<IIoCContainer> onInstall)
+        public IoCContainerPluginBuilder BeforeInstall(Action<IIoCContainer> beforeInstall)
         {
-            DeferredOnInstall = onInstall;
+            DeferredBeforeInstall = beforeInstall;
 
             return this;
         }
@@ -24,9 +25,19 @@ namespace Core.IoC.Plugins
         /// <summary>
         /// Given an IIoCContainer, this allows consumers to specify type registraions, etc
         /// </summary>
-        public IoCContainerPluginBuilder RegisterServices(Action<IIoCContainer> registerServices)
+        public IoCContainerPluginBuilder Install(Action<IIoCContainer> install)
         {
-            DeferredRegisterServices = registerServices;
+            DeferredInstall = install;
+
+            return this;
+        }
+
+        /// <summary>
+        /// A defered action to be run after the plugin is installed
+        /// </summary>
+        public IoCContainerPluginBuilder AfterInstall(Action<IIoCContainer> afterInstall)
+        {
+            DeferredAfterInstall = afterInstall;
 
             return this;
         }
