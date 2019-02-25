@@ -12,7 +12,7 @@ namespace Core.Data
         /// </summary>
         /// <typeparam name="TEntity">The type of entities to reference from the data source</typeparam>
         /// <returns>A reference to a set of entities from the data source</returns>
-        ICollection<TEntity> Set<TEntity>();
+        ICollection<TEntity> Set<TEntity>() where TEntity : class;
 
         /// <summary>
         /// A mechanism for tracking entities to be added or modified in the data source
