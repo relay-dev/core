@@ -65,7 +65,7 @@ namespace Core.IoC
         /// </summary>
         /// <typeparam name="IIoCContainerPlugin">The plugin type to install</typeparam>
         /// <returns>The instance of this IIoCContainer, to support a fluent API</returns>
-        IIoCContainer Install<IIoCContainerPlugin>();
+        IIoCContainer Install<IIoCContainerPlugin>() where IIoCContainerPlugin : new();
 
         /// <summary>
         /// Indicates to consumers whether or not a generic service is already registered with the IoC container
