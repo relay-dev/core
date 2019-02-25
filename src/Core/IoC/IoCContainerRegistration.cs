@@ -10,21 +10,21 @@ namespace Core.IoC
         /// <summary>
         /// The name of the registration
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; }
 
         /// <summary>
         /// The type of service for this registration
         /// </summary>
-        public Type ServiceType { get; set; }
+        public Type ServiceType { get; }
 
         /// <summary>
         /// The implementation type for this registration
         /// </summary>
-        public Type ImplementationType { get; set; }
+        public Type ImplementationType { get; }
 
         /// <summary>
         /// The lifetime for this registation
         /// </summary>
-        public RegistrationLifetime RegistrationLifetime { get; set; }
+        public RegistrationLifetime RegistrationLifetime { get; }
     }
 }
