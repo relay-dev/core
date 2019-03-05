@@ -39,13 +39,14 @@ namespace Core.IoC
         /// Resolves a generic service to a concrete implementation using the mapping specified by the given IoC container
         /// </summary>
         /// <typeparam name="TService">The generic service interface</typeparam>
+        /// <param name="registrationName">Optional; used when many implementiations are mapped to a single service type</param>
         /// <returns>An instance of the concrete implementation mapped to the generic service</returns>
-        TService Resolve<TService>();
+        TService Resolve<TService>(string registrationName = null);
 
         /// <summary>
         /// Resolves a generic service to a concrete implementation using the mapping specified by the given IoC container
         /// </summary>
-        /// <param name="type">The generic service interface</param>
+        /// <param name="service">The generic service interface</param>
         /// <returns>An instance of the concrete implementation mapped to the generic service</returns>
         object Resolve(Type service);
 
@@ -62,12 +63,6 @@ namespace Core.IoC
         /// <typeparam name="TService">The generic service interface</typeparam>
         /// <returns>Returns <c>true</c> if the given generic service is already registered with the IoC container; otherwise, <c>false</c></returns>
         bool IsRegistered<TService>();
-
-        /// <summary>
-        /// Loads a collection of registrations at once
-        /// </summary>
-        /// <param name="registrations">The collection of registrations to add to the IoC container</param>
-        void Load(List<IoCContainerRegistration> registrations);
 
         /// <summary>
         /// Global settings to be used by the IoC container

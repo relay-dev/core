@@ -1,4 +1,5 @@
-﻿using System.Runtime.Loader;
+﻿using System;
+using System.Runtime.Loader;
 
 namespace Core.IoC
 {
@@ -16,7 +17,7 @@ namespace Core.IoC
             DuplicateRegistrationOption = DuplicateRegistrationOption.IgnoreRegistrationRequest;
             RegistrationNameFormat = "{0}";
             IsThrowIfInvalid = true;
-            AssemblyLoadContext = AssemblyLoadContext.Default;
+            AppDomain = AppDomain.CurrentDomain;
         }
 
         /// <summary>
@@ -40,8 +41,8 @@ namespace Core.IoC
         public bool IsThrowIfInvalid { get; set; }
 
         /// <summary>
-        /// Indicates the AssemblyLoadContext for which assemblies should be scanned during the auto-registration process
+        /// Indicates the AppDomain for which assemblies should be scanned during the auto-registration process
         /// </summary>
-        public AssemblyLoadContext AssemblyLoadContext { get; set; }
+        public AppDomain AppDomain { get; set; }
     }
 }
