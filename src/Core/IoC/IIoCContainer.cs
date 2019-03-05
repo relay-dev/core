@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Core.IoC
 {
@@ -7,11 +8,6 @@ namespace Core.IoC
     /// </summary>
     public interface IIoCContainer
     {
-        /// <summary>
-        /// Global settings to be used by the IoC container
-        /// </summary>
-        IoCContainerSettings Settings { get; set; }
-
         /// <summary>
         /// Registers the IoC container mapping from a generic service to a concrete implementation
         /// </summary>
@@ -68,9 +64,20 @@ namespace Core.IoC
         bool IsRegistered<TService>();
 
         /// <summary>
-        /// Returns a formatted string that lists out the contents of the IoC container
+        /// Loads a collection of registrations at once
         /// </summary>
-        /// <returns>A formatted string that lists out the contents of the IoC container</returns>
-        string ToString();
+        /// <param name="registrations">The collection of registrations to add to the IoC container</param>
+        void Load(List<IoCContainerRegistration> registrations);
+
+        /// <summary>
+        /// Global settings to be used by the IoC container
+        /// </summary>
+        IoCContainerSettings Settings { get; set; }
+
+        /// <summary>
+        /// Returns a collection of registration objects that describe the contents of the IoC container
+        /// </summary>
+        /// <returns>All services registered with the IoC container</returns>
+        List<IoCContainerRegistration> Registrations { get; }
     }
 }
