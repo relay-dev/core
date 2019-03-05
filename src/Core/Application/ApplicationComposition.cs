@@ -2,7 +2,7 @@
 
 namespace Core.Application
 {
-    public class ApplicationComposition
+    public partial class ApplicationComposition
     {
         public string IoCContainer { get; set; }
 
