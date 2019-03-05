@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Framework;
+using System;
 using System.Collections.Generic;
 
 namespace Core.IoC
@@ -34,6 +35,14 @@ namespace Core.IoC
         /// <param name="ioCContainerSettings">Optional; will override the Settings property for this registration only</param>
         /// <returns>The instance of this IIoCContainer, to support a fluent API</returns>
         IIoCContainer Register<TService>(TService instance, IoCContainerSettings ioCContainerSettings = null) where TService : class;
+
+        /// <summary>
+        /// Registers the IoC container to handle a service as a factory
+        /// </summary>
+        /// <typeparam name="TFactory">The tyype of factory to register</typeparam>
+        /// <param name="ioCContainerSettings">Optional; will override the Settings property for this registration only</param>
+        /// <returns>The instance of this IIoCContainer, to support a fluent API</returns>
+        IIoCContainer RegisterFactory<TFactory>(IoCContainerSettings ioCContainerSettings = null) where TFactory : IFactory;
 
         /// <summary>
         /// Resolves a generic service to a concrete implementation using the mapping specified by the given IoC container

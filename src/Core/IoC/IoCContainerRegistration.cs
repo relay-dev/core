@@ -17,11 +17,6 @@ namespace Core.IoC
         }
 
         /// <summary>
-        /// The name of the registration
-        /// </summary>
-        public string Name { get; }
-
-        /// <summary>
         /// The type of service for this registration
         /// </summary>
         public Type ServiceType { get; }
@@ -35,6 +30,11 @@ namespace Core.IoC
         /// The lifetime for this registation
         /// </summary>
         public RegistrationLifetime RegistrationLifetime { get; }
+
+        /// <summary>
+        /// The name of the registration
+        /// </summary>
+        public string Name { get; }
 
         /// <summary>
         /// Indicates this service should exhibit the behavior of a factory
