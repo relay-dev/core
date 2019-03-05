@@ -48,10 +48,10 @@ namespace Core.IoC
         public override string ToString()
         {
             return
-                $"ServiceType          : {ServiceType.FullName}" +
-                $"ImplementationType   : {ImplementationType.FullName}" +
-                $"RegistrationLifetime : {RegistrationLifetime.ToString()}" +
-                $"Name                 : {Name}" +
+                $"ServiceType          : {ServiceType.FullName}{Environment.NewLine}" +
+                $"ImplementationType   : {ImplementationType.FullName}{Environment.NewLine}" +
+                $"RegistrationLifetime : {RegistrationLifetime.ToString()}{Environment.NewLine}" +
+                $"Name                 : {Name}{Environment.NewLine}" +
                 $"IsFactory            : {IsFactory}";
         }
     }
