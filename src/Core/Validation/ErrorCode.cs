@@ -41,6 +41,11 @@
         public const string AUTH = "AUTH";
 
         /// <summary>
+        /// Null object
+        /// </summary>
+        public const string NULL = "NULL";
+
+        /// <summary>
         /// Invalid
         /// </summary>
         public const string INVL = "INVL";
