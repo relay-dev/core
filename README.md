@@ -11,6 +11,22 @@
 An application framework for .NET Core
 
 
+## Installation
+
+Install the [Relay.Core NuGet Package](https://www.nuget.org/packages/Relay.Core).
+
+### Package Manager Console
+
+```
+Install-Package Relay.Core
+```
+
+### .NET Core CLI
+
+```
+dotnet add package Relay.Core
+```
+
 
 ## Folder structure
 <sup>(https://gist.github.com/davidfowl/ed7564297c61fe9ab814)</sup>
