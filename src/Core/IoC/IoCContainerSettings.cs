@@ -32,6 +32,11 @@ namespace Core.IoC
         /// <summary>
         /// The name which the IoC Container should use to identify this registration
         /// </summary>
+        public string RegistrationName { get; set; }
+
+        /// <summary>
+        /// The name format which the IoC Container should use to identify this registration
+        /// </summary>
         public string RegistrationNameFormat { get; set; }
 
         /// <summary>

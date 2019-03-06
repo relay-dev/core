@@ -30,7 +30,7 @@ namespace Core.Data
         /// </summary>
         /// <param name="sql">The SQL to be executed</param>
         /// <param name="databaseParameters">Optional; if there are parameter placeholders in the SQL string, the parameter values should be specified here</param>
-        /// <returns></returns>
+        /// <returns>The count of rows affected</returns>
         int ExecuteNonQuery(string sql, List<DatabaseCommandParameter> databaseParameters = null);
 
         /// <summary>
@@ -52,7 +52,12 @@ namespace Core.Data
         /// <summary>
         /// Gets the server name this <see cref="IDatabase"/> instance is connected to
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The server name</returns>
         string GetServerName();
+
+        /// <summary>
+        /// The database command timeout in seconds
+        /// </summary>
+        int CommandTimeoutInSeconds { get; set; }
     }
 }

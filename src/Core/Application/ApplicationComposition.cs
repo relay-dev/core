@@ -17,6 +17,16 @@ namespace Core.Application
         /// Specifies the details about all data access needed by the application
         /// </summary>
         public DataAccess DataAccess { get; set; }
+
+        #region ctor
+
+        public ApplicationComposition()
+        {
+            IoCContainer = new IoCContainer();
+            DataAccess = new DataAccess();
+        }
+
+        #endregion
     }
 
     /// <summary>
@@ -33,6 +43,15 @@ namespace Core.Application
         /// A collection of all plugins to install on the IoC Container
         /// </summary>
         public List<IoCContainerPlugin> Plugins { get; set; }
+
+        #region ctor
+
+        public IoCContainer()
+        {
+            Plugins = new List<IoCContainerPlugin>();
+        }
+
+        #endregion
     }
 
     /// <summary>
@@ -81,6 +100,16 @@ namespace Core.Application
         /// Repositories to be used by the application
         /// </summary>
         public List<Repository> Repositories { get; set; }
+
+        #region ctor
+
+        public DataAccess()
+        {
+            Databases = new List<Database>();
+            Repositories = new List<Repository>();
+        }
+
+        #endregion
     }
 
     /// <summary>
