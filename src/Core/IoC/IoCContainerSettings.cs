@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Loader;
 
 namespace Core.IoC
 {

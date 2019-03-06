@@ -7,7 +7,12 @@ namespace Core.IoC
     /// </summary>
     public class IoCContainerRegistration
     {
-        public IoCContainerRegistration(Type serviceType, Type implementationType, RegistrationLifetime registrationLifetime, string name, bool isFactory)
+        public IoCContainerRegistration(
+            Type serviceType, 
+            Type implementationType, 
+            RegistrationLifetime registrationLifetime, 
+            string name, 
+            bool isFactory)
         {
             ServiceType = serviceType;
             ImplementationType = implementationType;
