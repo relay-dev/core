@@ -8,7 +8,7 @@
 
 # Core
 
-An application framework for .NET Core
+A bare-bones, plugin model application framework for .NET Core
 
 
 ## Installation
