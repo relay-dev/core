@@ -11,7 +11,7 @@
         /// </summary>
         /// <typeparam name="TToCreate">Type of object to be returned</typeparam>
         /// <returns>A new instance of an object of type TToCreate</returns>
-        TToCreate Create<TToCreate>() where TToCreate : TService;
+        TToCreate Create<TToCreate>() where TToCreate : class, TService;
 
         /// <summary>
         /// Creates the type requested

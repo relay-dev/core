@@ -1,5 +1,3 @@
-<img src="https://github.com/relay-dev/core/blob/master/resources/readme-icon.jpg" alt="Core">
-
 [![Build status](https://ci.appveyor.com/api/projects/status/uy3l50i1p1gxu1pe/branch/master?svg=true)](https://ci.appveyor.com/project/sferguson82/core/branch/master)
 [![NuGet Release](https://img.shields.io/nuget/v/relay.core.svg)](https://www.nuget.org/packages/Relay.Core/)
 [![MyGet Release](https://img.shields.io/myget/relay-dev/v/Relay.Core.svg)](https://www.myget.org/feed/relay-dev/package/nuget/Relay.Core)
