@@ -130,7 +130,7 @@ namespace Core.Application
         /// <summary>
         /// The encrypted connection string
         /// </summary>
-        public EncryptedValue ConnectionString { get; set; }
+        public string ConnectionString { get; set; }
     }
 
     /// <summary>
