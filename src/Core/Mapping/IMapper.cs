@@ -11,7 +11,7 @@
         /// <typeparam name="TDestination">The type which should be mapped to and returned</typeparam>
         /// <param name="source">The input object, expected to be non-null and fully hydrated</param>
         /// <returns>A new instance of type TDestination, fully hydrated using the values from the source object</returns>
-        TDestination MapToNew<TDestination>(object source);
+        TDestination MapTo<TDestination>(object source);
 
         /// <summary>
         /// Maps an object over an existing instance of the destination type
