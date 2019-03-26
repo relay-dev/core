@@ -1,5 +1,4 @@
-﻿using Core.Security;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Core.Application
 {
@@ -37,7 +36,7 @@ namespace Core.Application
         /// <summary>
         /// The type of container
         /// </summary>
-        public IoCContainerType Type { get; set; }
+        public string Type { get; set; }
 
         /// <summary>
         /// A collection of all plugins to install on the IoC Container
@@ -125,7 +124,7 @@ namespace Core.Application
         /// <summary>
         /// The type of the database
         /// </summary>
-        public DatabaseType DatabaseType { get; set; }
+        public string Type { get; set; }
 
         /// <summary>
         /// The encrypted connection string
