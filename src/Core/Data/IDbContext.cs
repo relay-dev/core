@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Core.Data
 {
@@ -24,5 +25,11 @@ namespace Core.Data
         /// </summary>
         /// <returns>Count of rows affected</returns>
         int SaveChanges();
+
+        /// <summary>
+        /// Persists all pending changes to the data source asyncronously
+        /// </summary>
+        /// <returns>Count of rows affected</returns>
+        Task<int> SaveChangesAsync();
     }
 }
