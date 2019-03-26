@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace Core.Data
 {
@@ -12,5 +13,11 @@ namespace Core.Data
         /// </summary>
         /// <returns>Count of rows affected</returns>
         int Commit();
+
+        /// <summary>
+        /// Asyncronously persists all pending changes to the data source
+        /// </summary>
+        /// <returns>Count of rows affected</returns>
+        Task<int> CommitAsync();
     }
 }
