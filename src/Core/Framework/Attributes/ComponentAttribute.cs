@@ -3,7 +3,7 @@
 namespace Core.Framework.Attributes
 {
     /// <summary>
-    /// This attribute give you the ability to create new Components and subscribe them to existing Modules without impacting Module code (i.e. this facilitaes a loose coupling between Modules and Components)
+    /// Provides you the ability to create new Components and subscribe them to existing Modules without impacting Module code (i.e. this facilitaes a loose coupling between Modules and Components)
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
     public sealed class ComponentAttribute : Attribute

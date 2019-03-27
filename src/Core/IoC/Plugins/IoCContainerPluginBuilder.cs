@@ -8,13 +8,26 @@ namespace Core.IoC.Plugins
     /// </summary>
     public class IoCContainerPluginBuilder : PluginBuilder
     {
-        public Action<IIoCContainer> DeferredBeforeInstall;
-        public Action<IIoCContainer> DeferredInstall;
-        public Action<IIoCContainer> DeferredAfterInstall;
-        
         /// <summary>
-        /// A defered action to be run before the plugin is installed
+        /// Executed before the installation process beings
         /// </summary>
+        public Action<IIoCContainer> DeferredBeforeInstall;
+
+        /// <summary>
+        /// Executed to run the installation process
+        /// </summary>
+        public Action<IIoCContainer> DeferredInstall;
+
+        /// <summary>
+        /// Executed byfore the installation process beings
+        /// </summary>
+        public Action<IIoCContainer> DeferredAfterInstall;
+
+        /// <summary>
+        /// A deffered action to be run before the plugin is installed
+        /// </summary>
+        /// <param name="beforeInstall">The deferred action</param>
+        /// <returns>The plugin builder expression</returns>
         public IoCContainerPluginBuilder BeforeInstall(Action<IIoCContainer> beforeInstall)
         {
             DeferredBeforeInstall = beforeInstall;
@@ -25,6 +38,8 @@ namespace Core.IoC.Plugins
         /// <summary>
         /// Given an IIoCContainer, this allows consumers to specify type registraions, etc
         /// </summary>
+        /// <param name="onInstall">The deferred action</param>
+        /// <returns>The plugin builder expression</returns>
         public IoCContainerPluginBuilder OnInstall(Action<IIoCContainer> onInstall)
         {
             DeferredInstall = onInstall;
@@ -33,8 +48,10 @@ namespace Core.IoC.Plugins
         }
 
         /// <summary>
-        /// A defered action to be run after the plugin is installed
+        /// A deffered action to be run after the plugin is installed
         /// </summary>
+        /// <param name="afterInstall">The deferred action</param>
+        /// <returns>The plugin builder expression</returns>
         public IoCContainerPluginBuilder AfterInstall(Action<IIoCContainer> afterInstall)
         {
             DeferredAfterInstall = afterInstall;

@@ -3,6 +3,9 @@ using System.Data;
 
 namespace Core.Utilities
 {
+    /// <summary>
+    /// A generic helper
+    /// </summary>
     public interface IGlobalHelper
     {
         /// <summary>

@@ -3,7 +3,7 @@
 namespace Core.Framework.Attributes
 {
     /// <summary>
-    /// This attribute give you the ability to specify meta-data about your Module, such as a Name
+    /// Provides you the ability to specify meta-data about your Module, such as a Name
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
     public sealed class ModuleAttribute : Attribute

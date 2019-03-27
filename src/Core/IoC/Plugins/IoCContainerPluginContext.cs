@@ -9,6 +9,12 @@ namespace Core.IoC.Plugins
     /// </summary>
     public class IoCContainerPluginContext : PluginContext
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="iocContainerRegisterations">Current IoC container registrations</param>
+        /// <param name="iocContainerSettings">Current IoC container settings</param>
+        /// <param name="applicationComposition">Current application composition</param>
         public IoCContainerPluginContext(
             IReadOnlyList<IoCContainerRegistration> iocContainerRegisterations,
             IoCContainerSettings iocContainerSettings,

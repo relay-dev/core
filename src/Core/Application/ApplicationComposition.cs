@@ -19,6 +19,9 @@ namespace Core.Application
 
         #region ctor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public ApplicationComposition()
         {
             IoCContainer = new IoCContainer();
@@ -45,6 +48,9 @@ namespace Core.Application
 
         #region ctor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public IoCContainer()
         {
             Plugins = new List<IoCContainerPlugin>();
@@ -102,6 +108,9 @@ namespace Core.Application
 
         #region ctor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public DataAccess()
         {
             Databases = new List<Database>();

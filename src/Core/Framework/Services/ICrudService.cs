@@ -46,6 +46,7 @@ namespace Core.Framework.Services
         /// Updates the item asyncronously
         /// </summary>
         /// <param name="item">The item to update</param>
+        /// <returns>The task to execute</returns>
         Task UpdateAsync(TItem item);
 
         /// <summary>
@@ -58,6 +59,7 @@ namespace Core.Framework.Services
         /// Deletes the item asyncronously
         /// </summary>
         /// <param name="id">The ID of the item to delete</param>
+        /// <returns>The task to execute</returns>
         Task DeleteAsync(long id);
     }
 }

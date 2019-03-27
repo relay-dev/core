@@ -59,7 +59,7 @@ namespace Core.Validation
         /// <summary>
         /// Returns a string representation of the validation result
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string representation of the validation result</returns>
         public override string ToString()
         {
             if (IsValid)

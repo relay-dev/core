@@ -11,17 +11,23 @@
         public bool IsSuccess { get; }
 
         /// <summary>
-        /// Provides details regarding why the Operation was not successful (will be null when Operations are successful) 
+        /// Provides details regarding why the Operation was not successful (will be null when Operations are successful)
         /// </summary>
         public string ErrorMessage { get; }
 
         /// <summary>
-        /// Provides a specific code regarding why the Operation was not successful (will be null when Operations are successful) 
+        /// Provides a specific code regarding why the Operation was not successful (will be null when Operations are successful)
         /// </summary>
         public string ErrorCode { get; }
 
         #region ctor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="isSuccess">Indicates if the operation was successful</param>
+        /// <param name="errorMessage">Provides details regarding why the Operation was not successful (will be null when Operations are successful)</param>
+        /// <param name="errorCode">Provides a specific code regarding why the Operation was not successful (will be null when Operations are successful)</param>
         public Result(bool isSuccess, string errorMessage, string errorCode)
         {
             IsSuccess = isSuccess;
@@ -35,6 +41,7 @@
     /// <summary>
     /// The Result of an Operation
     /// </summary>
+    /// <typeparam name="TValue">The type of the Value of the result</typeparam>
     public class Result<TValue> : Result
     {
         /// <summary>
@@ -44,6 +51,13 @@
 
         #region ctor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="isSuccess">Indicates if the operation was successful</param>
+        /// <param name="errorMessage">Provides details regarding why the Operation was not successful (will be null when Operations are successful)</param>
+        /// <param name="errorCode">Provides a specific code regarding why the Operation was not successful (will be null when Operations are successful)</param>
+        /// <param name="value">The output of the operation</param>
         public Result(bool isSuccess, string errorMessage, string errorCode, TValue value)
             : base(isSuccess, errorMessage, errorCode)
         {

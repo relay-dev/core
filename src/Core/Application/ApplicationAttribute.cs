@@ -3,7 +3,7 @@
 namespace Core.Application
 {
     /// <summary>
-    /// This attribute provides the ability to specify meta-data about an application
+    /// Provides the ability to specify meta-data about an application
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
     public sealed class ApplicationAttribute : Attribute

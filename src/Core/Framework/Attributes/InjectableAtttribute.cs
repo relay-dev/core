@@ -5,7 +5,7 @@ using System;
 namespace Core.Framework.Attributes
 {
     /// <summary>
-    /// This attribute give you the ability to declare IoC injection behavor as meta-data on a class intended to be used in a dependeny injection context
+    /// Provides you the ability to declare IoC injection behavor as meta-data on a class intended to be used in a dependeny injection context
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = false)]
     public sealed class InjectableAttribute : Attribute

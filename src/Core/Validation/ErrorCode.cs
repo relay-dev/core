@@ -20,7 +20,7 @@
         /// </summary>
         public const string CORE = "CORE";
 
-        /// <summary>`
+        /// <summary>
         /// Database Error
         /// </summary>
         public const string DTBS = "DTBS";

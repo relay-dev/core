@@ -10,7 +10,7 @@ namespace Core.Caching
         /// <summary>
         /// Indicates whether or not the cache contains a specific key
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="key">The key of the cache entry</param>
         /// <returns><c>true</c> if the provided string is found in the cache, which inheritly means there is a value cached for it; otherwise, <c>false</c></returns>
         bool ContainsKey(string key);
 
@@ -42,7 +42,8 @@ namespace Core.Caching
         /// <summary>
         /// Given n input arguments, this method will return a string ready to be used as a key using all standard conventions
         /// </summary>
-        /// <returns>The formatted cache key</returns>
+        /// <param name="args">A set of objects to be used to create a unique cache key</param>
+        /// <returns>The key to use</returns>
         string FormatKey(params object[] args);
 
         /// <summary>

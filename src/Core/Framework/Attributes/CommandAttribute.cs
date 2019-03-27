@@ -3,7 +3,7 @@
 namespace Core.Framework.Attributes
 {
     /// <summary>
-    /// This attribute provides the ability to specify meta-data about a Command, such as whether or not it will alter a data source
+    /// Provides the ability to specify meta-data about a Command, such as whether or not it will alter a data source
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
     public sealed class CommandAttribute : Attribute

@@ -3,7 +3,7 @@
 namespace Core.Application
 {
     /// <summary>
-    /// This attribute give you the ability to provide additional meta-data details for a specific value in any Enum that represents runtime Environments
+    /// Provides you the ability to provide additional meta-data details for a specific value in any Enum that represents runtime Environments
     /// </summary>
     [AttributeUsage(AttributeTargets.Field, Inherited = false, AllowMultiple = false)]
     public sealed class HostEnvironmentAttribute : Attribute

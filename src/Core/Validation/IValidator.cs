@@ -3,6 +3,7 @@
     /// <summary>
     /// A generic abstraction of a validation mechanism
     /// </summary>
+    /// <typeparam name="TToValidate">The type to run validation on</typeparam>
     public interface IValidator<TToValidate>
     {
         /// <summary>

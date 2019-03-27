@@ -31,6 +31,7 @@ namespace Core.Utilities
     /// <summary>
     /// The result of a retry operation
     /// </summary>
+    /// <typeparam name="TResult">The type of the Result property</typeparam>
     public class RetryResult<TResult> : RetryResult
     {
         /// <summary>

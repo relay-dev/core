@@ -7,6 +7,14 @@ namespace Core.IoC
     /// </summary>
     public class IoCContainerRegistration
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="serviceType">The type of service for this registration</param>
+        /// <param name="implementationType">The implementation type for this registration</param>
+        /// <param name="registrationLifetime">The lifetime for this registation</param>
+        /// <param name="name">The name of the registration</param>
+        /// <param name="isFactory">Indicates this service should exhibit the behavior of a factory</param>
         public IoCContainerRegistration(
             Type serviceType, 
             Type implementationType, 

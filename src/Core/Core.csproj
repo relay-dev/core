@@ -22,4 +22,8 @@
     <DocumentationFile>C:\_src\relay\core\src\Core\Core.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\_src\relay\core\src\Core\comments.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

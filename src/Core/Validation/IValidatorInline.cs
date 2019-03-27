@@ -14,6 +14,7 @@ namespace Core.Validation
         /// Validate against a generic expression
         /// </summary>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        /// <returns>This validator, for the sake of a fluent API</returns>
         IValidatorInline Not(Expression<Func<bool>> expression);
 
         /// <summary>
@@ -21,12 +22,14 @@ namespace Core.Validation
         /// </summary>
         /// <typeparam name="T">The input type for the Func{T} within the expression</typeparam>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        /// <returns>This validator, for the sake of a fluent API</returns>
         IValidatorInline NotDefault<T>(Expression<Func<T>> expression);
 
         /// <summary>
         /// Validate against enums where Undefined is set
         /// </summary>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        /// <returns>This validator, for the sake of a fluent API</returns>
         IValidatorInline NotEnumUndefined(Expression<Func<Enum>> expression);
 
         /// <summary>
@@ -35,6 +38,7 @@ namespace Core.Validation
         /// <typeparam name="T">The input type for the Func{T} within the expression</typeparam>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
         /// <param name="value">The object or property to validate against</param>
+        /// <returns>This validator, for the sake of a fluent API</returns>
         IValidatorInline NotGreaterThan<T>(Expression<Func<T>> expression, T value) where T : IComparable;
 
         /// <summary>
@@ -43,20 +47,23 @@ namespace Core.Validation
         /// <typeparam name="T">The input type for the Func{T} within the expression</typeparam>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
         /// <param name="value">The object or property to validate against</param>
+        /// <returns>This validator, for the sake of a fluent API</returns>
         IValidatorInline NotGreaterThanOrEqual<T>(Expression<Func<T>> expression, T value) where T : IComparable;
 
         /// <summary>
         /// Validate against an invalidate ID
         /// </summary>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        /// <returns>This validator, for the sake of a fluent API</returns>
         IValidatorInline NotInvalidID(Expression<Func<long>> expression);
 
         /// <summary>
-        /// Validate against less than
+        /// Validate against not less than
         /// </summary>
         /// <typeparam name="T">The input type for the Func{T} within the expression</typeparam>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
         /// <param name="value">The object or property to validate against</param>
+        /// <returns>This validator, for the sake of a fluent API</returns>
         IValidatorInline NotLessThan<T>(Expression<Func<T>> expression, T value) where T : IComparable;
 
         /// <summary>
@@ -65,18 +72,21 @@ namespace Core.Validation
         /// <typeparam name="T">The input type for the Func{T} within the expression</typeparam>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
         /// <param name="value">The object or property to validate against</param>
+        /// <returns>This validator, for the sake of a fluent API</returns>
         IValidatorInline NotLessThanOrEqual<T>(Expression<Func<T>> expression, T value) where T : IComparable;
 
         /// <summary>
         /// Validate against a null object
         /// </summary>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        /// <returns>This validator, for the sake of a fluent API</returns>
         IValidatorInline NotNull(Expression<Func<object>> expression);
 
         /// <summary>
         /// Validate against a null or empty string
         /// </summary>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        /// <returns>This validator, for the sake of a fluent API</returns>
         IValidatorInline NotNullOrEmpty(Expression<Func<string>> expression);
 
         /// <summary>
@@ -84,6 +94,7 @@ namespace Core.Validation
         /// </summary>
         /// <typeparam name="T">The input type for the Func{T} within the expression</typeparam>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
+        /// <returns>This validator, for the sake of a fluent API</returns>
         IValidatorInline NotNullOrEmptyCollection<T>(Expression<Func<ICollection<T>>> expression);
 
         /// <summary>

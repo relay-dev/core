@@ -7,6 +7,11 @@ namespace Core.Providers
     /// </summary>
     public interface IConnectionStringProvider : IProvider<string>
     {
+        /// <summary>
+        /// Gets a connection string by the connection name
+        /// </summary>
+        /// <param name="connectionName">The name of the connection string in the configuration</param>
+        /// <returns>The connection string</returns>
         string Get(string connectionName);
     }
 }
