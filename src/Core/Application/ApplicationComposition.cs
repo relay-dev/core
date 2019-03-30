@@ -8,9 +8,39 @@ namespace Core.Application
     public partial class ApplicationComposition
     {
         /// <summary>
+        /// The caching framework to be used
+        /// </summary>
+        public string Cache { get; set; }
+
+        /// <summary>
+        /// The configuration framework to be used
+        /// </summary>
+        public string Configuration { get; set; }
+
+        /// <summary>
         /// The IoC container framework to be used
         /// </summary>
-        public IoCContainer IoCContainer { get; set; }
+        public string IoCContainer { get; set; }
+
+        /// <summary>
+        /// The logging framework to be used
+        /// </summary>
+        public string Logging { get; set; }
+
+        /// <summary>
+        /// The mapping framework to be used
+        /// </summary>
+        public string Mapping { get; set; }
+
+        /// <summary>
+        /// The validation framework to be used
+        /// </summary>
+        public string Validation { get; set; }
+
+        /// <summary>
+        /// All other misc. components to be used
+        /// </summary>
+        public List<string> Components { get; set; }
 
         /// <summary>
         /// Specifies the details about all data access needed by the application
@@ -24,7 +54,6 @@ namespace Core.Application
         /// </summary>
         public ApplicationComposition()
         {
-            IoCContainer = new IoCContainer();
             DataAccess = new DataAccess();
         }
 

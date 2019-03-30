@@ -19,9 +19,39 @@
             A generic abstraction of the configuration of components which comprise an application
             </summary>
         </member>
+        <member name="P:Core.Application.ApplicationComposition.Cache">
+            <summary>
+            The caching framework to be used
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationComposition.Configuration">
+            <summary>
+            The configuration framework to be used
+            </summary>
+        </member>
         <member name="P:Core.Application.ApplicationComposition.IoCContainer">
             <summary>
             The IoC container framework to be used
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationComposition.Logging">
+            <summary>
+            The logging framework to be used
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationComposition.Mapping">
+            <summary>
+            The mapping framework to be used
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationComposition.Validation">
+            <summary>
+            The validation framework to be used
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationComposition.Components">
+            <summary>
+            All other misc. components to be used
             </summary>
         </member>
         <member name="P:Core.Application.ApplicationComposition.DataAccess">
@@ -346,6 +376,23 @@
             <param name="errorMessage">Provides details regarding why the Operation was not successful (will be null when Operations are successful)</param>
             <param name="errorCode">Provides a specific code regarding why the Operation was not successful (will be null when Operations are successful)</param>
             <param name="result">The result of the operation</param>
+        </member>
+        <member name="T:Core.Caching.CacheEntry`1">
+            <summary>
+            A generic representation of an entry in a cache
+            </summary>
+            <typeparam name="TToCache">The type of object to cache</typeparam>
+        </member>
+        <member name="M:Core.Caching.CacheEntry`1.#ctor(`0)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="P:Core.Caching.CacheEntry`1.Value">
+            <summary>
+            The value of the cache entry
+            </summary>
         </member>
         <member name="T:Core.Caching.ICache">
             <summary>

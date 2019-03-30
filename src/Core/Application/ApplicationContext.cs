@@ -9,7 +9,7 @@ namespace Core.Application
     public class ApplicationContext : IContext
     {
         /// <summary>
-        /// Constriuctor
+        /// Constructor
         /// </summary>
         public ApplicationContext(long applicationID, string applicationName, string applicationVersion, bool isDebugMode, DateTime buildTimestamp, HostEnvironment hostEnvironment)
         {
