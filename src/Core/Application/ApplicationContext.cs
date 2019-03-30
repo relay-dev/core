@@ -24,31 +24,31 @@ namespace Core.Application
         /// <summary>
         /// The unique Id of the application
         /// </summary>
-        long ApplicationID { get; }
+        public long ApplicationID { get; }
 
         /// <summary>
         /// The name of the application
         /// </summary>
-        string ApplicationName { get; }
+        public string ApplicationName { get; }
 
         /// <summary>
         /// The version of the application
         /// </summary>
-        string ApplicationVersion { get; }
+        public string ApplicationVersion { get; }
 
         /// <summary>
         /// Indicates whether the application is running in a debugging context
         /// </summary>
-        bool IsDebugMode { get; }
-        
+        public bool IsDebugMode { get; }
+
         /// <summary>
         /// The timestamp at which this application was built
         /// </summary>
-        DateTime BuildTimestamp { get; }
+        public DateTime BuildTimestamp { get; }
 
         /// <summary>
         /// The HostEnvironment where the application is running (Dev, Test, Stage, Production)
         /// </summary>
-        HostEnvironment HostEnvironment { get; }
+        public HostEnvironment HostEnvironment { get; }
     }
 }
