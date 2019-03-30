@@ -74,7 +74,7 @@ namespace Core.Application
         /// <summary>
         /// A collection of all plugins to install on the IoC Container
         /// </summary>
-        public List<string> Plugins { get; set; }
+        public List<IoCContainerPlugin> Plugins { get; set; }
 
         #region ctor
 
@@ -83,7 +83,7 @@ namespace Core.Application
         /// </summary>
         public IoCContainer()
         {
-            Plugins = new List<string>();
+            Plugins = new List<IoCContainerPlugin>();
         }
 
         #endregion
