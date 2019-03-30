@@ -33,6 +33,7 @@ namespace Core.Logging
         /// <summary>
         /// Logs an error; if you have more details to provide, please use the Log(LogEntry logEntry) method
         /// </summary>
+        /// <param name="e">The exception</param>
         /// <param name="message">The message to log</param>
         /// <param name="args">Optional; a set of objects to be used in a String.Format() to replace any tokens in the message string</param>
         /// <returns>A unique identifier of the persisted <see cref="LogEntry"/></returns>
@@ -41,6 +42,7 @@ namespace Core.Logging
         /// <summary>
         /// Logs an error as being fatal; if you have more details to provide, please use the Log(LogEntry logEntry) method
         /// </summary>
+        /// <param name="e">The exception</param>
         /// <param name="message">The message to log</param>
         /// <param name="args">Optional; a set of objects to be used in a String.Format() to replace any tokens in the message string</param>
         /// <returns>A unique identifier of the persisted <see cref="LogEntry"/></returns>
