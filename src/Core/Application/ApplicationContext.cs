@@ -9,6 +9,19 @@ namespace Core.Application
     public class ApplicationContext : IContext
     {
         /// <summary>
+        /// Constriuctor
+        /// </summary>
+        public ApplicationContext(long applicationID, string applicationName, string applicationVersion, bool isDebugMode, DateTime buildTimestamp, HostEnvironment hostEnvironment)
+        {
+            ApplicationID = applicationID;
+            ApplicationName = applicationName;
+            ApplicationVersion = applicationVersion;
+            IsDebugMode = isDebugMode;
+            BuildTimestamp = buildTimestamp;
+            HostEnvironment = hostEnvironment;
+        }
+
+        /// <summary>
         /// The unique Id of the application
         /// </summary>
         long ApplicationID { get; }

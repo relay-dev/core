@@ -179,6 +179,11 @@
             Communicates details about the application context
             </summary>
         </member>
+        <member name="M:Core.Application.ApplicationContext.#ctor(System.Int64,System.String,System.String,System.Boolean,System.DateTime,Core.Application.HostEnvironment)">
+            <summary>
+            Constriuctor
+            </summary>
+        </member>
         <member name="P:Core.Application.ApplicationContext.ApplicationID">
             <summary>
             The unique Id of the application
@@ -1851,6 +1856,23 @@
             <summary>
             Optional; allows an application to host n classes that map the same source type to the same destination type, but in different ways
             </summary>
+        </member>
+        <member name="T:Core.Providers.IApplicationContextProvider">
+            <summary>
+            Provides consumers with the current ApplicationContext
+            </summary>
+        </member>
+        <member name="M:Core.Providers.IApplicationContextProvider.#ctor(Core.Application.ApplicationContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="applicationContext">The current ApplicationContext</param>
+        </member>
+        <member name="M:Core.Providers.IApplicationContextProvider.Get">
+            <summary>
+            Gets the current ApplicationContext
+            </summary>
+            <returns>The current ApplicationContext</returns>
         </member>
         <member name="T:Core.Providers.ICancellationTokenProvider">
             <summary>
