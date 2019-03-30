@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Core.IoC;
+using System.Collections.Generic;
 
 namespace Core.Application
 {
@@ -16,11 +17,6 @@ namespace Core.Application
         /// The configuration framework to be used
         /// </summary>
         public string Configuration { get; set; }
-
-        /// <summary>
-        /// The IoC container framework to be used
-        /// </summary>
-        public string IoCContainer { get; set; }
 
         /// <summary>
         /// The logging framework to be used
@@ -41,6 +37,11 @@ namespace Core.Application
         /// All other misc. components to be used
         /// </summary>
         public List<string> Components { get; set; }
+
+        /// <summary>
+        /// The IoC container framework to be used
+        /// </summary>
+        public IoCContainer IoCContainer { get; set; }
 
         /// <summary>
         /// Specifies the details about all data access needed by the application
@@ -73,7 +74,7 @@ namespace Core.Application
         /// <summary>
         /// A collection of all plugins to install on the IoC Container
         /// </summary>
-        public List<IoCContainerPlugin> Plugins { get; set; }
+        public List<string> Plugins { get; set; }
 
         #region ctor
 
@@ -82,7 +83,7 @@ namespace Core.Application
         /// </summary>
         public IoCContainer()
         {
-            Plugins = new List<IoCContainerPlugin>();
+            Plugins = new List<string>();
         }
 
         #endregion

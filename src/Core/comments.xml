@@ -29,11 +29,6 @@
             The configuration framework to be used
             </summary>
         </member>
-        <member name="P:Core.Application.ApplicationComposition.IoCContainer">
-            <summary>
-            The IoC container framework to be used
-            </summary>
-        </member>
         <member name="P:Core.Application.ApplicationComposition.Logging">
             <summary>
             The logging framework to be used
@@ -52,6 +47,11 @@
         <member name="P:Core.Application.ApplicationComposition.Components">
             <summary>
             All other misc. components to be used
+            </summary>
+        </member>
+        <member name="P:Core.Application.ApplicationComposition.IoCContainer">
+            <summary>
+            The IoC container framework to be used
             </summary>
         </member>
         <member name="P:Core.Application.ApplicationComposition.DataAccess">
@@ -211,7 +211,7 @@
         </member>
         <member name="M:Core.Application.ApplicationContext.#ctor(System.Int64,System.String,System.String,System.Boolean,System.DateTime,Core.Application.HostEnvironment)">
             <summary>
-            Constriuctor
+            Constructor
             </summary>
         </member>
         <member name="P:Core.Application.ApplicationContext.ApplicationID">
