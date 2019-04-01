@@ -63,7 +63,7 @@ While you do not need to reflect my exact development package source library on 
 
 <br />
 
-Name | Source | Required?
+Name | Source | Requires Local Setup?
 --- | --- | --- 
 NuGet (v2) | [https://www.nuget.org/api/v2](https://www.nuget.org/api/v2) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
 NuGet (v3) | [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
