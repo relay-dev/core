@@ -13,7 +13,7 @@ A bare-bones, plugin model application framework for .NET Core
 > 
 > <sup>Various technological implementations will come and go over the years; so the heart of all platform applications will depend only on abstractions. This ensures that specific technological implementations can seemlessly evolve in and out of platform applications over time (while conforming to the generic API).</sup>
 >
-> <sup>Core is delivered to consuming applications by way of the main public NuGet feed (see section "Installation"). Implementations of the Core stubs are manifested in the form of Core "Plugins", which can be found here (github: [core-plugins](https://github.com/relay-dev/core-plugins) // nuget: [Relay.Core.Plugins](https://www.nuget.org/packages/Relay.Core.Plugins/))</sup>
+> <sup>Core is delivered to consuming applications by way of the main public NuGet feed (see section [Installation](#installation)). Implementations of the Core stubs are manifested in the form of Core "Plugins", which can be found here (github: [core-plugins](https://github.com/relay-dev/core-plugins) // nuget: [Relay.Core.Plugins](https://www.nuget.org/packages/Relay.Core.Plugins/))</sup>
 > 
 > <sup>All APIs are fully documented in a .chm file located [here](https://github.com/relay-dev/core/raw/master/docs/Core%20API%20Documentation.chm). A formal architectural diagram and documention coming soon.</sup>
 
@@ -23,8 +23,9 @@ A bare-bones, plugin model application framework for .NET Core
 
 <br />
 
-### Installation
+<div id="installation"></div>
 
+### Installation
 Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/packages/Relay.Core):
 
 
