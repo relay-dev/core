@@ -9,7 +9,7 @@
 
 A bare-bones, plugin model application framework for .NET Core
 
-> <sup>Core is a base class library written on .NET Core 2.2. It consists of abstractions, contracts, stubs and interfaces only. Core is intended to be a stable code base that reliably defines common APIs, desgined and assemled to distributing them across many consuming applications.</sup>
+> <sup>Core is a set of base class libraries written on .NET Core 2.2, and will abide by the Relay.Core interfaces. The Core NuGet packges consists of abstractions, contracts, stubs and interfaces only. Core is intended to be a reliable and stable code base which defines shared APIs, desgined and assemled to distribute them across an indefinite number of platform application consumers.</sup>
 > 
 > <sup>Various technological implementations will come and go over the years; so the heart of all platform applications will depend only on abstractions. This ensures that specific technological implementations can seemlessly evolve in and out of platform applications over time (while conforming to the generic API).</sup>
 >
@@ -26,19 +26,19 @@ A bare-bones, plugin model application framework for .NET Core
 <div id="installation"></div>
 
 ### Installation
-Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/packages/Relay.Core):
 
+Here's how you can install the Relay.Core.Plugins application [NuGet Package](https://www.nuget.org/packages/Relay.Core.Plugins):
+
+> #### *Package Manager Console*
+> 
+> ```
+> Install-Package Relay.Core
+> ```
 
 > #### *.NET Core CLI*
 > 
 > ```
 > dotnet add package Relay.Core
-> ```
-> 
-> #### *Package Manager Console*
-> 
-> ```
-> Install-Package Relay.Core
 > ```
 
 <br />
