@@ -43,14 +43,14 @@ While you do not need to reflect my exact development environment on your machin
 
 Type | Version | Is Installation Needed?
 --- | --- | --- 
-Operationg System | [Windows 10 Home](https://www.microsoft.com/en-us/windows) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="30" width="30">
-IDE | [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="30" width="30">
-Database | [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="30" width="30">
-Version Control | [Git Client](https://tortoisegit.org/) (any git client will do) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="30" width="30">
-Continous Integration | [AppVeyor](https://ci.appveyor.com/projects) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="30" width="30">
-Host | [Microsoft Azure](https://azure.microsoft.com/) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="30" width="30">
-Containerized Deployment | [Docker](https://www.docker.com/) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="30" width="30">
-NuGet Deployment | [AppVeyor](https://ci.appveyor.com/projects) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="30" width="30">
+Operationg System | [Windows 10 Home](https://www.microsoft.com/en-us/windows) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
+IDE | [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
+Database | [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
+Version Control | [Git Client](https://tortoisegit.org/) (any git client will do) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
+Continous Integration | [AppVeyor](https://ci.appveyor.com/projects) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
+Host | [Microsoft Azure](https://azure.microsoft.com/) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
+Containerized Deployment | [Docker](https://www.docker.com/) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
+NuGet Deployment | [AppVeyor](https://ci.appveyor.com/projects) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
 
 <br />
 
