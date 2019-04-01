@@ -23,6 +23,7 @@ A bare-bones, plugin model application framework for .NET Core
 
 Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/packages/Relay.Core):
 
+
 > #### *.NET Core CLI*
 > 
 > ```
@@ -40,8 +41,9 @@ Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/
 ### Development Environment
 
 While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I currently using to develop this product:
-<br />
-Type | Version | Requires Local Install?
+
+
+Type | Version | Is Installation Needed?
 --- | --- | --- 
 Operationg System | [Windows 10 Home](https://www.microsoft.com/en-us/windows) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
 IDE | [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
@@ -57,7 +59,8 @@ NuGet Deployment | [AppVeyor](https://ci.appveyor.com/projects) | <img src="http
 ### Package Sources
 
 While you do not need to reflect my exact development package source library on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact NuGet Package sources I've personally configured locally, and use to develop this product:
-<br />
+
+
 Name | Source
 --- | --- 
 NuGet (v2) | [https://www.nuget.org/api/v2](https://www.nuget.org/api/v2)
@@ -69,6 +72,7 @@ MyGet (Relay) | [https://www.myget.org/F/relay-dev/api/v2/](https://www.myget.or
 ### Folder structure
 
 The folder structure has a definite form, which should be mainained. The standard was derived by the great David Fowler [here](https://gist.github.com/davidfowl/ed7564297c61fe9ab814).
+
 
 ```
 $/
