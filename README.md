@@ -41,16 +41,16 @@ Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/
 
 While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I currently using to develop this product:
 
-Type | Version
+Type | Version | Is Installtion Needed
 --- | --- 
-Operationg System | [Windows 10 Home](https://www.microsoft.com/en-us/windows)
-IDE | [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/)
-Database | [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
-Version Control | [Git Client](https://tortoisegit.org/) (any git client will do)
-Continous Integration | [AppVeyor](https://ci.appveyor.com/projects) (no install needed)
-Host | [Microsoft Azure](https://azure.microsoft.com/) (no install needed)
-Containerized Deployment | [Docker](https://www.docker.com/) (no install needed)
-NuGet Deployment | [AppVeyor](https://ci.appveyor.com/projects) (no install needed)
+Operationg System | [Windows 10 Home](https://www.microsoft.com/en-us/windows) | Yes
+IDE | [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/) | Yes
+Database | [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express) | Yes
+Version Control | [Git Client](https://tortoisegit.org/) (any git client will do) | Yes
+Continous Integration | [AppVeyor](https://ci.appveyor.com/projects) (no install needed) | No
+Host | [Microsoft Azure](https://azure.microsoft.com/) (no install needed) | No
+Containerized Deployment | [Docker](https://www.docker.com/) (no install needed) | No
+NuGet Deployment | [AppVeyor](https://ci.appveyor.com/projects) (no install needed) | No
 
 <br />
 
