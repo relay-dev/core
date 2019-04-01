@@ -13,8 +13,11 @@ A bare-bones, plugin model application framework for .NET Core
 
 <sup>All APIs are fully documented in a .chm file located [here](https://github.com/relay-dev/core/raw/master/docs/Core%20API%20Documentation.chm). A formal arcitectural diagram and documention coming soon.</sup>
 
+<br />
+
 <img src="https://github.com/relay-dev/core/raw/master/resources/break.jpg?raw=true">
 
+<br />
 
 ### Installation
 
@@ -51,7 +54,6 @@ NuGet Deployment | [AppVeyor](https://ci.appveyor.com/projects) (no install need
 
 <br />
 
-
 ### Package Sources
 
 While you do not need to reflect my exact development package source library on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact NuGet Package sources I've personally configured locally, and use to develop this product:
@@ -62,6 +64,7 @@ NuGet (v2) | [https://www.nuget.org/api/v2](https://www.nuget.org/api/v2)
 NuGet (v3) | [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json)
 MyGet (Relay) | [https://www.myget.org/F/relay-dev/api/v2/](https://www.myget.org/F/relay-dev/api/v2/)
 
+<br />
 
 ### Folder structure
 <sup>(https://gist.github.com/davidfowl/ed7564297c61fe9ab814)</sup>
