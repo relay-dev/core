@@ -9,28 +9,50 @@
 
 A bare-bones, plugin model application framework for .NET Core
 
-<sup>Core is a base class library written on .NET Core. It consists only of abstractions, contracts and interfaces. Core is meant to be a stable code base which defines common APIs which are shared across consuming applications. Implementations of Core come in the form of "Plugins", which can be found here (github: [core-plugins](https://github.com/relay-dev/core-plugins) // nuget: [Relay.Core.Plugins](https://www.nuget.org/packages/Relay.Core.Plugins/))</sup>
+<sup>Core is a base class library written on .NET Core 2.2. It consists only of abstractions, contracts and interfaces. Core is meant to be a stable code base which defines common APIs distributed across consuming applications. Implementations of Core are manifested in the form of Core "Plugins", which can be found here (github: [core-plugins](https://github.com/relay-dev/core-plugins) // nuget: [Relay.Core.Plugins](https://www.nuget.org/packages/Relay.Core.Plugins/))</sup>
 
 <sup>All APIs are fully documented in a .chm file located [here](https://github.com/relay-dev/core/raw/master/docs/Core%20API%20Documentation.chm). A formal arcitectural diagram and documention coming soon.</sup>
 
-<center><img src="https://github.com/relay-dev/core/raw/master/resources/break.jpg?raw=true"></center>
+<img src="https://github.com/relay-dev/core/raw/master/resources/break.jpg?raw=true">
 
 
 ## Installation
 
 Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/packages/Relay.Core):
 
-#### *.NET Core CLI*
+> #### *.NET Core CLI*
+> 
+> ```
+> dotnet add package Relay.Core
+> ```
+> 
+> #### *Package Manager Console*
+> 
+> ```
+> Install-Package Relay.Core
+> ```
 
-```
-dotnet add package Relay.Core
-```
 
-#### *Package Manager Console*
+## Development Environment
 
-```
-Install-Package Relay.Core
-```
+While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I've personally use to develop:
+
+⋅⋅* OS     : [Windows 10 Home](https://www.microsoft.com/en-us/windows)
+⋅⋅* IDE    : [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/)
+⋅⋅* SQL    : [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
+⋅⋅* VC     : [Git Client](https://tortoisegit.org/) (I use TortoiseGit as my git client but you are free to use what you like)
+⋅⋅* CI     : AppVeyor (no install needed)
+⋅⋅* HOST   : Microsoft Azure (no install needed)
+⋅⋅* DEPLOY : Docker (no install needed)
+
+
+## Package Sources
+
+While you do not need to reflect my exact development package source library on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact NuGet Package sources I've personally configured localled, and use for developmet:
+
+⋅⋅* NuGet (v2)    : [https://www.nuget.org/api/v2](https://www.nuget.org/api/v2)
+⋅⋅* NuGet (v3)    : [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json)
+⋅⋅* MyGet (Relay) : [https://www.myget.org/F/relay-dev/api/v2/](https://www.myget.org/F/relay-dev/api/v2/)
 
 
 ## Folder structure
@@ -57,7 +79,6 @@ $/
   README.md
   {solution}.sln
 ```
-
 
 - `src` - Main projects (the product code)
 - `tests` - Test projects
