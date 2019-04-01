@@ -43,7 +43,7 @@ Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/
 While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I currently using to develop this product:
 
 
-Type | Version | Is Installation Needed?
+Type | Version | Requires Local Installation?
 --- | --- | --- 
 Operationg System | [Windows 10 Home](https://www.microsoft.com/en-us/windows) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
 IDE | [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
