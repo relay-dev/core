@@ -15,12 +15,6 @@ namespace Core.Caching
         bool ContainsKey(string key);
 
         /// <summary>
-        /// Exposes the contents of the cache as a formatted string
-        /// </summary>
-        /// <returns>A string representing the contents of the cache</returns>
-        string Contents { get; }
-
-        /// <summary>
         /// Calls the GetOrAdd() overload using the applications default CacheExpirationInHours
         /// </summary>
         /// <typeparam name="TReturn">The Type of object you are expecting to receive from the cache</typeparam>
