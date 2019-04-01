@@ -9,11 +9,13 @@
 
 A bare-bones, plugin model application framework for .NET Core
 
-> <sup>Core is a base class library written on .NET Core 2.2. It consists of abstractions, contracts, stubs and interfaces only. The Core library is intended to be a stable code base that defines common APIs. The APIs have been assemled with the intention of distributing them across many consuming applications. Various technological implementations will come and go over the years; so the heart of all platform applications will depend only on abstractions. This ensures that specific technological implementations can seemlessly evolve in and out of platform applications over time (while conforming to the generic API).</sup>
+> <sup>Core is a base class library written on .NET Core 2.2. It consists of abstractions, contracts, stubs and interfaces only. Core is intended to be a stable code base that reliably defines common APIs, desgined and assemled to distributing them across many consuming applications.</sup>
 > 
+> <sup>Various technological implementations will come and go over the years; so the heart of all platform applications will depend only on abstractions. This ensures that specific technological implementations can seemlessly evolve in and out of platform applications over time (while conforming to the generic API).</sup>
+>
 > <sup>Core is delivered to consuming applications by way of the main public NuGet feed (see section "Installation"). Implementations of the Core stubs are manifested in the form of Core "Plugins", which can be found here (github: [core-plugins](https://github.com/relay-dev/core-plugins) // nuget: [Relay.Core.Plugins](https://www.nuget.org/packages/Relay.Core.Plugins/))</sup>
 > 
-> <sup>All APIs are fully documented in a .chm file located [here](https://github.com/relay-dev/core/raw/master/docs/Core%20API%20Documentation.chm). A formal arcitectural diagram and documention coming soon.</sup>
+> <sup>All APIs are fully documented in a .chm file located [here](https://github.com/relay-dev/core/raw/master/docs/Core%20API%20Documentation.chm). A formal architectural diagram and documention coming soon.</sup>
 
 <br />
 
