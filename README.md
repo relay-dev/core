@@ -1,4 +1,4 @@
-<img src="https://github.com/relay-dev/core/raw/master/resources/icon.png?raw=true" alt="Core" style="max-width:100%; float: left; padding-right: 50px; margin: 20px 0;" height="250" width="250">
+<img src="https://github.com/relay-dev/core/raw/master/resources/icon.png?raw=true" alt="Core" style="max-width:100%; float: left; padding-right: 50px; margin: 20px 0;" height="200" width="200">
 
 # Core
 
@@ -11,22 +11,24 @@ A bare-bones, plugin model application framework for .NET Core
 
 <sup>Core is a base class library written on .NET Core. Please note, it consists only of abstractions, contracts and interfaces. It is meant to be a stable code base which defines common API contracts that are shared across consumer code bases. Implementations of Core are done by Plugins (github: [core-plugins](https://github.com/relay-dev/core-plugins) // nuget: [Relay.Core.Plugins](https://www.nuget.org/packages/Relay.Core.Plugins/))</sup>
 
+
 <center><img src="https://github.com/relay-dev/core/raw/master/resources/break.jpg?raw=true"></center>
+
 
 ## Installation
 
-Install the [Relay.Core NuGet Package](https://www.nuget.org/packages/Relay.Core).
+Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/packages/Relay.Core):
 
-### Package Manager Console
-
-```
-Install-Package Relay.Core
-```
-
-### .NET Core CLI
+#### *.NET Core CLI*
 
 ```
 dotnet add package Relay.Core
+```
+
+#### *Package Manager Console*
+
+```
+Install-Package Relay.Core
 ```
 
 
@@ -68,6 +70,7 @@ $/
 - `build.cmd` - Bootstrap the build for windows
 - `build.sh` - Bootstrap the build for *nix
 - `global.json` - ASP.NET vNext only
+
 
 ## .gitignore
 ```
