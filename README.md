@@ -41,16 +41,16 @@ Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/
 
 While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I currently using to develop this product:
 
-Type | Version | Is Installtion Needed
+Type | Version | Is Installation Needed
 --- | --- | --- 
-Operationg System | [Windows 10 Home](https://www.microsoft.com/en-us/windows) | Yes
-IDE | [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/) | Yes
-Database | [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express) | Yes
-Version Control | [Git Client](https://tortoisegit.org/) (any git client will do) | Yes
-Continous Integration | [AppVeyor](https://ci.appveyor.com/projects) (no install needed) | No
-Host | [Microsoft Azure](https://azure.microsoft.com/) (no install needed) | No
-Containerized Deployment | [Docker](https://www.docker.com/) (no install needed) | No
-NuGet Deployment | [AppVeyor](https://ci.appveyor.com/projects) (no install needed) | No
+Operationg System | [Windows 10 Home](https://www.microsoft.com/en-us/windows) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="30" width="30">
+IDE | [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="30" width="30">
+Database | [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="30" width="30">
+Version Control | [Git Client](https://tortoisegit.org/) (any git client will do) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="30" width="30">
+Continous Integration | [AppVeyor](https://ci.appveyor.com/projects) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="30" width="30">
+Host | [Microsoft Azure](https://azure.microsoft.com/) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="30" width="30">
+Containerized Deployment | [Docker](https://www.docker.com/) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="30" width="30">
+NuGet Deployment | [AppVeyor](https://ci.appveyor.com/projects) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="30" width="30">
 
 <br />
 
@@ -67,7 +67,8 @@ MyGet (Relay) | [https://www.myget.org/F/relay-dev/api/v2/](https://www.myget.or
 <br />
 
 ### Folder structure
-<sup>(https://gist.github.com/davidfowl/ed7564297c61fe9ab814)</sup>
+
+The folder structure has a definite form, which should be mainained. The standard was derived by the great David Fowler [here](https://gist.github.com/davidfowl/ed7564297c61fe9ab814).
 
 ```
 $/
