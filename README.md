@@ -32,25 +32,29 @@ Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/
 > Install-Package Relay.Core
 > ```
 
+<br />
 
 ### Development Environment
 
-While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I've personally use to develop:
+While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I'm personally and currently using to develop this product:
 
 Type | Version
 --- | --- 
 Operationg System | [Windows 10 Home](https://www.microsoft.com/en-us/windows)
 IDE | [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/)
 Database | [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
-Version Control | [Git Client](https://tortoisegit.org/) (I use TortoiseGit as my git client but you are free to use what you like)
-Continous Integration & Deployment | [AppVeyor](https://ci.appveyor.com/projects) (no install needed)
+Version Control | [Git Client](https://tortoisegit.org/) (any git client will do)
+Continous Integration | [AppVeyor](https://ci.appveyor.com/projects) (no install needed)
 Host | [Microsoft Azure](https://azure.microsoft.com/) (no install needed)
 Containerized Deployment | [Docker](https://www.docker.com/) (no install needed)
+NuGet Deployment | [AppVeyor](https://ci.appveyor.com/projects) (no install needed)
+
+<br />
 
 
 ### Package Sources
 
-While you do not need to reflect my exact development package source library on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact NuGet Package sources I've personally configured localled, and use for developmet:
+While you do not need to reflect my exact development package source library on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact NuGet Package sources I've personally configured locally, and use to develop this product:
 
 Name | Source
 --- | --- 
