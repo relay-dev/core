@@ -39,7 +39,7 @@ Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/
 
 ### Development Environment
 
-While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I'm personally and currently using to develop this product:
+While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I currently using to develop this product:
 
 Type | Version
 --- | --- 
