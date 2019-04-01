@@ -16,7 +16,7 @@ A bare-bones, plugin model application framework for .NET Core
 <img src="https://github.com/relay-dev/core/raw/master/resources/break.jpg?raw=true">
 
 
-## Installation
+### Installation
 
 Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/packages/Relay.Core):
 
@@ -33,29 +33,33 @@ Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/
 > ```
 
 
-## Development Environment
+### Development Environment
 
 While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I've personally use to develop:
 
-⋅⋅* OS     : [Windows 10 Home](https://www.microsoft.com/en-us/windows)
-⋅⋅* IDE    : [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/)
-⋅⋅* SQL    : [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
-⋅⋅* VC     : [Git Client](https://tortoisegit.org/) (I use TortoiseGit as my git client but you are free to use what you like)
-⋅⋅* CI     : AppVeyor (no install needed)
-⋅⋅* HOST   : Microsoft Azure (no install needed)
-⋅⋅* DEPLOY : Docker (no install needed)
+Type | Version
+--- | --- 
+Operationg System | [Windows 10 Home](https://www.microsoft.com/en-us/windows)
+IDE | [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/)
+Database | [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
+Version Control | [Git Client](https://tortoisegit.org/) (I use TortoiseGit as my git client but you are free to use what you like)
+Continous Integration & Deployment | [AppVeyor](https://ci.appveyor.com/projects) (no install needed)
+Host | [Microsoft Azure](https://azure.microsoft.com/) (no install needed)
+Containerized Deployment | [Docker](https://www.docker.com/) (no install needed)
 
 
-## Package Sources
+### Package Sources
 
 While you do not need to reflect my exact development package source library on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact NuGet Package sources I've personally configured localled, and use for developmet:
 
-⋅⋅* NuGet (v2)    : [https://www.nuget.org/api/v2](https://www.nuget.org/api/v2)
-⋅⋅* NuGet (v3)    : [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json)
-⋅⋅* MyGet (Relay) : [https://www.myget.org/F/relay-dev/api/v2/](https://www.myget.org/F/relay-dev/api/v2/)
+Name | Source
+--- | --- 
+NuGet (v2) | [https://www.nuget.org/api/v2](https://www.nuget.org/api/v2)
+NuGet (v3) | [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json)
+MyGet (Relay) | [https://www.myget.org/F/relay-dev/api/v2/](https://www.myget.org/F/relay-dev/api/v2/)
 
 
-## Folder structure
+### Folder structure
 <sup>(https://gist.github.com/davidfowl/ed7564297c61fe9ab814)</sup>
 
 ```
