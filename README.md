@@ -11,6 +11,7 @@ A bare-bones, plugin model application framework for .NET Core
 
 <sup>Core is a base class library written on .NET Core. It consists only of abstractions, contracts and interfaces. Core is meant to be a stable code base which defines common APIs which are shared across consuming applications. Implementations of Core come in the form of "Plugins", which can be found here (github: [core-plugins](https://github.com/relay-dev/core-plugins) // nuget: [Relay.Core.Plugins](https://www.nuget.org/packages/Relay.Core.Plugins/))</sup>
 
+<sup>All APIs are fully documented in a .chm file located [here](https://github.com/relay-dev/core/raw/master/docs/Core%20API%20Documentation.zip). A formal arcitectural diagram and documention coming soon.</sup>
 
 <center><img src="https://github.com/relay-dev/core/raw/master/resources/break.jpg?raw=true"></center>
 
