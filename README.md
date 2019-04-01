@@ -42,6 +42,7 @@ Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/
 
 While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I currently using to develop this product:
 
+<br />
 
 Type | Version | Requires Local Installation?
 --- | --- | --- 
@@ -60,6 +61,7 @@ NuGet Deployment | [AppVeyor](https://ci.appveyor.com/projects) | <img src="http
 
 While you do not need to reflect my exact development package source library on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact NuGet Package sources I've personally configured locally, and use to develop this product:
 
+<br />
 
 Name | Source | Required?
 --- | --- | --- 
