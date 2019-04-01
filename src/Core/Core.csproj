@@ -10,7 +10,7 @@
     <PackageReleaseNotes>Initial release</PackageReleaseNotes>
     <Copyright>Copyright ©2019</Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <Description>Plugins available for the Core framework</Description>
+    <Description>A bare-bones, plugin model application framework for .NET Core</Description>
     <PackageProjectUrl>https://github.com/relay-dev/core</PackageProjectUrl>
     <PackageIconUrl>https://i.imgur.com/wlzLkCC.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/relay-dev/core.git</RepositoryUrl>
