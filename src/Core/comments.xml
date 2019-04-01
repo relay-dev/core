@@ -1911,18 +1911,6 @@
             Provides consumers with the current ApplicationContext
             </summary>
         </member>
-        <member name="M:Core.Providers.IApplicationContextProvider.#ctor(Core.Application.ApplicationContext)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="applicationContext">The current ApplicationContext</param>
-        </member>
-        <member name="M:Core.Providers.IApplicationContextProvider.Get">
-            <summary>
-            Gets the current ApplicationContext
-            </summary>
-            <returns>The current ApplicationContext</returns>
-        </member>
         <member name="T:Core.Providers.ICancellationTokenProvider">
             <summary>
             Provides Commands with a CancellationToken
