@@ -40,24 +40,24 @@ Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/
 ### Development Environment
 
 While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I currently using to develop this product:
-
-Type | Version | Is Installation Needed?
+<br />
+Type | Version | Requires Local Install?
 --- | --- | --- 
 Operationg System | [Windows 10 Home](https://www.microsoft.com/en-us/windows) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
 IDE | [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
 Database | [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
 Version Control | [Git Client](https://tortoisegit.org/) (any git client will do) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
-Continous Integration | [AppVeyor](https://ci.appveyor.com/projects) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
-Host | [Microsoft Azure](https://azure.microsoft.com/) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
-Containerized Deployment | [Docker](https://www.docker.com/) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
-NuGet Deployment | [AppVeyor](https://ci.appveyor.com/projects) (no install needed) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
+Continous Integration | [AppVeyor](https://ci.appveyor.com/projects) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
+Host | [Microsoft Azure](https://azure.microsoft.com/) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
+Containerized Deployment | [Docker](https://www.docker.com/) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
+NuGet Deployment | [AppVeyor](https://ci.appveyor.com/projects) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
 
 <br />
 
 ### Package Sources
 
 While you do not need to reflect my exact development package source library on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact NuGet Package sources I've personally configured locally, and use to develop this product:
-
+<br />
 Name | Source
 --- | --- 
 NuGet (v2) | [https://www.nuget.org/api/v2](https://www.nuget.org/api/v2)
