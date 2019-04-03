@@ -27,7 +27,7 @@ A bare-bones, plugin model application framework for .NET Core
 
 ### Installation
 
-Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/packages/Relay.Core):
+Here's how you can install the Core [NuGet Package](https://www.nuget.org/packages/Relay.Core):
 
 <br />
 
@@ -36,7 +36,7 @@ Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/
 > ```
 > Install-Package Relay.Core
 > ```
-
+>
 > #### *.NET Core CLI*
 > 
 > ```
