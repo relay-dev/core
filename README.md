@@ -9,11 +9,11 @@
 
 A bare-bones, plugin model application framework for .NET Core
 
-> <sup>Core is a set of base class libraries written on .NET Core 2.2, and will abide by the Relay.Core interfaces. The Core NuGet packges consists of abstractions, contracts, stubs and interfaces only. Core is intended to be a reliable and stable code base which defines shared APIs, desgined and assemled to distribute them across an indefinite number of platform application consumers.</sup>
+> <sup>Core is a set of base class libraries written on .NET Core 2.2. The code base consists of abstractions, contracts, stubs and interfaces only. Core is intended to be a reliable and stable code base which defines shared APIs, desgined and assemled to distribute them across application consumers.</sup>
 > 
-> <sup>Various technological implementations will come and go over the years; so the heart of all platform applications will depend only on abstractions. This ensures that specific technological implementations can seemlessly evolve in and out of platform applications over time (while conforming to the generic API).</sup>
+> <sup>Consumers get the advantage of depending only on abstractions, ensuring that specific technological implementations can seemlessly evolve in and out of platform applications over time (while conforming to the generic API).</sup>
 >
-> <sup>Core is delivered to consuming applications by way of the main public NuGet feed (see section [Installation](#installation)). Implementations of the Core stubs are manifested in the form of Core "Plugins", which can be found here (github: [core-plugins](https://github.com/relay-dev/core-plugins) // nuget: [Relay.Core.Plugins](https://www.nuget.org/packages/Relay.Core.Plugins/))</sup>
+> <sup>Core is delivered to consuming applications by way of the main public NuGet feed (see section [Installation](#installation)). Implementations of the Core stubs come in the form of Core Plugins, which can be found here (github: [core-plugins](https://github.com/relay-dev/core-plugins) // nuget: [Relay.Core.Plugins](https://www.nuget.org/packages/Relay.Core.Plugins/))</sup>
 > 
 > <sup>All APIs are fully documented in a .chm file located [here](https://github.com/relay-dev/core/raw/master/docs/Core%20API%20Documentation.chm). A formal architectural diagram and documention coming soon.</sup>
 
@@ -27,7 +27,9 @@ A bare-bones, plugin model application framework for .NET Core
 
 ### Installation
 
-Here's how you can install the Relay.Core.Plugins application [NuGet Package](https://www.nuget.org/packages/Relay.Core.Plugins):
+Here's how you can install the Relay.Core [NuGet Package](https://www.nuget.org/packages/Relay.Core):
+
+<br />
 
 > #### *Package Manager Console*
 > 
@@ -45,7 +47,7 @@ Here's how you can install the Relay.Core.Plugins application [NuGet Package](ht
 
 ### Development Environment
 
-While you do not need to reflect my exact development environment on your machine, it's sometimes useful to at least provide potential Core developers with a list of the exact products and versions I currently using to develop this product:
+While you do not need to reflect my exact development environment on your machine, it's sometimes useful to provide potential Core developers with a list of the exact products and versions I currently use to develop this product:
 
 <br />
 
@@ -54,7 +56,7 @@ Type | Version | Requires Local Setup?
 Operationg System | [Windows 10 Home](https://www.microsoft.com/en-us/windows) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
 IDE | [Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
 Database | [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
-Version Control (git client) | [TortoiseSVN](https://tortoisegit.org/) or [GitKraken](https://www.gitkraken.com/download) or [Sourcetree](https://www.sourcetreeapp.com/) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
+Version Control (git client) | [TortoiseGit](https://tortoisegit.org/) or [GitKraken](https://www.gitkraken.com/download) or [Sourcetree](https://www.sourcetreeapp.com/) | <img src="https://github.com/relay-dev/core/raw/master/resources/yes.png?raw=true" alt="Yes" height="20" width="20">
 Continous Integration | [AppVeyor](https://ci.appveyor.com/projects) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
 Host | [Microsoft Azure](https://azure.microsoft.com/) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
 Containerized Deployment | [Docker](https://www.docker.com/) | <img src="https://github.com/relay-dev/core/raw/master/resources/no.png?raw=true" alt="No" height="20" width="20">
@@ -80,6 +82,7 @@ MyGet (Relay) | [https://www.myget.org/F/relay-dev/api/v2/](https://www.myget.or
 
 The folder structure has a definite form, which should be mainained. The standard was derived by the great David Fowler [here](https://gist.github.com/davidfowl/ed7564297c61fe9ab814).
 
+<br />
 
 ```
 $/
