@@ -406,12 +406,6 @@
             <param name="key">The key of the cache entry</param>
             <returns><c>true</c> if the provided string is found in the cache, which inheritly means there is a value cached for it; otherwise, <c>false</c></returns>
         </member>
-        <member name="P:Core.Caching.ICache.Contents">
-            <summary>
-            Exposes the contents of the cache as a formatted string
-            </summary>
-            <returns>A string representing the contents of the cache</returns>
-        </member>
         <member name="M:Core.Caching.ICache.GetOrAdd``1(System.String,System.Func{``0})">
             <summary>
             Calls the GetOrAdd() overload using the applications default CacheExpirationInHours
@@ -747,7 +741,7 @@
         </member>
         <member name="M:Core.Exceptions.CoreException.#ctor(System.String,System.String)">
             <summary>
-            Simple overload for providing an <see cref="T:Core.Validation.ErrorCode"/> as well as a message as part of the exception
+            Simple overload for providing an <see cref="T:Core.Exceptions.ErrorCode"/> as well as a message as part of the exception
             </summary>
             <param name="errorCode">The Error Code string to be logged; Error Codes can be found in Core.Constants.ErrorCode.* and are 4 character strings</param>
             <param name="message">A brief description of the <see cref="T:Core.Logging.LogEntry"/>. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readble descriptive note of what happened. There are other classes (i.e. <see cref="T:Core.Logging.LogEntry"/>) for providing more structure to log entries for the sake of searching and grouping</param>
@@ -761,11 +755,91 @@
         </member>
         <member name="M:Core.Exceptions.CoreException.#ctor(System.Exception,System.String,System.String)">
             <summary>
-            Simple overload for providing an inner exception and an <see cref="T:Core.Validation.ErrorCode"/>, as well as a message as part of the exception
+            Simple overload for providing an inner exception and an <see cref="T:Core.Exceptions.ErrorCode"/>, as well as a message as part of the exception
             </summary>
             <param name="innerException">The inner exception being wrapped</param>
             <param name="errorCode">The Error Code string to be logged; Error Codes can be found in Core.Constants.ErrorCode.* and are 4 character strings</param>
             <param name="message">A brief description of what the <see cref="T:Core.Logging.LogEntry"/> is. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readble descriptive note of what happened. There are other classes (i.e. <see cref="T:Core.Logging.LogEntry"/>) for providing more structure to log entries for the sake of searching and grouping</param>
+        </member>
+        <member name="T:Core.Exceptions.ErrorCode">
+            <summary>
+            Constant strings related to Error Codes
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.NONE">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.SYST">
+            <summary>
+            System Error
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.CORE">
+            <summary>
+            Core Error
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.DTBS">
+            <summary>
+            Database Error
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.APPL">
+            <summary>
+            Application Error
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.SRVC">
+            <summary>
+            Service Error
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.AUTH">
+            <summary>
+            Authenication Failure
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.NULL">
+            <summary>
+            Null object
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.INVL">
+            <summary>
+            Invalid
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.INVA">
+            <summary>
+            Invalid State of Application
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.INVD">
+            <summary>
+            Invalid State of Data
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.NODA">
+            <summary>
+            No Data
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.EXIS">
+            <summary>
+            Already Exists
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.CNSV">
+            <summary>
+            Could Not Save
+            </summary>
+        </member>
+        <member name="F:Core.Exceptions.ErrorCode.WBST">
+            <summary>
+            Web Site
+            </summary>
         </member>
         <member name="T:Core.Framework.Attributes.CommandAttribute">
             <summary>
@@ -2271,86 +2345,6 @@
         <member name="P:Core.Utilities.RetryResult.Exceptions">
             <summary>
             A list of exceptions that occured during the operation
-            </summary>
-        </member>
-        <member name="T:Core.Validation.ErrorCode">
-            <summary>
-            Constant strings related to Error Codes
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.NONE">
-            <summary>
-            None
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.SYST">
-            <summary>
-            System Error
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.CORE">
-            <summary>
-            Core Error
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.DTBS">
-            <summary>
-            Database Error
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.APPL">
-            <summary>
-            Application Error
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.SRVC">
-            <summary>
-            Service Error
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.AUTH">
-            <summary>
-            Authenication Failure
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.NULL">
-            <summary>
-            Null object
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.INVL">
-            <summary>
-            Invalid
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.INVA">
-            <summary>
-            Invalid State of Application
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.INVD">
-            <summary>
-            Invalid State of Data
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.NODA">
-            <summary>
-            No Data
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.EXIS">
-            <summary>
-            Already Exists
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.CNSV">
-            <summary>
-            Could Not Save
-            </summary>
-        </member>
-        <member name="F:Core.Validation.ErrorCode.WBST">
-            <summary>
-            Web Site
             </summary>
         </member>
         <member name="T:Core.Validation.IValidator`1">

@@ -1,4 +1,4 @@
-﻿namespace Core.Validation
+﻿namespace Core.Exceptions
 {
     /// <summary>
     /// Constant strings related to Error Codes
