@@ -31,16 +31,16 @@ Here's how you can install the Core [NuGet Package](https://www.nuget.org/packag
 
 <br />
 
-> #### *Package Manager Console*
-> 
-> ```
-> Install-Package Relay.Core
-> ```
->
 > #### *.NET Core CLI*
 > 
 > ```
 > dotnet add package Relay.Core
+> ```
+>
+> #### *Package Manager Console*
+> 
+> ```
+> Install-Package Relay.Core
 > ```
 
 <br />
