@@ -1980,7 +1980,7 @@
             Optional; allows an application to host n classes that map the same source type to the same destination type, but in different ways
             </summary>
         </member>
-        <member name="T:Core.Providers.IApplicationContextProvider">
+        <member name="T:Core.Providers.IProvider">
             <summary>
             Provides consumers with the current ApplicationContext
             </summary>
@@ -2006,6 +2006,18 @@
             <summary>
             Provides Commands with the date and time
             </summary>
+        </member>
+        <member name="T:Core.Providers.IKeyProvider">
+            <summary>
+            Provides Commands with keys, sych as encryption keys
+            </summary>
+        </member>
+        <member name="M:Core.Providers.IKeyProvider.Get(System.String)">
+            <summary>
+            Returns the key associated to the keyIdentifier
+            </summary>
+            <param name="keyIdentifier">A unique identifier of the key to return</param>
+            <returns></returns>
         </member>
         <member name="T:Core.Providers.IPageProvider`1">
             <summary>
