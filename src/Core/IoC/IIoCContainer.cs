@@ -73,6 +73,12 @@ namespace Core.IoC
         bool IsRegistered<TService>();
 
         /// <summary>
+        /// Opens a scope for which objects will be unique to
+        /// </summary>
+        /// <returns>A Disposable handle</returns>
+        IDisposable BeginScope();
+
+        /// <summary>
         /// Global settings to be used by the IoC container
         /// </summary>
         IoCContainerSettings Settings { get; set; }

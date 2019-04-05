@@ -1160,6 +1160,66 @@
             Creates types that implement the IService interface for Commands
             </summary>
         </member>
+        <member name="T:Core.Framework.LookupData">
+            <summary>
+            Represents a row in a lookup table that follow platform conventions
+            </summary>
+        </member>
+        <member name="P:Core.Framework.LookupData.Id">
+            <summary>
+            The unique identifier of the record
+            </summary>
+        </member>
+        <member name="P:Core.Framework.LookupData.Name">
+            <summary>
+            The name of the object
+            </summary>
+        </member>
+        <member name="P:Core.Framework.LookupData.Description">
+            <summary>
+            A description of the object
+            </summary>
+        </member>
+        <member name="P:Core.Framework.LookupData.Code">
+            <summary>
+            A short, unique code that represents the record
+            </summary>
+        </member>
+        <member name="P:Core.Framework.LookupData.DisplayName">
+            <summary>
+            The name to display on a UI
+            </summary>
+        </member>
+        <member name="P:Core.Framework.LookupData.DisplayOrder">
+            <summary>
+            The order to display this record on a UI
+            </summary>
+        </member>
+        <member name="P:Core.Framework.LookupData.IsActive">
+            <summary>
+            Indicates whether or not the record is considered to be active
+            </summary>
+        </member>
+        <member name="P:Core.Framework.LookupData.CreatedBy">
+            <summary>
+            The person, process or application that created the object
+            </summary>
+        </member>
+        <member name="P:Core.Framework.LookupData.CreatedDate">
+            <summary>
+            The date and time the object was created
+            </summary>
+        </member>
+        <member name="P:Core.Framework.LookupData.ModifiedBy">
+            <summary>
+            The person, process or application that modified the object
+            </summary>
+        </member>
+        <member name="P:Core.Framework.LookupData.ModifiedDate">
+            <summary>
+            The date and time the object was modified
+            </summary>
+        </member>
         <member name="T:Core.Framework.Plugins.PluginBuilder">
             <summary>
             Provides the ability to return an expression back to the framework to be used when registering services with the IoC container
@@ -1419,6 +1479,12 @@
             </summary>
             <typeparam name="TService">The generic service interface</typeparam>
             <returns>Returns <c>true</c> if the given generic service is already registered with the IoC container; otherwise, <c>false</c></returns>
+        </member>
+        <member name="M:Core.IoC.IIoCContainer.BeginScope">
+            <summary>
+            Opens a scope for which objects will be unique to
+            </summary>
+            <returns>A Disposable handle</returns>
         </member>
         <member name="P:Core.IoC.IIoCContainer.Settings">
             <summary>
@@ -1980,7 +2046,7 @@
             Optional; allows an application to host n classes that map the same source type to the same destination type, but in different ways
             </summary>
         </member>
-        <member name="T:Core.Providers.IProvider">
+        <member name="T:Core.Providers.IApplicationContextProvider">
             <summary>
             Provides consumers with the current ApplicationContext
             </summary>
@@ -2148,25 +2214,19 @@
             </summary>
             <returns>All assemblies within the scope of the application</returns>
         </member>
-        <member name="M:Core.Utilities.IAssemblyScanner.GetCoreAssemblies">
-            <summary>
-            Gets all Core assemblies within the scope of the application
-            </summary>
-            <returns>All Core assemblies within the scope of the application</returns>
-        </member>
-        <member name="M:Core.Utilities.IAssemblyScanner.GetCoreTypesWithAttribute``1">
-            <summary>
-            Scans all Core assemblies and returns a collection of types that utilize a given attribute type
-            </summary>
-            <typeparam name="TAttribute">The attribute type to search all class in the assemblies for</typeparam>
-            <returns>All Core types that utilize the given attribute type</returns>
-        </member>
-        <member name="M:Core.Utilities.IAssemblyScanner.GetCoreTypesWithAttribute``1(System.Func{``0,System.Boolean})">
+        <member name="M:Core.Utilities.IAssemblyScanner.GetApplicationTypesWithAttribute``1">
             <summary>
             Scans all Core assemblies and returns a collection of types that utilize a given attribute type and match the pedicate argument
             </summary>
             <typeparam name="TAttribute">The attribute type to search all class in the assemblies for</typeparam>
-            <param name="predicate">The condition of the types to match in order to include them in the return collection</param>
+            <returns>All Core types that utilize the given attribute type and match the pedicate argument</returns>
+        </member>
+        <member name="M:Core.Utilities.IAssemblyScanner.GetApplicationTypesWithAttribute``1(System.Func{``0,System.Boolean})">
+            <summary>
+            Scans all Core assemblies and returns a collection of types that utilize a given attribute type and match the pedicate argument
+            </summary>
+            <typeparam name="TAttribute">The attribute type to search all class in the assemblies for</typeparam>
+            <param name="predicate">Optional; the condition of the types to match in order to include them in the return collection</param>
             <returns>All Core types that utilize the given attribute type and match the pedicate argument</returns>
         </member>
         <member name="T:Core.Utilities.IGlobalHelper">
