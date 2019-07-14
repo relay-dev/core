@@ -23,11 +23,17 @@ A bare-bones, plugin model application framework for .NET Core
 
 <br />
 
+### Production Deployment
+
+https://www.nuget.org/packages/Relay.Core
+
+<br />
+
 <div id="installation"></div>
 
 ### Installation
 
-Here's how you can install the Core [NuGet Package](https://www.nuget.org/packages/Relay.Core):
+Here's how you can install the Core NuGet Package:
 
 <br />
 
