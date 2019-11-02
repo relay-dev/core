@@ -606,6 +606,13 @@
             Creates <see cref="T:Core.Data.IDatabase"/> instances, using the default (when no name is specified) or the database instance by name
             </summary>
         </member>
+        <member name="M:Core.Data.IDatabaseFactory.Create(System.String)">
+            <summary>
+            Creates a new IDatabase instance
+            </summary>
+            <param name="connectionName">The name of the connection string in the IConnectionStringProvider</param>
+            <returns>A new IDatabase instance</returns>
+        </member>
         <member name="T:Core.Data.IDbContext">
             <summary>
             A generic abstraction of a database context
