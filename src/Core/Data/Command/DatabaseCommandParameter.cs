@@ -18,6 +18,11 @@ namespace Core.Data
         public object Value { get; set; }
 
         /// <summary>
+        /// The name of the parameter type that should be passed as part of this Command
+        /// </summary>
+        public string TypeName { get; set; }
+
+        /// <summary>
         /// The direction of the parameter (Input, Output, InputOutput or Return)
         /// </summary>
         public ParameterDirection Direction { get; set; }
