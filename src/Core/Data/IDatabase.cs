@@ -42,6 +42,14 @@ namespace Core.Data
         DataTable ExecuteStoredProcedure(string storedProcedureName, List<DatabaseCommandParameter> databaseParameters = null);
 
         /// <summary>
+        /// Executes a stored procedure against the database this <see cref="IDatabase"/> is connected to
+        /// </summary>
+        /// <param name="storedProcedureName">The name of the stored procedure to be executed</param>
+        /// <param name="databaseParameters">Optional; if there are parameter placeholders in the SQL string, the parameter values should be specified here</param>
+        /// <returns>The result of the stored procedure</returns>
+        DataTable ExecuteStoredProcedure(string storedProcedureName, ref List<DatabaseCommandParameter> databaseParameters);
+
+        /// <summary>
         /// Inserts a set of records from a <see cref="DataTable"/> into a database table in a single transaction
         /// </summary>
         /// <param name="tableName">The name of the table to insert into</param>
