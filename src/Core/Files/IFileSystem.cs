@@ -1,4 +1,4 @@
-﻿namespace Core.IO
+﻿namespace Core.Files
 {
     /// <summary>
     /// A generic abstraction of the File system
