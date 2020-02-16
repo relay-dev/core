@@ -5,7 +5,7 @@ namespace Core.Data.Entity
     /// <summary>
     /// A generic representation of an object that represents a record
     /// </summary>
-    public class Entity : ReadOnlyEntity, IEntity
+    public class AuditableEntity : ReadOnlyEntity, IAuditableEntity
     {
         /// <summary>
         /// The person, process or application that modified the object

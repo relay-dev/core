@@ -5,13 +5,8 @@ namespace Core.Data.Entity
     /// <summary>
     /// A generic representation of an object that represents a readonly record
     /// </summary>
-    public class ReadOnlyEntity : IReadOnlyEntity
+    public class ReadOnlyEntity : IReadEntityOnly
     {
-        /// <summary>
-        /// The ID of the object
-        /// </summary>
-        public long ID { get; set; }
-
         /// <summary>
         /// The person, process or application that created the object
         /// </summary>
