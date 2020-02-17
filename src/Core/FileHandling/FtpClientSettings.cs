@@ -1,4 +1,4 @@
-﻿namespace Core.Files
+﻿namespace Core.FileHandling
 {
     /// <summary>
     /// Settings used to connect to an FTP drive

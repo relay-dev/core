@@ -1,4 +1,4 @@
-﻿namespace Core.Files
+﻿namespace Core.FileHandling
 {
     /// <summary>
     /// Creates <see cref="IFtpClient"/> instances, using the default (when no name is specified) or the database instance by name

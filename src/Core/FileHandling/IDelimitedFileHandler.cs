@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Core.Files
+namespace Core.FileHandling
 {
     /// <summary>
     /// A generic abstraction of a handler for delimited files

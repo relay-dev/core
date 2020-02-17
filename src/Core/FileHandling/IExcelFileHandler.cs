@@ -1,12 +1,12 @@
 ﻿using System.Data;
 using System.IO;
 
-namespace Core.Files
+namespace Core.FileHandling
 {
     /// <summary>
     /// A generic abstraction of a handler for Excel files
     /// </summary>
-    public interface IExcelHandler
+    public interface IExcelFileHandler
     {
         /// <summary>
         /// Creates an Excel workbook using a DataTable, and returns it as a stream
