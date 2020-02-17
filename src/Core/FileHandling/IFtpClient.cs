@@ -65,8 +65,8 @@ namespace Core.FileHandling
         /// Renames a file on the remote taget
         /// </summary>
         /// <param name="currentFilePath">The remote file path, including the file name</param>
-        /// <param name="currentFilePath">The new file path, including the file name</param>
-        void Rename(string currentFilePath, string currentFilePath);
+        /// <param name="newFilePath">The new file path, including the file name</param>
+        void Rename(string currentFilePath, string newFilePath);
 
         /// <summary>
         /// Uploads a file to the remote target
