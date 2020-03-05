@@ -10,7 +10,7 @@ namespace Core.Communication.Smtp
         /// <summary>
         /// Sends an email according to the properties set in the MailMessage object
         /// </summary>
-        /// <param name="message">The email to send</param>
-        void Send(MailMessage message);
+        /// <param name="mailMessage">The email to send</param>
+        void Send(MailMessage mailMessage);
     }
 }
