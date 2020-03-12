@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace Core.Data.Entity
+namespace Core.Framework
 {
     /// <summary>
     /// A generic representation of an object that represents a record
     /// </summary>
-    public class AuditableEntity : ReadOnlyEntity, IAuditableEntity
+    public class Auditable : ReadOnly, IAuditable
     {
         /// <summary>
         /// The person, process or application that modified the object

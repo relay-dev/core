@@ -1,4 +1,6 @@
-﻿namespace Core.Framework.Descriptor
+﻿using Core.Framework.Descriptor;
+
+namespace Core.Framework
 {
     /// <summary>
     /// Indicates this class has properties used to capture the artifacts around the creation and modification of the object

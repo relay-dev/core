@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace Core.Data.Entity
+namespace Core.Framework
 {
     /// <summary>
     /// A generic representation of an object that represents a readonly record
     /// </summary>
-    public class ReadOnlyEntity : IReadEntityOnly
+    public class ReadOnly : IReadOnly
     {
         /// <summary>
         /// The person, process or application that created the object

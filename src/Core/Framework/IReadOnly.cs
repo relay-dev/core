@@ -1,9 +1,9 @@
 ﻿using Core.Framework.Descriptor;
 
-namespace Core.Data.Entity
+namespace Core.Framework
 {
     /// <summary>
     /// A generic representation of an object that represents a readonly record
     /// </summary>
-    public interface IReadEntityOnly : IHaveCreatedFields { }
+    public interface IReadOnly : IHaveCreatedFields { }
 }

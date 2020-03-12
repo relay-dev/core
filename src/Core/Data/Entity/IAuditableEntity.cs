@@ -1,9 +1,0 @@
-﻿using Core.Framework.Descriptor;
-
-namespace Core.Data.Entity
-{
-    /// <summary>
-    /// A generic representation of an object that represents a record
-    /// </summary>
-    public interface IAuditableEntity : IAuditable { }
-}

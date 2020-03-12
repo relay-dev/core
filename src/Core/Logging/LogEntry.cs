@@ -1,4 +1,4 @@
-﻿using Core.Data.Entity;
+﻿using Core.Framework;
 using System;
 
 namespace Core.Logging
@@ -6,7 +6,7 @@ namespace Core.Logging
     /// <summary>
     /// A generic representation of an entry in a log
     /// </summary>
-    public class LogEntry : ReadOnlyEntity
+    public class LogEntry : ReadOnly
     {
         /// <summary>
         /// The unique identifier for this instance
