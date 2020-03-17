@@ -6,15 +6,25 @@ namespace Core.Caching
     /// A generic representation of an entry in a cache
     /// </summary>
     /// <typeparam name="TToCache">The type of object to cache</typeparam>
-    internal class CacheEntry<TToCache>
+    public class CacheEntry<TToCache>
     {
         /// <summary>
         /// Constructor
         /// </summary>
+        /// <param name="key"></param>
         /// <param name="value"></param>
-        public CacheEntry(TToCache value)
+        public CacheEntry(string key, TToCache value)
         {
+            if (string.IsNullOrEmpty(key))
+                throw new ArgumentException("key cannot be null", "key");
+
+            if (value == null)
+                throw new ArgumentException("value cannot be null", "value");
+
+            Key = key;
             Value = value;
+            IsValid = true;
+            TypeName = value.GetType().FullName;
         }
 
         /// <summary>
@@ -28,15 +38,18 @@ namespace Core.Caching
         public TToCache Value { get; }
 
         /// <summary>
-        /// The Type of the object in the Value field
+        /// The name of the type of the object in the Value field
         /// </summary>
-        public Type Type { get; }
+        public string TypeName { get; }
 
         /// <summary>
         /// Returns <c>true</c> if the cache entry has not expired; otherwise, <c>false</c>
         /// </summary>
         public bool IsValid { get; private set; }
 
+        /// <summary>
+        /// Invalidates this cache entry
+        /// </summary>
         public void Invalidate()
         {
             IsValid = false;

@@ -24,7 +24,7 @@ namespace Core.Exceptions
         /// <param name="message">A brief description of what the <see cref="LogEntry"/> is. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readble descriptive note of what happened. There are other classes for providing more structure to log entries for the sake of searching and grouping</param>
         public CoreException(string message) : base(message)
         {
-            ErrorCode = Exceptions.ErrorCode.CORE;
+            ErrorCode = Exceptions.ErrorCode.SYST;
             LogLevel = LogLevel.Error;
         }
 
@@ -46,7 +46,7 @@ namespace Core.Exceptions
         /// <param name="message">A brief description of what the <see cref="LogEntry"/> is. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readble descriptive note of what happened. There are other classes for providing more structure to log entries for the sake of searching and grouping</param>
         public CoreException(Exception innerException, string message) : base(message, innerException)
         {
-            ErrorCode = Exceptions.ErrorCode.CORE;
+            ErrorCode = Exceptions.ErrorCode.SYST;
             LogLevel = LogLevel.Error;
         }
 

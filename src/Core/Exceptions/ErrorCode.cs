@@ -6,78 +6,58 @@
     public static class ErrorCode
     {
         /// <summary>
-        /// None
+        /// Unknown
         /// </summary>
-        public const string NONE = "NONE";
+        public static string UNKN = "UNKN";
 
         /// <summary>
-        /// System Error
+        /// System
         /// </summary>
-        public const string SYST = "SYST";
+        public static string SYST = "SYST";
 
         /// <summary>
-        /// Core Error
+        /// BadRequest
         /// </summary>
-        public const string CORE = "CORE";
+        public static string BADR = "BADR";
 
         /// <summary>
-        /// Database Error
+        /// Unauthorized
         /// </summary>
-        public const string DTBS = "DTBS";
+        public static string AUTH = "AUTH";
 
         /// <summary>
-        /// Application Error
+        /// Forbidden
         /// </summary>
-        public const string APPL = "APPL";
+        public static string FRBD = "FRBD";
 
         /// <summary>
-        /// Service Error
+        /// NotFound
         /// </summary>
-        public const string SRVC = "SRVC";
+        public static string NTFD = "NTFD";
 
         /// <summary>
-        /// Authenication Failure
+        /// InternalServerError
         /// </summary>
-        public const string AUTH = "AUTH";
+        public static string EROR = "EROR";
 
         /// <summary>
-        /// Null object
+        /// NotImplemented
         /// </summary>
-        public const string NULL = "NULL";
+        public static string NTIM = "NTIM";
 
         /// <summary>
-        /// Invalid
+        /// BadGateway
         /// </summary>
-        public const string INVL = "INVL";
+        public static string BDGW = "BDGW";
 
         /// <summary>
-        /// Invalid State of Application
+        /// ServiceUnavailable
         /// </summary>
-        public const string INVA = "INVA";
+        public static string SVCU = "SVCU";
 
         /// <summary>
-        /// Invalid State of Data
+        /// GatewayTimeout
         /// </summary>
-        public const string INVD = "INVD";
-
-        /// <summary>
-        /// No Data
-        /// </summary>
-        public const string NODA = "NODA";
-
-        /// <summary>
-        /// Already Exists
-        /// </summary>
-        public const string EXIS = "EXIS";
-
-        /// <summary>
-        /// Could Not Save
-        /// </summary>
-        public const string CNSV = "CNSV";
-
-        /// <summary>
-        /// Web Site
-        /// </summary>
-        public const string WBST = "WBST";
+        public static string TIME = "TIME";
     }
 }
