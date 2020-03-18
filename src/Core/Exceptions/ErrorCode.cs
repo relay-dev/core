@@ -11,9 +11,19 @@
         public static string UNKN = "UNKN";
 
         /// <summary>
+        /// Core
+        /// </summary>
+        public static string CORE = "CORE";
+
+        /// <summary>
         /// System
         /// </summary>
         public static string SYST = "SYST";
+
+        /// <summary>
+        /// Invalid
+        /// </summary>
+        public static string INVA = "INVA";
 
         /// <summary>
         /// BadRequest

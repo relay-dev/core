@@ -28,5 +28,12 @@ namespace Core.Caching
         /// Removes all cache entries, effectively clearing out the cache completely
         /// </summary>
         void RemoveAll();
+
+        /// <summary>
+        /// Formats the cache key using a consistent delimiter
+        /// </summary>
+        /// <param name="args">Objects used as strings to format the key in a predictable way</param>
+        /// <returns>The formatted string, ready to be used as a cache key</returns>
+        string FormatKey(params object[] args);
     }
 }
