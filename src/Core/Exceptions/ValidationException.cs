@@ -1,4 +1,5 @@
-﻿using Core.Validation;
+﻿using Core.Logging;
+using Core.Validation;
 
 namespace Core.Exceptions
 {
@@ -38,6 +39,7 @@ namespace Core.Exceptions
         public ValidationException(ValidationFailureResult validationFailureResult)
             : base("Input validation failed")
         {
+            ErrorCode = Exceptions.ErrorCode.BADR;
             ValidationFailureResult = validationFailureResult;
         }
     }
