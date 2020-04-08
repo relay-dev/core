@@ -10,6 +10,6 @@
         /// </summary>
         /// <param name="connectionName">The name of the connection string in the IConnectionStringProvider</param>
         /// <returns>A new IDatabase instance</returns>
-        IDatabase Create(string connectionName);
+        IDatabase Create(string connectionName = null);
     }
 }

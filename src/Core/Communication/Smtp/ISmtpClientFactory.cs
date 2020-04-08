@@ -10,6 +10,6 @@
         /// </summary>
         /// <param name="connectionName">The name of the connection string in the IConnectionStringProvider</param>
         /// <returns>A new ISmtpClient instance</returns>
-        ISmtpClient Create(string connectionName);
+        ISmtpClient Create(string connectionName = null);
     }
 }
