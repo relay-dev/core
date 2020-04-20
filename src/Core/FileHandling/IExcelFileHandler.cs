@@ -16,6 +16,14 @@ namespace Core.FileHandling
         /// <returns></returns>
         byte[] CreateWorkbookFromDataTable(DataTable dataTable, string sheetName = "Sheet1");
 
+
+        /// <summary>
+        /// Creates an Excel workbook using a collection of DataTables, and returns it as a stream
+        /// </summary>
+        /// <param name="dataTables">The DataTables to be used as a data source when creating the workbook</param>
+        /// <returns></returns>
+        byte[] CreateWorkbookFromDataTables(List<DataTable> dataTables);
+
         /// <summary>
         /// Connects to an Excel file stream and returns the contents of a specified tab as a DataTable
         /// </summary>
