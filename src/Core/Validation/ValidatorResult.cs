@@ -68,8 +68,6 @@ namespace Core.Validation
             return String.Join(Environment.NewLine, GetFormattedErrors());
         }
 
-        #region Private
-
         private List<string> GetFormattedErrors(bool includeTypeName = true)
         {
             if (IsValid)
@@ -101,7 +99,5 @@ namespace Core.Validation
                 return str;
             }
         }
-
-        #endregion
     }
 }

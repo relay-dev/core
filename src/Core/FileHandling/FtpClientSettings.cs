@@ -69,8 +69,6 @@ namespace Core.FileHandling
         /// </summary>
         public bool IsSftp { get; }
 
-        #region Private
-
         private string TryGet(Dictionary<string, string> dictionary, string key)
         {
             if (dictionary.ContainsKey(key))
@@ -80,7 +78,5 @@ namespace Core.FileHandling
 
             return null;
         }
-
-        #endregion
     }
 }

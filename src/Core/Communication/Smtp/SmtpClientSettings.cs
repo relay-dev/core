@@ -61,8 +61,6 @@ namespace Core.Communication.Smtp
         /// </summary>
         public string Password { get; }
 
-        #region Private
-
         private string TryGet(Dictionary<string, string> dictionary, string key)
         {
             if (dictionary.ContainsKey(key))
@@ -72,7 +70,5 @@ namespace Core.Communication.Smtp
 
             return null;
         }
-
-        #endregion
     }
 }
