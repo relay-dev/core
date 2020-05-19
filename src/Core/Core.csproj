@@ -26,4 +26,8 @@
     <DocumentationFile>C:\_src\relay\core\src\Core\comments.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\Pager\" />
+  </ItemGroup>
+
 </Project>
