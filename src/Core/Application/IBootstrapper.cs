@@ -18,6 +18,19 @@
     /// <summary>
     /// A generic abstraction of an application bootstrapper
     /// </summary>
+    /// <typeparam name="TOutput">The output of the startup process</typeparam>
+    public interface IBootstrapper<TOutput>
+    {
+        /// <summary>
+        /// Called by the Core application framework during application startup
+        /// </summary>
+        /// <returns>The result of the startup process</returns>
+        TOutput Startup();
+    }
+
+    /// <summary>
+    /// A generic abstraction of an application bootstrapper
+    /// </summary>
     public interface IBootstrapper
     {
         /// <summary>
