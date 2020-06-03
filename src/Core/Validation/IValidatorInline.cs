@@ -51,7 +51,7 @@ namespace Core.Validation
         IValidatorInline NotGreaterThanOrEqual<T>(Expression<Func<T>> expression, T value) where T : IComparable;
 
         /// <summary>
-        /// Validate against an invalidate ID
+        /// Validate against an invalidate Id
         /// </summary>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
         /// <returns>This validator, for the sake of a fluent API</returns>

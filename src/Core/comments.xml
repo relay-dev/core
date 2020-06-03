@@ -214,7 +214,7 @@
             Constructor
             </summary>
         </member>
-        <member name="P:Core.Application.ApplicationContext.ApplicationID">
+        <member name="P:Core.Application.ApplicationContext.ApplicationId">
             <summary>
             The unique Id of the application
             </summary>
@@ -524,9 +524,9 @@
             A generic representation of an object that represents a readonly record
             </summary>
         </member>
-        <member name="P:Core.Data.Entity.ReadOnlyEntity.ID">
+        <member name="P:Core.Data.Entity.ReadOnlyEntity.Id">
             <summary>
-            The ID of the object
+            The Id of the object
             </summary>
         </member>
         <member name="P:Core.Data.Entity.ReadOnlyEntity.CreatedBy">
@@ -544,29 +544,29 @@
             Creates <see cref="T:Core.Data.IRepositoryFactory"/> for Commands
             </summary>
         </member>
-        <member name="T:Core.Data.IDatabase">
+        <member name="T:Core.Data.Idatabase">
             <summary>
             A generic abstraction of a database
             </summary>
         </member>
-        <member name="M:Core.Data.IDatabase.Execute(System.String,System.Collections.Generic.List{Core.Data.DatabaseCommandParameter})">
+        <member name="M:Core.Data.Idatabase.Execute(System.String,System.Collections.Generic.List{Core.Data.DatabaseCommandParameter})">
             <summary>
-            Executes a SQL string against the database this <see cref="T:Core.Data.IDatabase"/> is connected to
+            Executes a SQL string against the database this <see cref="T:Core.Data.Idatabase"/> is connected to
             </summary>
             <param name="sql">The SQL to be executed</param>
             <param name="databaseParameters">Optional; if there are parameter placeholders in the SQL string, the parameter values should be specified here</param>
             <returns>The result of the SQL string</returns>
         </member>
-        <member name="M:Core.Data.IDatabase.ExecuteScalar``1(System.String,System.Collections.Generic.List{Core.Data.DatabaseCommandParameter})">
+        <member name="M:Core.Data.Idatabase.ExecuteScalar``1(System.String,System.Collections.Generic.List{Core.Data.DatabaseCommandParameter})">
             <summary>
-            Executes a SQL string against the database this <see cref="T:Core.Data.IDatabase"/> is connected to which returns a single value
+            Executes a SQL string against the database this <see cref="T:Core.Data.Idatabase"/> is connected to which returns a single value
             </summary>
             <typeparam name="TResult">The type to convert the result to</typeparam>
             <param name="sql">The SQL to be executed</param>
             <param name="databaseParameters">Optional; if there are parameter placeholders in the SQL string, the parameter values should be specified here</param>
             <returns>The result of the SQL string</returns>
         </member>
-        <member name="M:Core.Data.IDatabase.ExecuteNonQuery(System.String,System.Collections.Generic.List{Core.Data.DatabaseCommandParameter})">
+        <member name="M:Core.Data.Idatabase.ExecuteNonQuery(System.String,System.Collections.Generic.List{Core.Data.DatabaseCommandParameter})">
             <summary>
             Executes a SQL statement which is either an Insert, Update or Delete
             </summary>
@@ -574,15 +574,15 @@
             <param name="databaseParameters">Optional; if there are parameter placeholders in the SQL string, the parameter values should be specified here</param>
             <returns>The count of rows affected</returns>
         </member>
-        <member name="M:Core.Data.IDatabase.ExecuteStoredProcedure(System.String,System.Collections.Generic.List{Core.Data.DatabaseCommandParameter})">
+        <member name="M:Core.Data.Idatabase.ExecuteStoredProcedure(System.String,System.Collections.Generic.List{Core.Data.DatabaseCommandParameter})">
             <summary>
-            Executes a stored procedure against the database this <see cref="T:Core.Data.IDatabase"/> is connected to
+            Executes a stored procedure against the database this <see cref="T:Core.Data.Idatabase"/> is connected to
             </summary>
             <param name="storedProcedureName">The name of the stored procedure to be executed</param>
             <param name="databaseParameters">Optional; if there are parameter placeholders in the SQL string, the parameter values should be specified here</param>
             <returns>The result of the stored procedure</returns>
         </member>
-        <member name="M:Core.Data.IDatabase.BulkInsert(System.String,System.Data.DataTable,System.Collections.Generic.Dictionary{System.String,System.String})">
+        <member name="M:Core.Data.Idatabase.BulkInsert(System.String,System.Data.DataTable,System.Collections.Generic.Dictionary{System.String,System.String})">
             <summary>
             Inserts a set of records from a <see cref="T:System.Data.DataTable"/> into a database table in a single transaction
             </summary>
@@ -590,53 +590,53 @@
             <param name="dataTable">The dataTable that contains the data to be inserted</param>
             <param name="columnMappings">Optional; maps the dataTable column names to the database table column names</param>
         </member>
-        <member name="M:Core.Data.IDatabase.GetServerName">
+        <member name="M:Core.Data.Idatabase.GetServerName">
             <summary>
-            Gets the server name this <see cref="T:Core.Data.IDatabase"/> instance is connected to
+            Gets the server name this <see cref="T:Core.Data.Idatabase"/> instance is connected to
             </summary>
             <returns>The server name</returns>
         </member>
-        <member name="P:Core.Data.IDatabase.CommandTimeoutInSeconds">
+        <member name="P:Core.Data.Idatabase.CommandTimeoutInSeconds">
             <summary>
             The database command timeout in seconds
             </summary>
         </member>
-        <member name="T:Core.Data.IDatabaseFactory">
+        <member name="T:Core.Data.IdatabaseFactory">
             <summary>
-            Creates <see cref="T:Core.Data.IDatabase"/> instances, using the default (when no name is specified) or the database instance by name
+            Creates <see cref="T:Core.Data.Idatabase"/> instances, using the default (when no name is specified) or the database instance by name
             </summary>
         </member>
-        <member name="M:Core.Data.IDatabaseFactory.Create(System.String)">
+        <member name="M:Core.Data.IdatabaseFactory.Create(System.String)">
             <summary>
-            Creates a new IDatabase instance
+            Creates a new Idatabase instance
             </summary>
             <param name="connectionName">The name of the connection string in the IConnectionStringProvider</param>
-            <returns>A new IDatabase instance</returns>
+            <returns>A new Idatabase instance</returns>
         </member>
-        <member name="T:Core.Data.IDbContext">
+        <member name="T:Core.Data.IdbContext">
             <summary>
             A generic abstraction of a database context
             </summary>
         </member>
-        <member name="M:Core.Data.IDbContext.Set``1">
+        <member name="M:Core.Data.IdbContext.Set``1">
             <summary>
             Returns a reference to a set of entities from the data source
             </summary>
             <typeparam name="TEntity">The type of entities to reference from the data source</typeparam>
             <returns>A reference to a set of entities from the data source</returns>
         </member>
-        <member name="P:Core.Data.IDbContext.Tracker">
+        <member name="P:Core.Data.IdbContext.Tracker">
             <summary>
             A mechanism for tracking entities to be added or modified in the data source
             </summary>
         </member>
-        <member name="M:Core.Data.IDbContext.SaveChanges">
+        <member name="M:Core.Data.IdbContext.SaveChanges">
             <summary>
             Persists all pending changes to the data source
             </summary>
             <returns>Count of rows affected</returns>
         </member>
-        <member name="M:Core.Data.IDbContext.SaveChangesAsync">
+        <member name="M:Core.Data.IdbContext.SaveChangesAsync">
             <summary>
             Persists all pending changes to the data source asyncronously
             </summary>
@@ -924,14 +924,14 @@
             Indicates this class has properties used to capture the artifacts around the creation and modification of the object
             </summary>
         </member>
-        <member name="T:Core.Framework.Descriptor.IHaveAnID">
+        <member name="T:Core.Framework.Descriptor.IHaveAnId">
             <summary>
             Indicates this class has a property called Id of type long that has a public setter and getter. Used by polymorphic methods that need to check for a non-zero Id to know whether to insert or update
             </summary>
         </member>
-        <member name="P:Core.Framework.Descriptor.IHaveAnID.ID">
+        <member name="P:Core.Framework.Descriptor.IHaveAnId.Id">
             <summary>
-            The ID of the object
+            The Id of the object
             </summary>
         </member>
         <member name="T:Core.Framework.Descriptor.IHaveCreatedFields">
@@ -1301,27 +1301,27 @@
             Creates the item
             </summary>
             <param name="item">The item to create</param>
-            <returns>The ID of the item created</returns>
+            <returns>The Id of the item created</returns>
         </member>
         <member name="M:Core.Framework.Services.ICrudService`1.CreateAsync(`0)">
             <summary>
             Creates the item asyncronously
             </summary>
             <param name="item">The item to create</param>
-            <returns>The ID of the item created</returns>
+            <returns>The Id of the item created</returns>
         </member>
-        <member name="M:Core.Framework.Services.ICrudService`1.GetByID(System.Int64)">
+        <member name="M:Core.Framework.Services.ICrudService`1.GetById(System.Int64)">
             <summary>
-            Gets the item by ID
+            Gets the item by Id
             </summary>
-            <param name="id">The ID of the item to return</param>
+            <param name="id">The Id of the item to return</param>
             <returns>The item if found; otherwise, null</returns>
         </member>
-        <member name="M:Core.Framework.Services.ICrudService`1.GetByIDAsync(System.Int64)">
+        <member name="M:Core.Framework.Services.ICrudService`1.GetByIdAsync(System.Int64)">
             <summary>
-            Gets the item by ID asyncronously
+            Gets the item by Id asyncronously
             </summary>
-            <param name="id">The ID of the item to return</param>
+            <param name="id">The Id of the item to return</param>
             <returns>The item if found; otherwise, null</returns>
         </member>
         <member name="M:Core.Framework.Services.ICrudService`1.Update(`0)">
@@ -1341,13 +1341,13 @@
             <summary>
             Deletes the item
             </summary>
-            <param name="id">The ID of the item to delete</param>
+            <param name="id">The Id of the item to delete</param>
         </member>
         <member name="M:Core.Framework.Services.ICrudService`1.DeleteAsync(System.Int64)">
             <summary>
             Deletes the item asyncronously
             </summary>
-            <param name="id">The ID of the item to delete</param>
+            <param name="id">The Id of the item to delete</param>
             <returns>The task to execute</returns>
         </member>
         <member name="T:Core.Framework.Services.ILookupService`1">
@@ -1744,33 +1744,33 @@
             The type of file
             </summary>
         </member>
-        <member name="T:Core.IO.IDirectorySystem">
+        <member name="T:Core.IO.IdirectorySystem">
             <summary>
             A generic abstraction of the Directory system
             </summary>
         </member>
-        <member name="M:Core.IO.IDirectorySystem.CreateDirectory(System.IO.DirectoryInfo)">
+        <member name="M:Core.IO.IdirectorySystem.CreateDirectory(System.IO.DirectoryInfo)">
             <summary>
             Creates a new Directory
             </summary>
             <param name="directoryInfo">DirectoryInfo for the directory of interest</param>
             <returns>Returns <c>true</c> if the Directory was created successfully; otherwise, <c>false</c></returns>
         </member>
-        <member name="M:Core.IO.IDirectorySystem.DeleteDirectory(System.IO.DirectoryInfo)">
+        <member name="M:Core.IO.IdirectorySystem.DeleteDirectory(System.IO.DirectoryInfo)">
             <summary>
             Deletes an existing Directory
             </summary>
             <param name="directoryInfo">DirectoryInfo for the directory of interest</param>
             <returns>Returns <c>true</c> if the Directory was created successfully; otherwise, <c>false</c></returns>
         </member>
-        <member name="M:Core.IO.IDirectorySystem.GetUniqueFileInfo(System.IO.FileInfo)">
+        <member name="M:Core.IO.IdirectorySystem.GetUniqueFileInfo(System.IO.FileInfo)">
             <summary>
             Finds a unique filename for the directory you wish to store a file. This guarentees you'll be able to save a file, using a certain naming convention, in any directory you choose, regarless of whether or not a file by that same name already exists in that directory (useful on retry scenarios where files are being created)
             </summary>
             <param name="fileInfo">Details about the file to generate a unique name for, such as the directory, and potential name for the file</param>
             <returns>Returns FileInfo about the unique file to avoid ambiguity about the nature of a simpiler return type, such as a string</returns>
         </member>
-        <member name="M:Core.IO.IDirectorySystem.IsDirectoryExists(System.IO.DirectoryInfo)">
+        <member name="M:Core.IO.IdirectorySystem.IsDirectoryExists(System.IO.DirectoryInfo)">
             <summary>
             Checks to see if a Dictory already exists
             </summary>
@@ -1866,12 +1866,12 @@
             A generic representation of an entry in a log
             </summary>
         </member>
-        <member name="P:Core.Logging.LogEntry.GUID">
+        <member name="P:Core.Logging.LogEntry.GUId">
             <summary>
             The unique identifier for this instance
             </summary>
         </member>
-        <member name="P:Core.Logging.LogEntry.ProcessGUID">
+        <member name="P:Core.Logging.LogEntry.ProcessGUId">
             <summary>
             The unique identifier for a given process which can be used to tie all LogEntries for a single Process
             </summary>
@@ -1933,7 +1933,7 @@
         </member>
         <member name="P:Core.Logging.LogEntry.ProcessStep">
             <summary>
-            Used in conjunction with the ProcessGUID, this can be used to tag which step in the overall process generated this LogEntry
+            Used in conjunction with the ProcessGUId, this can be used to tag which step in the overall process generated this LogEntry
             </summary>
         </member>
         <member name="P:Core.Logging.LogEntry.GenericIdentifier1">
@@ -2075,7 +2075,7 @@
             <param name="connectionName">The name of the connection string in the configuration</param>
             <returns>The connection string</returns>
         </member>
-        <member name="T:Core.Providers.IDateTimeProvider">
+        <member name="T:Core.Providers.IdateTimeProvider">
             <summary>
             Provides Commands with the date and time
             </summary>
@@ -2100,7 +2100,7 @@
         </member>
         <member name="T:Core.Providers.IRandomGuidProvider">
             <summary>
-            Provides Commands with a random GUID
+            Provides Commands with a random GUId
             </summary>
         </member>
         <member name="T:Core.Providers.IRandomLongProvider">
@@ -2504,9 +2504,9 @@
             <param name="value">The object or property to validate against</param>
             <returns>This validator, for the sake of a fluent API</returns>
         </member>
-        <member name="M:Core.Validation.IValidatorInline.NotInvalidID(System.Linq.Expressions.Expression{System.Func{System.Int64}})">
+        <member name="M:Core.Validation.IValidatorInline.NotInvalidId(System.Linq.Expressions.Expression{System.Func{System.Int64}})">
             <summary>
-            Validate against an invalidate ID
+            Validate against an invalidate Id
             </summary>
             <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
             <returns>This validator, for the sake of a fluent API</returns>

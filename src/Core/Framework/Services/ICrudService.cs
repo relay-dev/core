@@ -12,27 +12,27 @@ namespace Core.Framework.Services
         /// Creates the item
         /// </summary>
         /// <param name="item">The item to create</param>
-        /// <returns>The ID of the item created</returns>
+        /// <returns>The Id of the item created</returns>
         long Create(TItem item);
 
         /// <summary>
         /// Creates the item asyncronously
         /// </summary>
         /// <param name="item">The item to create</param>
-        /// <returns>The ID of the item created</returns>
+        /// <returns>The Id of the item created</returns>
         Task<long> CreateAsync(TItem item);
 
         /// <summary>
-        /// Gets the item by ID
+        /// Gets the item by Id
         /// </summary>
-        /// <param name="id">The ID of the item to return</param>
+        /// <param name="id">The Id of the item to return</param>
         /// <returns>The item if found; otherwise, null</returns>
         TItem GetByID(long id);
 
         /// <summary>
-        /// Gets the item by ID asyncronously
+        /// Gets the item by Id asyncronously
         /// </summary>
-        /// <param name="id">The ID of the item to return</param>
+        /// <param name="id">The Id of the item to return</param>
         /// <returns>The item if found; otherwise, null</returns>
         Task<TItem> GetByIDAsync(long id);
 
@@ -52,13 +52,13 @@ namespace Core.Framework.Services
         /// <summary>
         /// Deletes the item
         /// </summary>
-        /// <param name="id">The ID of the item to delete</param>
+        /// <param name="id">The Id of the item to delete</param>
         void Delete(long id);
 
         /// <summary>
         /// Deletes the item asyncronously
         /// </summary>
-        /// <param name="id">The ID of the item to delete</param>
+        /// <param name="id">The Id of the item to delete</param>
         /// <returns>The task to execute</returns>
         Task DeleteAsync(long id);
     }
