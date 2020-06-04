@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 
 namespace Core.Application
 {
@@ -10,6 +11,6 @@ namespace Core.Application
         /// <summary>
         /// Invokes the process
         /// </summary>
-        Task ProcessAsync();
+        Task ProcessAsync(CancellationToken cancellationToken = default);
     }
 }
