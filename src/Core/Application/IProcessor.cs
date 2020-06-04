@@ -1,4 +1,6 @@
-﻿namespace Core.Application
+﻿using System.Threading.Tasks;
+
+namespace Core.Application
 {
     /// <summary>
     /// Represents a simple class that runs a process
@@ -8,6 +10,6 @@
         /// <summary>
         /// Invokes the process
         /// </summary>
-        void Process();
+        Task ProcessAsync();
     }
 }
