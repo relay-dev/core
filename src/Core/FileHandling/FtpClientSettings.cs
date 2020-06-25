@@ -25,6 +25,8 @@ namespace Core.FileHandling
             Username = TryGet(connectionStringProperties, "Username");
             Password = TryGet(connectionStringProperties, "Password");
             IsSftp = Convert.ToBoolean(TryGet(connectionStringProperties, "IsSftp"));
+
+            ParseTimeout(connectionStringProperties);
         }
 
         /// <summary>
@@ -34,13 +36,15 @@ namespace Core.FileHandling
         /// <param name="port">The port of the FTP drive</param>
         /// <param name="username">The username for the credentials of the FTP drive</param>
         /// <param name="password">The password for the credentials of the FTP drive</param>
+        /// <param name="timeoutInSeconds">The duration of time an operation should wait before throwing a timeout exception</param>
         /// <param name="isSftp">Indicates is the FTP drive to connect to is SFTP</param>
-        public FtpClientSettings(string host, string port, string username, string password, bool isSftp)
+        public FtpClientSettings(string host, string port, string username, string password, int timeoutInSeconds, bool isSftp)
         {
             Host = host;
             Port = port;
             Username = username;
             Password = password;
+            TimeoutInSeconds = timeoutInSeconds;
             IsSftp = isSftp;
         }
 
@@ -65,6 +69,11 @@ namespace Core.FileHandling
         public string Password { get; }
 
         /// <summary>
+        /// The duration of time an operation should wait before throwing a timeout exception
+        /// </summary>
+        public int TimeoutInSeconds { get; set; }
+
+        /// <summary>
         /// Indicates is the FTP drive to connect to is SFTP
         /// </summary>
         public bool IsSftp { get; }
@@ -77,6 +86,19 @@ namespace Core.FileHandling
             }
 
             return null;
+        }
+
+        private void ParseTimeout(Dictionary<string, string> connectionStringProperties)
+        {
+            string timeoutStr = TryGet(connectionStringProperties, "TimeoutInSeconds");
+
+            if (!string.IsNullOrEmpty(timeoutStr))
+            {
+                if (!Int32.TryParse(timeoutStr, out int timeout))
+                {
+                    TimeoutInSeconds = timeout;
+                }
+            }
         }
     }
 }
