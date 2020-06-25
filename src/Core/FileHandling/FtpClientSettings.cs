@@ -38,7 +38,7 @@ namespace Core.FileHandling
         /// <param name="password">The password for the credentials of the FTP drive</param>
         /// <param name="timeoutInSeconds">The duration of time an operation should wait before throwing a timeout exception</param>
         /// <param name="isSftp">Indicates is the FTP drive to connect to is SFTP</param>
-        public FtpClientSettings(string host, string port, string username, string password, int timeoutInSeconds, bool isSftp)
+        public FtpClientSettings(string host, string port, string username, string password, int? timeoutInSeconds = null, bool isSftp = false)
         {
             Host = host;
             Port = port;
@@ -71,7 +71,7 @@ namespace Core.FileHandling
         /// <summary>
         /// The duration of time an operation should wait before throwing a timeout exception
         /// </summary>
-        public int TimeoutInSeconds { get; set; }
+        public int? TimeoutInSeconds { get; set; }
 
         /// <summary>
         /// Indicates is the FTP drive to connect to is SFTP
@@ -96,8 +96,10 @@ namespace Core.FileHandling
             {
                 if (!Int32.TryParse(timeoutStr, out int timeout))
                 {
-                    TimeoutInSeconds = timeout;
+                    throw new Exception($"Could not parse the FTP connection string as expected. TimeoutInSeconds must be an integer. Value found was '{timeoutStr}'");
                 }
+
+                TimeoutInSeconds = timeout;
             }
         }
     }
