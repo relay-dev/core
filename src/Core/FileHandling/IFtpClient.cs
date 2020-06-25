@@ -36,6 +36,13 @@ namespace Core.FileHandling
         string GetFileSize(string filePath);
 
         /// <summary>
+        /// Determines if a file exists on the FTP drive, by name
+        /// </summary>
+        /// <param name="filePath">The remote file path, including the file name</param>
+        /// <returns>Returns <c>true</c> if the file exists; otherwise false</returns>
+        bool IsFileExists(string filePath);
+
+        /// <summary>
         /// Lists all files in a remote directory
         /// </summary>
         /// <param name="directoryPath">The remote directory path</param>
