@@ -69,7 +69,7 @@ namespace Core.FileHandling
         void RemoveDirectory(string directoryPath);
 
         /// <summary>
-        /// Renames a file on the remote taget
+        /// Renames a file on the remote target
         /// </summary>
         /// <param name="currentFilePath">The remote file path, including the file name</param>
         /// <param name="newFilePath">The new file path, including the file name</param>

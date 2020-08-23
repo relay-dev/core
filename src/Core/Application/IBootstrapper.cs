@@ -5,7 +5,7 @@
     /// </summary>
     /// <typeparam name="TInput">The input to the startup process</typeparam>
     /// <typeparam name="TOutput">The output of the startup process</typeparam>
-    public interface IBootstrapper<TInput, TOutput>
+    public interface IBootstrapper<in TInput, out TOutput>
     {
         /// <summary>
         /// Called by the Core application framework during application startup
@@ -19,7 +19,7 @@
     /// A generic abstraction of an application bootstrapper
     /// </summary>
     /// <typeparam name="TOutput">The output of the startup process</typeparam>
-    public interface IBootstrapper<TOutput>
+    public interface IBootstrapper<out TOutput>
     {
         /// <summary>
         /// Called by the Core application framework during application startup

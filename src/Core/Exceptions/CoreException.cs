@@ -20,7 +20,7 @@ namespace Core.Exceptions
         /// <summary>
         /// Simple overload for providing a message as part of the exception
         /// </summary>
-        /// <param name="message">A brief description of what the LogEntry is. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readble descriptive note of what happened. There are other classes for providing more structure to log entries for the sake of searching and grouping</param>
+        /// <param name="message">A brief description of what the LogEntry is. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readable descriptive note of what happened. There are other classes for providing more structure to log entries for the sake of searching and grouping</param>
         public CoreException(string message) : base(message)
         {
             ErrorCode = Exceptions.ErrorCode.CORE;
@@ -31,7 +31,7 @@ namespace Core.Exceptions
         /// Simple overload for providing an <see cref="ErrorCode"/> as well as a message as part of the exception
         /// </summary>
         /// <param name="errorCode">The Error Code string to be logged; Error Codes can be found in Core.Constants.ErrorCode.* and are 4 character strings</param>
-        /// <param name="message">A brief description of the LogEntry. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readble descriptive note of what happened. There are other classes (i.e. LogEntry) for providing more structure to log entries for the sake of searching and grouping</param>
+        /// <param name="message">A brief description of the LogEntry. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readable descriptive note of what happened. There are other classes (i.e. LogEntry) for providing more structure to log entries for the sake of searching and grouping</param>
         public CoreException(string errorCode, string message) : base(message)
         {
             ErrorCode = errorCode;
@@ -42,7 +42,7 @@ namespace Core.Exceptions
         /// Simple overload for providing an inner exception as well as a message as part of the exception
         /// </summary>
         /// <param name="innerException">The inner exception being wrapped</param>
-        /// <param name="message">A brief description of what the LogEntry is. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readble descriptive note of what happened. There are other classes for providing more structure to log entries for the sake of searching and grouping</param>
+        /// <param name="message">A brief description of what the LogEntry is. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readable descriptive note of what happened. There are other classes for providing more structure to log entries for the sake of searching and grouping</param>
         public CoreException(Exception innerException, string message) : base(message, innerException)
         {
             ErrorCode = Exceptions.ErrorCode.CORE;
@@ -54,7 +54,7 @@ namespace Core.Exceptions
         /// </summary>
         /// <param name="innerException">The inner exception being wrapped</param>
         /// <param name="errorCode">The Error Code string to be logged; Error Codes can be found in Core.Constants.ErrorCode.* and are 4 character strings</param>
-        /// <param name="message">A brief description of what the LogEntry is. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readble descriptive note of what happened. There are other classes (i.e. LogEntry) for providing more structure to log entries for the sake of searching and grouping</param>
+        /// <param name="message">A brief description of what the LogEntry is. This is not meant to be formatted in a specific way and is not intended to be search on. It's a human-readable descriptive note of what happened. There are other classes (i.e. LogEntry) for providing more structure to log entries for the sake of searching and grouping</param>
         public CoreException(Exception innerException, string errorCode, string message) : base(message, innerException)
         {
             ErrorCode = errorCode;

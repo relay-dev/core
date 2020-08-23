@@ -94,7 +94,7 @@ namespace Core.FileHandling
 
             if (!string.IsNullOrEmpty(timeoutStr))
             {
-                if (!Int32.TryParse(timeoutStr, out int timeout))
+                if (!int.TryParse(timeoutStr, out int timeout))
                 {
                     throw new Exception($"Could not parse the FTP connection string as expected. TimeoutInSeconds must be an integer. Value found was '{timeoutStr}'");
                 }
