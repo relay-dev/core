@@ -38,7 +38,7 @@ namespace Core.IoC
         /// <summary>
         /// Registers the IoC container to handle a service as a factory
         /// </summary>
-        /// <typeparam name="TFactory">The tyype of factory to register</typeparam>
+        /// <typeparam name="TFactory">The type of factory to register</typeparam>
         /// <param name="ioCContainerSettings">Optional; will override the Settings property for this registration only</param>
         /// <returns>The instance of this IIoCContainer, to support a fluent API</returns>
         IIoCContainer RegisterFactory<TFactory>(IoCContainerSettings ioCContainerSettings = null) where TFactory : class;
@@ -47,7 +47,7 @@ namespace Core.IoC
         /// Resolves a generic service to a concrete implementation using the mapping specified by the given IoC container
         /// </summary>
         /// <typeparam name="TService">The generic service interface</typeparam>
-        /// <param name="registrationName">Optional; used when many implementiations are mapped to a single service type</param>
+        /// <param name="registrationName">Optional; used when many implementations are mapped to a single service type</param>
         /// <returns>An instance of the concrete implementation mapped to the generic service</returns>
         TService Resolve<TService>(string registrationName = null);
 

@@ -3,7 +3,7 @@
 namespace Core.Providers
 {
     /// <summary>
-    /// Provides Commands with keys, sych as encryption keys
+    /// Provides Commands with keys, such as encryption keys
     /// </summary>
     public interface IKeyProvider : IProvider<string>
     {

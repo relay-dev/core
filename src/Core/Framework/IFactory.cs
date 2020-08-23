@@ -4,21 +4,20 @@
     /// Factories create objects for use by Commands
     /// </summary>
     /// <typeparam name="TService">Type of object to be created</typeparam>
-    public interface IFactory<TService> where TService : class
+    public interface IFactory<out TService>
     {
         /// <summary>
         /// Creates the type requested
         /// </summary>
-        /// <typeparam name="TToCreate">Type of object to be returned</typeparam>
-        /// <returns>A new instance of an object of type TToCreate</returns>
-        TToCreate Create<TToCreate>() where TToCreate : class, TService;
+        /// <returns>A new instance of an object of type TService</returns>
+        TService Create();
 
         /// <summary>
         /// Creates the type requested
         /// </summary>
         /// <param name="name">Unique name of the instance to return (when name is null, the default instance will be used)</param>
         /// <returns>A new instance of an object of type TService</returns>
-        TService Create(string name = null);
+        TService Create(string name);
     }
 
     /// <summary>

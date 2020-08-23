@@ -15,7 +15,7 @@
     /// Represents a single unit of work that can be executed
     /// </summary>
     /// <typeparam name="TResult">Output type needed for the command</typeparam>
-    public interface ICommand<TResult>
+    public interface ICommand<out TResult>
     {
         /// <summary>
         /// Executes the command

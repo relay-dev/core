@@ -5,7 +5,7 @@ namespace Core.Data
     /// <summary>
     /// A generic abstraction of a repository of data capable of being paginated
     /// </summary>
-    /// <typeparam name="TEntity">The type of entites that belong to this repository</typeparam>
+    /// <typeparam name="TEntity">The type of entities that belong to this repository</typeparam>
     public interface IPageableRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         /// <summary>

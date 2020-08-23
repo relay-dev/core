@@ -13,7 +13,7 @@ namespace Core.Caching
         /// <typeparam name="TReturn">The Type of object you are expecting to receive from the cache</typeparam>
         /// <param name="key">Lookup key for the cache entry</param>
         /// <param name="valueFactory">Function to set the value of the cache entry if it does not exist or has expired</param>
-        /// <param name="expirationInHours">Specifies how long the cache should live for before using the Func parameter to refresh the cache entrys value</param>
+        /// <param name="expirationInHours">Specifies how long the cache should live for before using the Func parameter to refresh the cache entry's value</param>
         /// <returns>The entry in the cache for the given key</returns>
         TReturn GetOrSet<TReturn>(string key, Func<TReturn> valueFactory, int expirationInHours = 2);
 

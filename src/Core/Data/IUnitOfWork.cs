@@ -15,7 +15,7 @@ namespace Core.Data
         int Commit();
 
         /// <summary>
-        /// Asyncronously persists all pending changes to the data source
+        /// asynchronously persists all pending changes to the data source
         /// </summary>
         /// <returns>Count of rows affected</returns>
         Task<int> CommitAsync();

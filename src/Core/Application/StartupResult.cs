@@ -4,16 +4,14 @@ using Core.IoC;
 namespace Core.Application
 {
     /// <summary>
-    /// The result of the Boostrapper Startup operation
+    /// The result of the boostrapper Startup operation
     /// </summary>
     public class StartupResult : Result
     {
         /// <summary>
-        /// The IoC container, fully initizalized by the Boostrapper
+        /// The IoC container, fully initialized by the boostrapper
         /// </summary>
         public IIoCContainer IoCContainer { get; }
-
-        #region ctor
 
         /// <summary>
         /// Constructor
@@ -27,22 +25,18 @@ namespace Core.Application
         {
             IoCContainer = iocContainer;
         }
-
-        #endregion
     }
 
     /// <summary>
-    /// The result of the Boostrapper Startup operation
+    /// The result of the boostrapper Startup operation
     /// </summary>
     /// <typeparam name="TResult">The result of the startup operation</typeparam>
     public class StartupResult<TResult> : Result<TResult>
     {
         /// <summary>
-        /// The generic result of the Boostrapper Startup operation
+        /// The generic result of the boostrapper Startup operation
         /// </summary>
         public TResult Result { get; }
-
-        #region ctor
 
         /// <summary>
         /// Constructor
@@ -56,7 +50,5 @@ namespace Core.Application
         {
             Result = result;
         }
-
-        #endregion
     }
 }

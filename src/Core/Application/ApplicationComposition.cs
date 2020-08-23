@@ -1,5 +1,4 @@
-﻿using Core.IoC;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Core.Application
 {
@@ -48,8 +47,6 @@ namespace Core.Application
         /// </summary>
         public DataAccess DataAccess { get; set; }
 
-        #region ctor
-
         /// <summary>
         /// Constructor
         /// </summary>
@@ -57,8 +54,6 @@ namespace Core.Application
         {
             DataAccess = new DataAccess();
         }
-
-        #endregion
     }
 
     /// <summary>
@@ -76,8 +71,6 @@ namespace Core.Application
         /// </summary>
         public List<IoCContainerPlugin> Plugins { get; set; }
 
-        #region ctor
-
         /// <summary>
         /// Constructor
         /// </summary>
@@ -85,8 +78,6 @@ namespace Core.Application
         {
             Plugins = new List<IoCContainerPlugin>();
         }
-
-        #endregion
     }
 
     /// <summary>
@@ -136,8 +127,6 @@ namespace Core.Application
         /// </summary>
         public List<Repository> Repositories { get; set; }
 
-        #region ctor
-
         /// <summary>
         /// Constructor
         /// </summary>
@@ -146,8 +135,6 @@ namespace Core.Application
             Databases = new List<Database>();
             Repositories = new List<Repository>();
         }
-
-        #endregion
     }
 
     /// <summary>
@@ -205,7 +192,7 @@ namespace Core.Application
         /// <summary>
         /// SQL Server
         /// </summary>
-        SQLServer,
+        SqlServer,
 
         /// <summary>
         /// Oracle
@@ -215,7 +202,7 @@ namespace Core.Application
         /// <summary>
         /// MySQL
         /// </summary>
-        MySQL,
+        MySql,
 
         /// <summary>
         /// In-memory

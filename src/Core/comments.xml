@@ -638,7 +638,7 @@
         </member>
         <member name="M:Core.Data.IdbContext.SaveChangesAsync">
             <summary>
-            Persists all pending changes to the data source asyncronously
+            Persists all pending changes to the data source asynchronously
             </summary>
             <returns>Count of rows affected</returns>
         </member>
@@ -721,7 +721,7 @@
         </member>
         <member name="M:Core.Data.IUnitOfWork.CommitAsync">
             <summary>
-            Asyncronously persists all pending changes to the data source
+            asynchronously persists all pending changes to the data source
             </summary>
             <returns>Count of rows affected</returns>
         </member>
@@ -1305,7 +1305,7 @@
         </member>
         <member name="M:Core.Framework.Services.ICrudService`1.CreateAsync(`0)">
             <summary>
-            Creates the item asyncronously
+            Creates the item asynchronously
             </summary>
             <param name="item">The item to create</param>
             <returns>The Id of the item created</returns>
@@ -1319,7 +1319,7 @@
         </member>
         <member name="M:Core.Framework.Services.ICrudService`1.GetByIdAsync(System.Int64)">
             <summary>
-            Gets the item by Id asyncronously
+            Gets the item by Id asynchronously
             </summary>
             <param name="id">The Id of the item to return</param>
             <returns>The item if found; otherwise, null</returns>
@@ -1332,7 +1332,7 @@
         </member>
         <member name="M:Core.Framework.Services.ICrudService`1.UpdateAsync(`0)">
             <summary>
-            Updates the item asyncronously
+            Updates the item asynchronously
             </summary>
             <param name="item">The item to update</param>
             <returns>The task to execute</returns>
@@ -1345,7 +1345,7 @@
         </member>
         <member name="M:Core.Framework.Services.ICrudService`1.DeleteAsync(System.Int64)">
             <summary>
-            Deletes the item asyncronously
+            Deletes the item asynchronously
             </summary>
             <param name="id">The Id of the item to delete</param>
             <returns>The task to execute</returns>
@@ -1364,7 +1364,7 @@
         </member>
         <member name="M:Core.Framework.Services.ILookupService`1.GetAllAsync">
             <summary>
-            Returns all lookup data items asyncronously
+            Returns all lookup data items asynchronously
             </summary>
             <returns>A collection of all items</returns>
         </member>
@@ -2223,18 +2223,18 @@
         </member>
         <member name="M:Core.Utilities.IAssemblyScanner.GetApplicationTypesWithAttribute``1">
             <summary>
-            Scans all Core assemblies and returns a collection of types that utilize a given attribute type and match the pedicate argument
+            Scans all Core assemblies and returns a collection of types that utilize a given attribute type and match the predicate argument
             </summary>
             <typeparam name="TAttribute">The attribute type to search all class in the assemblies for</typeparam>
-            <returns>All Core types that utilize the given attribute type and match the pedicate argument</returns>
+            <returns>All Core types that utilize the given attribute type and match the predicate argument</returns>
         </member>
         <member name="M:Core.Utilities.IAssemblyScanner.GetApplicationTypesWithAttribute``1(System.Func{``0,System.Boolean})">
             <summary>
-            Scans all Core assemblies and returns a collection of types that utilize a given attribute type and match the pedicate argument
+            Scans all Core assemblies and returns a collection of types that utilize a given attribute type and match the predicate argument
             </summary>
             <typeparam name="TAttribute">The attribute type to search all class in the assemblies for</typeparam>
             <param name="predicate">Optional; the condition of the types to match in order to include them in the return collection</param>
-            <returns>All Core types that utilize the given attribute type and match the pedicate argument</returns>
+            <returns>All Core types that utilize the given attribute type and match the predicate argument</returns>
         </member>
         <member name="T:Core.Utilities.IGlobalHelper">
             <summary>

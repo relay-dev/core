@@ -27,7 +27,7 @@ namespace Core.Data
         int SaveChanges();
 
         /// <summary>
-        /// Persists all pending changes to the data source asyncronously
+        /// Persists all pending changes to the data source asynchronously
         /// </summary>
         /// <returns>Count of rows affected</returns>
         Task<int> SaveChangesAsync();

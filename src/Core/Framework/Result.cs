@@ -20,8 +20,6 @@
         /// </summary>
         public string ErrorCode { get; }
 
-        #region ctor
-
         /// <summary>
         /// Constructor
         /// </summary>
@@ -34,8 +32,6 @@
             ErrorMessage = errorMessage;
             ErrorCode = errorCode;
         }
-
-        #endregion
     }
 
     /// <summary>
@@ -49,8 +45,6 @@
         /// </summary>
         public TValue Value { get; }
 
-        #region ctor
-
         /// <summary>
         /// Constructor
         /// </summary>
@@ -63,7 +57,5 @@
         {
             Value = value;
         }
-
-        #endregion
     }
 }

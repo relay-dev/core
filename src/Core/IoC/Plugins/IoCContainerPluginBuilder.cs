@@ -19,12 +19,12 @@ namespace Core.IoC.Plugins
         public Action<IIoCContainer> DeferredInstall;
 
         /// <summary>
-        /// Executed byfore the installation process beings
+        /// Executed before the installation process beings
         /// </summary>
         public Action<IIoCContainer> DeferredAfterInstall;
 
         /// <summary>
-        /// A deffered action to be run before the plugin is installed
+        /// A deferred action to be run before the plugin is installed
         /// </summary>
         /// <param name="beforeInstall">The deferred action</param>
         /// <returns>The plugin builder expression</returns>
@@ -36,7 +36,7 @@ namespace Core.IoC.Plugins
         }
 
         /// <summary>
-        /// Given an IIoCContainer, this allows consumers to specify type registraions, etc
+        /// Given an IIoCContainer, this allows consumers to specify type registrations, etc
         /// </summary>
         /// <param name="onInstall">The deferred action</param>
         /// <returns>The plugin builder expression</returns>
@@ -48,7 +48,7 @@ namespace Core.IoC.Plugins
         }
 
         /// <summary>
-        /// A deffered action to be run after the plugin is installed
+        /// A deferred action to be run after the plugin is installed
         /// </summary>
         /// <param name="afterInstall">The deferred action</param>
         /// <returns>The plugin builder expression</returns>

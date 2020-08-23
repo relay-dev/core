@@ -15,7 +15,7 @@
     /// Represents an operation that can be executed
     /// </summary>
     /// <typeparam name="TResult">Output type to be returned by this operation</typeparam>
-    public interface IOperation<TResult>
+    public interface IOperation<out TResult>
     {
         /// <summary>
         /// Executes the operation
@@ -29,7 +29,7 @@
     /// </summary>
     /// <typeparam name="TInput">Input type to be returned by this operation</typeparam>
     /// <typeparam name="TResult">Output type to be returned by this operation</typeparam>
-    public interface IOperation<TInput, TResult>
+    public interface IOperation<in TInput, out TResult>
     {
         /// <summary>
         /// Executes the operation

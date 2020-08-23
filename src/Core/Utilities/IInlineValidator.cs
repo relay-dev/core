@@ -55,7 +55,7 @@ namespace Core.Utilities
         /// </summary>
         /// <param name="expression">An expression that represents the rule which should trigger a validation failure</param>
         /// <returns>This validator, for the sake of a fluent API</returns>
-        IInlineValidator NotInvalidID(Expression<Func<long>> expression);
+        IInlineValidator NotInvalidId(Expression<Func<long>> expression);
 
         /// <summary>
         /// Validate against not less than

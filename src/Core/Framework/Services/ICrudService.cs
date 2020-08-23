@@ -16,7 +16,7 @@ namespace Core.Framework.Services
         long Create(TItem item);
 
         /// <summary>
-        /// Creates the item asyncronously
+        /// Creates the item asynchronously
         /// </summary>
         /// <param name="item">The item to create</param>
         /// <returns>The Id of the item created</returns>
@@ -27,14 +27,14 @@ namespace Core.Framework.Services
         /// </summary>
         /// <param name="id">The Id of the item to return</param>
         /// <returns>The item if found; otherwise, null</returns>
-        TItem GetByID(long id);
+        TItem GetById(long id);
 
         /// <summary>
-        /// Gets the item by Id asyncronously
+        /// Gets the item by Id asynchronously
         /// </summary>
         /// <param name="id">The Id of the item to return</param>
         /// <returns>The item if found; otherwise, null</returns>
-        Task<TItem> GetByIDAsync(long id);
+        Task<TItem> GetByIdAsync(long id);
 
         /// <summary>
         /// Updates the item
@@ -43,7 +43,7 @@ namespace Core.Framework.Services
         void Update(TItem item);
 
         /// <summary>
-        /// Updates the item asyncronously
+        /// Updates the item asynchronously
         /// </summary>
         /// <param name="item">The item to update</param>
         /// <returns>The task to execute</returns>
@@ -56,7 +56,7 @@ namespace Core.Framework.Services
         void Delete(long id);
 
         /// <summary>
-        /// Deletes the item asyncronously
+        /// Deletes the item asynchronously
         /// </summary>
         /// <param name="id">The Id of the item to delete</param>
         /// <returns>The task to execute</returns>

@@ -16,10 +16,10 @@ namespace Core.Caching
         public CacheEntry(string key, TToCache value)
         {
             if (string.IsNullOrEmpty(key))
-                throw new ArgumentException("key cannot be null", "key");
+                throw new ArgumentException("key cannot be null", nameof(key));
 
             if (value == null)
-                throw new ArgumentException("value cannot be null", "value");
+                throw new ArgumentException("value cannot be null", nameof(value));
 
             Key = key;
             Value = value;

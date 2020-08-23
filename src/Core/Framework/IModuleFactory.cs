@@ -8,8 +8,8 @@
         /// <summary>
         /// Creates the Module type requested
         /// </summary>
-        /// <typeparam name="IModule">Type of the Module to be returned</typeparam>
+        /// <typeparam name="TModule">Type of the Module to be returned</typeparam>
         /// <returns>A new instance of an object of type IModule</returns>
-        new IModule Create<IModule>();
+        new TModule Create<TModule>();
     }
 }

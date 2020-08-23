@@ -120,7 +120,7 @@ namespace Core.Utilities
         /// </summary>
         /// <param name="o">The object to serialize to a string</param>
         /// <returns>The XML representation of the input object</returns>
-        string SerializeToXML(object o);
+        string SerializeToXml(object o);
 
         /// <summary>
         /// Deserializes XML to an object
@@ -128,7 +128,7 @@ namespace Core.Utilities
         /// <typeparam name="TResult">The result of the serialization</typeparam>
         /// <param name="xml">The XML to deserialize</param>
         /// <returns>An object generated from the input XML</returns>
-        TResult DeserializeXML<TResult>(string xml);
+        TResult DeserializeXml<TResult>(string xml);
 
         /// <summary>
         /// Try to get a value from a DataRow

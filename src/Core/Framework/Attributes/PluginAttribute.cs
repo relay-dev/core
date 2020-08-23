@@ -3,7 +3,7 @@
 namespace Core.Framework.Attributes
 {
     /// <summary>
-    /// Provides the ability to provide meta-data for plugins, which allows you to specifiy a plugin's name and type on the IPlugin class
+    /// Provides the ability to provide meta-data for plugins, which allows you to specify a plugins name and type on the IPlugin class
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = false)]
     public class PluginAttribute: Attribute
