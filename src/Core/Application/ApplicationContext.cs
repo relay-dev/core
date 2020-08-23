@@ -12,19 +12,19 @@ namespace Core.Application
         /// Constructor
         /// </summary>
         public ApplicationContext(
-            long applicationId = 0,
             string applicationName = "",
+            long applicationId = 0,
             string applicationVersion = "",
-            bool isDebugMode = false,
             DateTime buildTimestamp = default,
-            HostEnvironment hostEnvironment = default)
+            HostEnvironment hostEnvironment = default,
+            bool isDebugMode = false)
         {
-            ApplicationId = applicationId;
             ApplicationName = applicationName;
+            ApplicationId = applicationId;
             ApplicationVersion = applicationVersion;
-            IsDebugMode = isDebugMode;
             BuildTimestamp = buildTimestamp;
             HostEnvironment = hostEnvironment;
+            IsDebugMode = isDebugMode;
         }
 
         /// <summary>
