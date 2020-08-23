@@ -1,4 +1,4 @@
-﻿using Core.Framework.Attributes;
+﻿using Core.Framework;
 
 namespace Core.IoC.Plugins
 {

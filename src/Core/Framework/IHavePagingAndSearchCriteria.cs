@@ -1,4 +1,4 @@
-﻿namespace Core.Framework.Descriptor
+﻿namespace Core.Framework
 {
     /// <summary>
     /// Indicates this class has properties used to paginate a collection of records as well as a search string to filter results

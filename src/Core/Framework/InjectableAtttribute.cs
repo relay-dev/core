@@ -1,8 +1,7 @@
-﻿using Core.Framework.Enums;
-using Core.IoC;
+﻿using Core.IoC;
 using System;
 
-namespace Core.Framework.Attributes
+namespace Core.Framework
 {
     /// <summary>
     /// Provides you the ability to declare IoC injection behavior as meta-data on a class intended to be used in a dependent injection context

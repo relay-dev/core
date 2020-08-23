@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core.Framework.Descriptor
+namespace Core.Framework
 {
     /// <summary>
     /// Indicates this class has properties used to capture the artifacts around the creation of the object

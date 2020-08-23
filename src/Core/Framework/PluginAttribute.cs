@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core.Framework.Attributes
+namespace Core.Framework
 {
     /// <summary>
     /// Provides the ability to provide meta-data for plugins, which allows you to specify a plugins name and type on the IPlugin class

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core.Framework.Attributes
+namespace Core.Framework
 {
     /// <summary>
     /// Provides you the ability to specify meta-data about your Module, such as a Name

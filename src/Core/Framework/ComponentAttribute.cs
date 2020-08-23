@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core.Framework.Attributes
+namespace Core.Framework
 {
     /// <summary>
     /// Provides you the ability to create new Components and subscribe them to existing Modules without impacting Module code (i.e. this facilitaes a loose coupling between Modules and Components)

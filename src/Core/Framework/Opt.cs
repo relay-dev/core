@@ -1,4 +1,4 @@
-﻿namespace Core.Framework.Enums
+﻿namespace Core.Framework
 {
     /// <summary>
     /// Provides clients with an option to Opt In or Out of a process (this is currently used by the IoC bootstrapper assembly scanner)
