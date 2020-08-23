@@ -1,5 +1,5 @@
-﻿using System;
-using Core.Framework;
+﻿using Core.Framework;
+using System;
 
 namespace Core.Application
 {
@@ -11,9 +11,15 @@ namespace Core.Application
         /// <summary>
         /// Constructor
         /// </summary>
-        public ApplicationContext(long applicationID, string applicationName, string applicationVersion, bool isDebugMode, DateTime buildTimestamp, HostEnvironment hostEnvironment)
+        public ApplicationContext(
+            long applicationId = 0,
+            string applicationName = "",
+            string applicationVersion = "",
+            bool isDebugMode = false,
+            DateTime buildTimestamp = default,
+            HostEnvironment hostEnvironment = default)
         {
-            ApplicationID = applicationID;
+            ApplicationId = applicationId;
             ApplicationName = applicationName;
             ApplicationVersion = applicationVersion;
             IsDebugMode = isDebugMode;
@@ -24,7 +30,7 @@ namespace Core.Application
         /// <summary>
         /// The unique Id of the application
         /// </summary>
-        public long ApplicationID { get; }
+        public long ApplicationId { get; }
 
         /// <summary>
         /// The name of the application
