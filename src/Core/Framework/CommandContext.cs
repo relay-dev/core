@@ -8,6 +8,6 @@
         /// <summary>
         /// The Username from the command request to be used when auditing entities
         /// </summary>
-        string Username { get; set; }
+        public string Username { get; set; }
     }
 }
