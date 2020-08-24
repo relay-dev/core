@@ -1,4 +1,6 @@
-﻿namespace Core.Application
+﻿using System.Collections.Generic;
+
+namespace Core.Application
 {
     /// <summary>
     /// Parses a connection string into segments
@@ -9,6 +11,18 @@
         /// The value of the segment, if the segment key is present
         /// </summary>
         dynamic Segment { get; }
+
+        /// <summary>
+        /// All segments in the connection string
+        /// </summary>
+        Dictionary<string, string> Segments { get; }
+
+        /// <summary>
+        /// Parses a connection string into segments by splitting it on the delimiter
+        /// </summary>
+        /// <param name="connectionString">The connection string to parse</param>
+        /// <returns>A dynamic object that can be used to obtain the value of one segment</returns>
+        dynamic Parse(string connectionString);
 
         /// <summary>
         /// Attempts to get a segment value by key
