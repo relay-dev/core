@@ -10,12 +10,12 @@ namespace Core.Application
         /// <summary>
         /// The value of the segment, if the segment key is present
         /// </summary>
-        dynamic Segment { get; }
+        dynamic Segments { get; }
 
         /// <summary>
         /// All segments in the connection string
         /// </summary>
-        Dictionary<string, string> Segments { get; }
+        Dictionary<string, string> SegmentDictionary { get; }
 
         /// <summary>
         /// Parses a connection string into segments by splitting it on the delimiter
