@@ -3,7 +3,7 @@
     /// <summary>
     /// Provides information about the current command being executed
     /// </summary>
-    public interface ICommandContext
+    public class CommandContext
     {
         /// <summary>
         /// The Username from the command request to be used when auditing entities
