@@ -5,7 +5,7 @@ namespace Core.Application
     /// <summary>
     /// A generic abstraction of the configuration of components which comprise an application
     /// </summary>
-    public partial class ApplicationComposition
+    public class ApplicationComposition
     {
         /// <summary>
         /// The caching framework to be used

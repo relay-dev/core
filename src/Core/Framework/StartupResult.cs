@@ -1,7 +1,6 @@
-﻿using Core.Framework;
-using Core.IoC;
+﻿using Core.IoC;
 
-namespace Core.Application
+namespace Core.Framework
 {
     /// <summary>
     /// The result of the boostrapper Startup operation

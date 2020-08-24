@@ -1,4 +1,4 @@
-﻿namespace Core.Application
+﻿namespace Core.Framework
 {
     /// <summary>
     /// A generic abstraction of an application bootstrapper

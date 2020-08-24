@@ -1,7 +1,7 @@
 ﻿namespace Core.Framework
 {
     /// <summary>
-    /// A generic representation of an object that represents a readonly record
+    /// Represents a readonly record
     /// </summary>
     public interface IReadOnly : IHaveCreatedFields { }
 }

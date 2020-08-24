@@ -15,16 +15,12 @@ namespace Core.Application
             string applicationName = "",
             long applicationId = 0,
             string applicationVersion = "",
-            DateTime buildTimestamp = default,
-            HostEnvironment hostEnvironment = default,
-            bool isDebugMode = false)
+            DateTime buildTimestamp = default)
         {
             ApplicationName = applicationName;
             ApplicationId = applicationId;
             ApplicationVersion = applicationVersion;
             BuildTimestamp = buildTimestamp;
-            HostEnvironment = hostEnvironment;
-            IsDebugMode = isDebugMode;
         }
 
         /// <summary>
@@ -43,18 +39,8 @@ namespace Core.Application
         public string ApplicationVersion { get; }
 
         /// <summary>
-        /// Indicates whether the application is running in a debugging context
-        /// </summary>
-        public bool IsDebugMode { get; }
-
-        /// <summary>
         /// The timestamp at which this application was built
         /// </summary>
         public DateTime BuildTimestamp { get; }
-
-        /// <summary>
-        /// The HostEnvironment where the application is running (Dev, Test, Stage, Production)
-        /// </summary>
-        public HostEnvironment HostEnvironment { get; }
     }
 }

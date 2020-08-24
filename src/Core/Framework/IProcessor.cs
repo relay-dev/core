@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace Core.Application
+namespace Core.Framework
 {
     /// <summary>
     /// Represents a simple class that runs a process
