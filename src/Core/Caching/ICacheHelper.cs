@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Core.Caching
 {
@@ -16,6 +17,12 @@ namespace Core.Caching
         /// <param name="expirationInHours">Specifies how long the cache should live for before using the Func parameter to refresh the cache entry's value</param>
         /// <returns>The entry in the cache for the given key</returns>
         TReturn GetOrSet<TReturn>(string key, Func<TReturn> valueFactory, int expirationInHours = 2);
+
+        /// <summary>
+        /// Retrieves all keys in the current cache
+        /// </summary>
+        /// <returns>The keys available in the cache</returns>
+        List<string> GetAllKeys();
 
         /// <summary>
         /// Removes a single cache entry, by key
