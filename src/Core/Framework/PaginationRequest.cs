@@ -14,5 +14,15 @@
         /// The number of records to take
         /// </summary>
         public int? Take { get; set; }
+
+        /// <summary>
+        /// A read-only property that resolves the nullable Skip property to the default if it's null
+        /// </summary>
+        public int SkipResolved => Skip.GetValueOrDefault();
+
+        /// <summary>
+        /// A read-only property that resolves the nullable Take property to the default if it's null
+        /// </summary>
+        public int TakeResolved => Take ?? 100;
     }
 }
