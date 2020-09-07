@@ -8,6 +8,6 @@
         /// <summary>
         /// The username that should be stamped on the CreatedBy or ModifiedBy
         /// </summary>
-        public string Username { get; set; }
+        public string UsernameForAudit { get; set; }
     }
 }
