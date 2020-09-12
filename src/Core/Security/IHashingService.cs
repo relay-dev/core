@@ -3,7 +3,7 @@
     /// <summary>
     /// A generic abstraction of a hashing mechanism
     /// </summary>
-    public interface IHashingComponent
+    public interface IHashingService
     {
         /// <summary>
         /// Creates a hash using the input as a cipher

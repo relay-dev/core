@@ -5,7 +5,7 @@ namespace Core.Security
     /// <summary>
     /// A generic abstraction of a cryptography mechanism
     /// </summary>
-    public interface ICryptographyComponent
+    public interface ICryptographyService
     {
         /// <summary>
         /// Encrypt a string
