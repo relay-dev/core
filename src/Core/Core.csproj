@@ -8,7 +8,7 @@
     <Company>Relay Technologies</Company>
     <Product />
     <PackageReleaseNotes>Initial release</PackageReleaseNotes>
-    <Copyright>Copyright ©2019</Copyright>
+    <Copyright>Copyright ©2020</Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
     <Description>A bare-bones, plugin model application framework for .NET</Description>
     <PackageProjectUrl>https://github.com/relay-dev/core</PackageProjectUrl>
