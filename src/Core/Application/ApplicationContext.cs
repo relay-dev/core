@@ -1,5 +1,4 @@
-﻿using Core.Framework;
-using System;
+﻿using System;
 using System.IO;
 
 namespace Core.Application
@@ -7,7 +6,7 @@ namespace Core.Application
     /// <summary>
     /// Communicates details about the application context
     /// </summary>
-    public class ApplicationContext : IContext
+    public class ApplicationContext
     {
         /// <summary>
         /// Constructor

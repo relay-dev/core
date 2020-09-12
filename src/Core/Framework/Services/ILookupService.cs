@@ -7,7 +7,7 @@ namespace Core.Framework.Services
     /// A generic abstraction of a service that returns static lookup data
     /// </summary>
     /// <typeparam name="TItem">The type of item to be returned</typeparam>
-    public interface ILookupService<TItem> : IService
+    public interface ILookupService<TItem>
     {
         /// <summary>
         /// Returns all lookup data items

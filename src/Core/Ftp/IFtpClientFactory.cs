@@ -1,4 +1,4 @@
-﻿namespace Core.FileHandling
+﻿namespace Core.Ftp
 {
     /// <summary>
     /// Creates <see cref="IFtpClient"/> instances using the connectionName

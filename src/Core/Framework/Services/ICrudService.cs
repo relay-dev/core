@@ -6,7 +6,7 @@ namespace Core.Framework.Services
     /// A generic abstraction of a service that contains all basic CRUD methods
     /// </summary>
     /// <typeparam name="TItem">The type of item being operated on</typeparam>
-    public interface ICrudService<TItem> : IService
+    public interface ICrudService<TItem>
     {
         /// <summary>
         /// Creates the item

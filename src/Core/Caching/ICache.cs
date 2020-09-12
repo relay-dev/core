@@ -6,7 +6,7 @@ namespace Core.Caching
     /// <summary>
     /// A generic abstraction of a caching mechanism
     /// </summary>
-    public interface ICacheHelper
+    public interface ICache
     {
         /// <summary>
         /// Gets an entry from the cache if it exists. If it does not exist (or it has expired) it will use the Func you pass in to set a value in the cache for the key you specified.
