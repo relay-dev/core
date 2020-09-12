@@ -11,14 +11,14 @@ namespace Core.Security
         /// Encrypt a string
         /// </summary>
         /// <param name="valueToEncrypt">The value to encrypt</param>
-        /// <returns>An object encapsulating the encrypted value</returns>
-        EncryptedValue Encrypt(SecureString valueToEncrypt);
+        /// <returns>The encrypted result</returns>
+        string Encrypt(string valueToEncrypt);
 
         /// <summary>
-        /// Decrypts an EncryptedValue
+        /// Decrypts an encrypted string
         /// </summary>
-        /// <param name="encryptedValue">The value to decrypt</param>
-        /// <returns>The decrypted value as a SecureString</returns>
-        SecureString Decrypt(EncryptedValue encryptedValue);
+        /// <param name="cipherString">The string to decrypt</param>
+        /// <returns>The decrypted result</returns>
+        string Decrypt(string cipherString);
     }
 }
