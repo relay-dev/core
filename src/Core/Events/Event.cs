@@ -20,6 +20,17 @@ namespace Core.Events
         /// <summary>
         /// Constructor
         /// </summary>
+        /// <param name="eventType">The event type (ex. in Azure, this is the Subscription Event Type)</param>
+        /// <param name="data">The payload of the event</param>
+        public Event(string eventType, object data) : this()
+        {
+            EventType = eventType;
+            Data = data;
+        }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
         /// <param name="topic">The unique identifier of the event</param>
         /// <param name="eventType">The event type (ex. in Azure, this is the Subscription Event Type)</param>
         /// <param name="data">The payload of the event</param>
