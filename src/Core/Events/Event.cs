@@ -31,25 +31,18 @@ namespace Core.Events
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="topic">The unique identifier of the event</param>
         /// <param name="eventType">The event type (ex. in Azure, this is the Subscription Event Type)</param>
+        /// <param name="subject">The subject of the event</param>
         /// <param name="data">The payload of the event</param>
-        public Event(string topic, string eventType, object data) : this()
+        public Event(string eventType, string subject, object data) : this(eventType, data)
         {
-            Topic = topic;
-            EventType = eventType;
-            Data = data;
+            Subject = subject;
         }
 
         /// <summary>
         /// The unique identifier of the event
         /// </summary>
         public string Id { get; set; }
-
-        /// <summary>
-        /// The topic to publish the event to
-        /// </summary>
-        public string Topic { get; set; }
 
         /// <summary>
         /// The subject of the event
