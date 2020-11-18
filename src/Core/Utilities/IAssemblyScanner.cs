@@ -25,7 +25,7 @@ namespace Core.Utilities
         /// <param name="predicate">Optional; the condition of the types to match in order to include them in the return collection</param>
         /// <param name="assemblies">The assemblies to scan</param>
         /// <returns>All Core types that utilize the given attribute type and match the predicate argument</returns>
-        IEnumerable<Type> FindTypesWithBaseClass<TBaseClass>(IEnumerable<Assembly> assemblies, Func<TBaseClass, bool> predicate = null);
+        IEnumerable<Type> FindTypesWithBaseClass<TBaseClass>(IEnumerable<Assembly> assemblies, Func<Type, bool> predicate = null);
 
         /// <summary>
         /// Scans assemblies and returns a collection of types that utilize a given attribute type and match an optional predicate argument if specified
@@ -34,8 +34,8 @@ namespace Core.Utilities
         /// <param name="predicate">Optional; the condition of the types to match in order to include them in the return collection</param>
         /// <param name="assemblies">The assemblies to scan</param>
         /// <returns>All Core types that utilize the given attribute type and match the predicate argument</returns>
-        IEnumerable<Type> FindTypesWithInterface<TInterface>(IEnumerable<Assembly> assemblies, Func<TInterface, bool> predicate = null);
-
+        IEnumerable<Type> FindTypesWithInterface<TInterface>(IEnumerable<Assembly> assemblies, Func<Type, bool> predicate = null);
+        
         /// <summary>
         /// Gets all assemblies within the scope of the application
         /// </summary>
