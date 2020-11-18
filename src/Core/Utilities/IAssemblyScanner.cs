@@ -19,15 +19,17 @@ namespace Core.Utilities
         /// Scans all Core assemblies and returns a collection of types that utilize a given attribute type and match the predicate argument
         /// </summary>
         /// <typeparam name="TAttribute">The attribute type to search all class in the assemblies for</typeparam>
+        /// <param name="assemblies">The assemblies to scan</param>
         /// <returns>All Core types that utilize the given attribute type and match the predicate argument</returns>
-        IEnumerable<Type> GetApplicationTypesWithAttribute<TAttribute>(params Assembly[] assemblies) where TAttribute : Attribute;
+        IEnumerable<Type> GetTypesWithAttribute<TAttribute>(params Assembly[] assemblies) where TAttribute : Attribute;
 
         /// <summary>
         /// Scans all Core assemblies and returns a collection of types that utilize a given attribute type and match the predicate argument
         /// </summary>
         /// <typeparam name="TAttribute">The attribute type to search all class in the assemblies for</typeparam>
         /// <param name="predicate">Optional; the condition of the types to match in order to include them in the return collection</param>
+        /// <param name="assemblies">The assemblies to scan</param>
         /// <returns>All Core types that utilize the given attribute type and match the predicate argument</returns>
-        IEnumerable<Type> GetApplicationTypesWithAttribute<TAttribute>(Func<TAttribute, bool> predicate, params Assembly[] assemblies) where TAttribute : Attribute;
+        IEnumerable<Type> GetTypesWithAttribute<TAttribute>(Func<TAttribute, bool> predicate, params Assembly[] assemblies) where TAttribute : Attribute;
     }
 }
