@@ -1,4 +1,6 @@
-# <table border="0" style="margin: 0 !important"><tr style="border: none !important"><td vlign="bottom" style="border: none !important"><img src="https://i.imgur.com/wlzLkCC.png" alt="Core" style="max-width:100%; float: left; padding-right: 10px; margin: 0;" height="50" width="50"> Core</td></tr></table>
+<img src="https://i.imgur.com/wlzLkCC.png" alt="Core" style="float: left; margin-right: 10px;" height="50" width="50">
+
+# Core
 
 [![Build status](https://ci.appveyor.com/api/projects/status/uy3l50i1p1gxu1pe/branch/master?svg=true)](https://ci.appveyor.com/project/sfergusonATX/core/branch/master)
 [![NuGet Release](https://img.shields.io/nuget/v/relay.core.svg)](https://www.nuget.org/packages/Relay.Core/)
