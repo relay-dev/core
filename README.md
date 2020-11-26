@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/wlzLkCC.png" alt="Core" style="float: right; margin-right: 10px;" height="75" width="75">
+<img src="https://i.imgur.com/wlzLkCC.png" alt="Core" style="margin-bottom: 0; padding-bottom: 0; margin-right: 10px;" height="100" width="100">
 
 # Core
 
