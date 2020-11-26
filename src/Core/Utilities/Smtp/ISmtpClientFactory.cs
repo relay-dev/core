@@ -1,4 +1,4 @@
-﻿namespace Core.Smtp
+﻿namespace Core.Utilities.Smtp
 {
     /// <summary>
     /// Creates <see cref="ISmtpClient"/> instances using the connectionName

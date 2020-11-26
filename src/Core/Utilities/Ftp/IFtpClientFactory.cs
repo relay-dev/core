@@ -1,4 +1,4 @@
-﻿namespace Core.Ftp
+﻿namespace Core.Utilities.Ftp
 {
     /// <summary>
     /// Creates <see cref="IFtpClient"/> instances using the connectionName

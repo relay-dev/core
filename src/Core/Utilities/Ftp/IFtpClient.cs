@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace Core.Ftp
+namespace Core.Utilities.Ftp
 {
     /// <summary>
     /// A generic abstraction of an FTP client

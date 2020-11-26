@@ -1,6 +1,6 @@
 ﻿using System.Net.Mail;
 
-namespace Core.Smtp
+namespace Core.Utilities.Smtp
 {
     /// <summary>
     /// A generic abstraction of an SMTP client
