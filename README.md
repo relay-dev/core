@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/wlzLkCC.png" alt="Core" style="margin-bottom: 0; padding-bottom: 0; margin-right: 10px;" height="100" width="100">
+<img src="https://i.imgur.com/wlzLkCC.png" alt="Core" height="100" width="100">
 
 # Core
 
@@ -13,7 +13,7 @@ Core is a set of base class libraries written using .NET Standard. The code base
 
 Core is published to the main public NuGet feed (see section [Installation](#installation)). All APIs are documented in a .chm file located [here](https://github.com/relay-dev/core/raw/master/docs/Core%20API%20Documentation.chm).
 
-*Update: .NET Core/.NET 5 has made the original intention of this project obsolete. Services like ILogger, IConfiguration, IServiceProvider, etc have been making their way out of this codebase. There are other useful abstractions so the package will stay.
+*Update: .NET Core/.NET 5 has made the original intention of this project obsolete. Services like ILogger, IConfiguration, IServiceProvider, etc have been making their way out of this codebase. There are other useful abstractions here so the package will stay.
 
 ## Getting Started
 
