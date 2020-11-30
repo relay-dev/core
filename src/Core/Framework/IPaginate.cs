@@ -6,13 +6,13 @@
     public interface IPaginate
     {
         /// <summary>
-        /// The number of records to skip
+        /// The number of the current page
         /// </summary>
-        public int? Skip { get; set; }
+        public int? PageNumber { get; set; }
 
         /// <summary>
-        /// The number of records to take
+        /// The number of records to return for each iteration
         /// </summary>
-        public int? Take { get; set; }
+        public int? PageSize { get; set; }
     }
 }

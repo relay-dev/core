@@ -6,23 +6,13 @@
     public class PaginationRequest : IPaginate
     {
         /// <summary>
-        /// The number of records to skip
+        /// The number of the current page
         /// </summary>
-        public int? Skip { get; set; }
+        public int? PageNumber { get; set; }
 
         /// <summary>
-        /// The number of records to take
+        /// The number of records to return for each iteration
         /// </summary>
-        public int? Take { get; set; }
-
-        /// <summary>
-        /// A read-only property that resolves the nullable Skip property to the default if it's null
-        /// </summary>
-        public int SkipResolved => Skip.GetValueOrDefault();
-
-        /// <summary>
-        /// A read-only property that resolves the nullable Take property to the default if it's null
-        /// </summary>
-        public int TakeResolved => Take ?? 100;
+        public int? PageSize { get; set; }
     }
 }
